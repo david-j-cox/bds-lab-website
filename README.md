@@ -2,7 +2,7 @@
 
 A cyberpunk-themed 90s retro website for the Behavioral Data Science Research Lab. Built with pure HTML, CSS, and JavaScript for easy deployment and maintenance.
 
-## 🎨 Features
+## Features
 
 - **Cyberpunk 90s Retro Design**: Neon colors, pixel art, glitch effects
 - **Responsive Design**: Works perfectly on desktop, tablet, and mobile
@@ -26,14 +26,14 @@ bds-lab-website/
 └── README.md           # This file
 ```
 
-## 🚀 Quick Start
+## Quick Start
 
 1. **Clone or Download** the files to your local machine
 2. **Open `index.html`** in your web browser to preview locally
 3. **Customize Content** by editing the HTML files
 4. **Deploy** to your web server or GitHub Pages
 
-## 🎯 Content Customization
+## Content Customization
 
 ### Homepage (`index.html`)
 - Update the hero section text
@@ -65,7 +65,7 @@ bds-lab-website/
 - Add your lab's actual contact information
 - Update office hours and location
 
-## 🌐 Deployment Options
+## Deployment Options
 
 ### Option 1: GitHub Pages (Recommended)
 
@@ -105,7 +105,7 @@ bds-lab-website/
 2. **Deploy** automatically from your Git repository
 3. **Add Custom Domain** in the hosting platform settings
 
-## 🎨 Customization Guide
+## Customization Guide
 
 ### Colors
 Edit the CSS variables in `styles.css`:
@@ -130,7 +130,7 @@ Modify animation speeds and effects in `script.js`:
 - Glitch effect intensity
 - Pixel animation timing
 
-## 📱 Mobile Optimization
+## Mobile Optimization
 
 The website is fully responsive with:
 - Mobile-first design approach
@@ -138,7 +138,7 @@ The website is fully responsive with:
 - Optimized forms for mobile input
 - Readable text at all screen sizes
 
-## 🔧 Technical Details
+## Technical Details
 
 - **No Dependencies**: Pure HTML/CSS/JavaScript
 - **Fast Loading**: Optimized for performance
@@ -146,7 +146,7 @@ The website is fully responsive with:
 - **Accessible**: Proper ARIA labels and keyboard navigation
 - **Cross-Browser**: Works in all modern browsers
 
-## 📞 Support
+## Support
 
 For questions about:
 - **Content Updates**: Edit the HTML files directly
@@ -154,7 +154,7 @@ For questions about:
 - **Interactive Features**: Update `script.js`
 - **Deployment Issues**: Check your hosting provider's documentation
 
-## 🎯 Next Steps
+## Next Steps
 
 1. **Add Your Content**: Replace all placeholder text with your lab's information
 2. **Upload Images**: Add lab photos, member pictures, and research images
@@ -162,10 +162,6 @@ For questions about:
 4. **Add Analytics**: Include Google Analytics or other tracking
 5. **SEO Optimization**: Add meta tags and descriptions for better search visibility
 
-## 📄 License
+## License
 
 This project is open source and available under the MIT License.
-
----
-
-**Built with ❤️ for the Behavioral Data Science Research Lab** 
