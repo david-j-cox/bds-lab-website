@@ -265,8 +265,8 @@ body {
 }
 
 .pliny-image {
-    width: 80px;
-    height: 80px;
+    width: 40px;
+    height: 40px;
     object-fit: contain;
     filter: drop-shadow(0 0 15px var(--neon-cyan));
 }
