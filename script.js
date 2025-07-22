@@ -149,27 +149,34 @@ function initButtonEffects() {
             }, 600);
         });
         
-        // Add typing effect on hover
-        button.addEventListener('mouseenter', function() {
-            const text = this.textContent;
-            this.textContent = '';
-            let i = 0;
-            
-            const typeWriter = () => {
-                if (i < text.length) {
-                    this.textContent += text.charAt(i);
-                    i++;
-                    setTimeout(typeWriter, 50);
-                }
-            };
-            
-            typeWriter();
-        });
+        // Store original text for restoration
+        if (!button.getAttribute('data-original')) {
+            button.setAttribute('data-original', button.textContent);
+        }
         
-        button.addEventListener('mouseleave', function() {
-            const originalText = this.getAttribute('data-original') || this.textContent;
-            this.textContent = originalText;
-        });
+        // Add typing effect on hover for regular buttons
+        if (!button.classList.contains('small')) {
+            button.addEventListener('mouseenter', function() {
+                const originalText = this.getAttribute('data-original');
+                this.textContent = '';
+                let i = 0;
+                
+                const typeWriter = () => {
+                    if (i < originalText.length) {
+                        this.textContent += originalText.charAt(i);
+                        i++;
+                        setTimeout(typeWriter, 50);
+                    }
+                };
+                
+                typeWriter();
+            });
+            
+            button.addEventListener('mouseleave', function() {
+                const originalText = this.getAttribute('data-original');
+                this.textContent = originalText;
+            });
+                }
     });
 }
 
