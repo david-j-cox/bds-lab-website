@@ -653,9 +653,13 @@ body {
 }
 
 .member-info p {
-    font-size: 1.05rem;
+    font-size: 1.25rem;
     opacity: 0.9;
     line-height: 1.6;
+}
+
+.spaced-paragraph {
+    margin-top: 1em; /* or any value you like */
 }
 
 /* Graduates Section */
