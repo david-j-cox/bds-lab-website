@@ -313,7 +313,7 @@ body {
 
 /* Main Content */
 .cyber-main {
-    max-width: 1200px;
+    max-width: 80%;
     margin: 0 auto;
     padding: 2rem;
 }
@@ -625,7 +625,7 @@ body {
     border: 1px solid var(--neon-yellow);
     background: var(--dark-bg);
     width: 100%;
-    max-width: 800px;
+    max-width: 90%;
     text-align: left;
     transition: all 0.3s ease;
 }
