@@ -658,6 +658,18 @@ body {
     line-height: 1.6;
 }
 
+.member-info ul {
+    font-size: 1.25rem;
+    line-height: 1.6;
+}
+
+.member-info li {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
+}
+
 .spaced-paragraph {
     margin-top: 1em; /* or any value you like */
 }
