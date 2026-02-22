@@ -313,7 +313,7 @@ body {
 
 /* Main Content */
 .cyber-main {
-    max-width: 1200px;
+    max-width: 80%;
     margin: 0 auto;
     padding: 2rem;
 }
@@ -625,7 +625,7 @@ body {
     border: 1px solid var(--neon-yellow);
     background: var(--dark-bg);
     width: 100%;
-    max-width: 800px;
+    max-width: 90%;
     text-align: left;
     transition: all 0.3s ease;
 }
@@ -656,6 +656,18 @@ body {
     font-size: 1.25rem;
     opacity: 0.9;
     line-height: 1.6;
+}
+
+.member-info ul {
+    font-size: 1.25rem;
+    line-height: 1.6;
+}
+
+.member-info li {
+    font-size: 1.25rem;
+    opacity: 0.9;
+    line-height: 1.6;
+    margin-bottom: 0.5rem;
 }
 
 .spaced-paragraph {
