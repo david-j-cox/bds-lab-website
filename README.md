@@ -10,7 +10,7 @@ A cyberpunk-themed 90s retro website for the Behavioral Data Science Research La
 - **Interactive Forms**: Contact and application forms with cyberpunk styling
 - **Easy to Customize**: Simple structure for content updates
 
-## 📁 File Structure
+## File Structure
 
 ```
 bds-lab-website/
