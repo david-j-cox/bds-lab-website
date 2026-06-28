@@ -1,81 +1,138 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Behavioral Data Science Research Lab</title>
-    <link rel="icon" type="image/png" href="images/Pliny-the-Pigeon.png">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=VT323&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Behavioral Data Science Research Lab</title>
+<link rel="icon" type="image/png" href="images/Pliny-the-Pigeon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="topic-map.css">
 </head>
 <body>
-    <div class="cyberpunk-container">
-        <!-- Animated Background -->
-        <div class="cyber-grid"></div>
-        
-        <!-- Header -->
-        <header class="cyber-header">
-            <div class="header-content">
-                <div class="logo-section">
-                    <div class="pliny-logo">
-                        <div class="pliny-container">
-                            <img src="images/Pliny-the-Pigeon.png" alt="Pliny the Pigeon" class="pliny-image">
-                        </div>
-                    </div>
-                    <div class="lab-title-section">
-                        <h1 class="lab-title">
-                            <span class="glitch" data-text="BEHAVIORAL">BEHAVIORAL</span>
-                            <span class="glitch" data-text="DATA">DATA</span>
-                            <span class="glitch" data-text="SCIENCE">SCIENCE</span>
-                            <span class="lab-subtitle">RESEARCH LAB</span>
-                        </h1>
-                    </div>
-                </div>
-            </div>
-        </header>
+  <!-- Top nav -->
+  <nav class="map-nav">
+    <a class="brand" href="index.html">
+      <img src="images/Pliny-the-Pigeon.png" alt="">
+      <span><small>Behavioral Data Science</small><b>Research Lab</b></span>
+    </a>
+    <ul>
+      <li><a class="lnk" href="about.html">About</a></li>
+      <li><a class="lnk" href="projects.html">Projects</a></li>
+      <li><a class="lnk" href="publications.html">Publications</a></li>
+      <li><a class="lnk" href="books.html">Books</a></li>
+      <li><a class="lnk live" href="https://david-j-cox.github.io/planarian-live/" target="_blank" rel="noopener">&#9679; Live Rig</a></li>
+    </ul>
+  </nav>
 
-        <!-- Navigation -->
-        <nav class="cyber-nav">
-            <ul class="nav-list">
-                <li><a href="index.html" class="nav-link active">HOME</a></li>
-                <li><a href="about.html" class="nav-link">ABOUT US</a></li>
-                <li><a href="projects.html" class="nav-link">CURRENT PROJECTS</a></li>
-                <li><a href="publications.html" class="nav-link">PUBLICATIONS</a></li>
-                <li><a href="books.html" class="nav-link">BOOKS &amp; COURSE COMPANIONS</a></li>
-                <li><a href="https://david-j-cox.github.io/planarian-live/" class="nav-link" target="_blank" rel="noopener"><span style="color:#39ff14;">&#9679;</span> LIVE RIG</a></li>
-            </ul>
-        </nav>
-
-        <!-- Main Content -->
-        <main class="cyber-main">
-            <section class="hero-section">
-                <div class="hero-content">
-                    <h2 class="cyber-h2">WELCOME TO THE BEHAVIORAL DATA SCIENCE RESEARCH LAB</h2>
-                    <p class="cyber-text">
-                        Hello! Welcome to the webpage for one of the research labs at the 
-                        <a href="https://www.endicott.edu/academics/schools/institute-for-applied-behavioral-science/graduate-programs/doctoral-programs/applied-behavior-analysis-program" class="cyber-link">Institute for Applied Behavioral Science at Endicott College!</a>
-                    </p>
-                    <p class="cyber-text">
-                        Our research focuses primarily on: choice, decision-making, verbal behavior, and ethical behavior through the lens of behavioral economics and complex systems. Our research primarily leverages the methodologies of: human operant experiments, quantitative analyses of behavior-environment relations, machine learning, and computational modeling. All that is quite the mouthful so we shorten it to "behavioral data science".
-                    </p>
-                    <p class="cyber-text">
-                        Our lab tries to span the basic-translational-applied continuum, with findings from each area informing the others. 
-                        Check out our <a href="projects.html" class="cyber-link">Current Projects</a> and <a href="publications.html" class="cyber-link">Recent Publications</a> pages for 
-                        more information about our work. To learn more about the PI, <a href="documents/David_J_Cox_CV.pdf" class="cyber-link">check out his CV</a>. Otherwise, feel free to check out the website to learn more about who we are and what we're getting into on a regular basis.
-                    </p>
-                </div>
-            </section>
-
-        </main>
-
-        <!-- Footer -->
-        <footer class="cyber-footer">
-            <div class="footer-content">
-                <p>&copy; 2025 Behavioral Data Science Research Lab</p>
-            </div>
-        </footer>
+  <!-- Intro hero -->
+  <header class="landing-hero">
+    <div class="kicker">Behavioral Data Science Research Lab</div>
+    <h1>How the behavior of an organism comes together</h1>
+    <p>Behavior analysis has uncovered dozens of behavioral principles. We study how those
+       principles and processes <strong>interact and integrate</strong> into the behavior of a whole
+       organism &mdash; over time, across contexts, and from the molecular, moment-to-moment control
+       of behavior up to its molar, aggregate patterns.</p>
+    <p>We pursue that question across a <strong>basic &rarr; translational &rarr; applied</strong>
+       continuum: human operant experiments and artificial organisms that test how processes combine,
+       then carrying that work into socially important domains &mdash; ethics, clinical and autism
+       service delivery, substance use, baseball, and more. Running through all of it is a common
+       methodological backbone: <strong>rigorous science, expanding data, and sophisticated analysis</strong>.</p>
+    <div class="areas-head">Dive into a line of research</div>
+    <div class="areas">
+      <a class="area" href="area-integrating-principles.html">
+        <span class="stage-tag">Basic</span>
+        <b>Integrating principles</b>
+        <span>How processes combine in human operant work</span>
+      </a>
+      <a class="area" href="area-artificial-organisms.html">
+        <span class="stage-tag">Basic</span>
+        <b>Artificial organisms</b>
+        <span>Building integrated systems to test theory</span>
+      </a>
+      <a class="area" href="area-applied-domains.html">
+        <span class="stage-tag">Translational &middot; Applied</span>
+        <b>Applied domains</b>
+        <span>Ethics, autism services, substance use, baseball</span>
+      </a>
+      <a class="area" href="area-methodological-backbone.html">
+        <span class="stage-tag">Backbone</span>
+        <b>Methodological backbone</b>
+        <span>Data, science, and mathematics</span>
+      </a>
     </div>
+    <p class="cue">Or explore the whole corpus below &mdash; every paper and book placed by what it is
+       about, not when it was written. Scroll to zoom, drag to pan, click any point to drill in. &darr;</p>
+  </header>
 
-    <script src="script.js"></script>
+  <!-- Interactive topic map -->
+  <div id="app">
+    <canvas id="map"></canvas>
+
+    <aside id="legend" aria-label="Topic clusters">
+      <div class="legend-head">Topics</div>
+      <ul id="legend-list"></ul>
+      <button id="reset-view" type="button">Reset view</button>
+    </aside>
+
+    <div id="tooltip" hidden></div>
+
+    <section id="detail" hidden aria-live="polite">
+      <button id="detail-close" type="button" aria-label="Close">&times;</button>
+      <div class="detail-tag" id="detail-tag"></div>
+      <h2 id="detail-title"></h2>
+      <div class="detail-meta" id="detail-meta"></div>
+      <p id="detail-abstract"></p>
+      <div class="detail-links" id="detail-links"></div>
+      <div class="detail-related" id="detail-related"></div>
+    </section>
+
+    <div id="hint">scroll to zoom &middot; drag to pan &middot; click a point to drill in</div>
+  </div>
+
+  <!-- How the lines of work inform each other -->
+  <section class="synthesis">
+    <div class="kicker">How it fits together</div>
+    <h2>Four lines of work, one organism</h2>
+    <p class="lead">No single principle explains the behavior of a whole organism, and none of these
+       lines stands alone. They feed each other across the basic&ndash;to&ndash;applied continuum.</p>
+    <div class="flow">
+      <div class="flowcard f1">
+        <span class="ftag">Basic</span>
+        <h3>Basic principles &amp; their interactions</h3>
+        <p>Human operant experiments isolate how individual processes combine &mdash; the raw material
+           everything else is built on.</p>
+      </div>
+      <div class="flowcard f2">
+        <span class="ftag">Basic</span>
+        <h3>Artificial organisms</h3>
+        <p>We test that understanding by building it: when a constructed system reproduces real
+           behavior it sharpens the theory; when it breaks, it shows what's missing.</p>
+      </div>
+      <div class="flowcard f3">
+        <span class="ftag">Translational &middot; Applied</span>
+        <h3>Applied &amp; translational domains</h3>
+        <p>Validated combinations move into messier, socially important settings &mdash; ethics, clinical
+           and autism services, substance use &mdash; where new constraints reveal which principles
+           actually matter, and pose fresh basic questions.</p>
+      </div>
+      <div class="flowcard f4">
+        <span class="ftag">Backbone</span>
+        <h3>Methodological backbone</h3>
+        <p>Rigorous design, expanding data, and quantitative modeling cut across all of it &mdash;
+           letting us see the interactions and carry findings from one level to the next.</p>
+      </div>
+    </div>
+    <p class="closing">The throughline is <strong>integration</strong>: molecular to molar,
+       basic to applied, and back again.</p>
+  </section>
+
+  <footer class="site-footer" style="border-top:1px solid var(--line);padding:24px 28px;color:var(--faint);font-size:.85rem;text-align:center">
+    &copy; 2025 Behavioral Data Science Research Lab
+  </footer>
+
+<script src="data/corpus.js"></script>
+<script src="topic-map.js"></script>
 </body>
-</html> 
+</html>

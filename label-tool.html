@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Label the corpus &middot; BDS Lab</title>
+<style>
+  :root{
+    --bg:#0b0e14; --panel:#161b27; --panel2:#1c2230; --ink:#e8ecf4; --muted:#9aa6bd;
+    --faint:#6b7689; --line:#27304a; --accent:#6cc5ff; --accent2:#a98bff; --good:#5fd6a4;
+    --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);line-height:1.5}
+  .bar{
+    position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:14px;flex-wrap:wrap;
+    padding:12px 22px;background:rgba(11,14,20,.92);backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  .bar .title{font-weight:700;letter-spacing:-.01em}
+  .bar .prog{color:var(--muted);font-size:.85rem}
+  .bar .progtrack{flex:1;min-width:120px;height:6px;background:var(--panel2);border-radius:99px;overflow:hidden}
+  .bar .progfill{height:100%;background:var(--good);width:0}
+  .bar button{
+    background:var(--panel2);color:var(--ink);border:1px solid var(--line);border-radius:8px;
+    padding:.45rem .8rem;font-family:inherit;font-size:.82rem;cursor:pointer;transition:.12s;
+  }
+  .bar button:hover{border-color:var(--accent)}
+  .bar button.primary{background:var(--accent);color:#06223a;border-color:var(--accent);font-weight:600}
+  .wrap{max-width:860px;margin:0 auto;padding:28px 22px 80px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:26px}
+  .meta{color:var(--accent);font-size:.74rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;margin-bottom:.7rem}
+  .card h1{font-size:1.5rem;line-height:1.25;margin:0 0 .5rem}
+  .authors{color:var(--ink);font-size:.95rem;margin:0 0 1rem}
+  .abstract{color:var(--muted);font-size:.92rem;max-height:230px;overflow:auto;
+    padding:14px;background:var(--panel2);border-radius:10px;border:1px solid var(--line)}
+  .assigned{margin:1.2rem 0 .3rem;font-size:.85rem;color:var(--faint)}
+  .assigned b{color:var(--good)}
+  .labels-head{margin:1.6rem 0 .7rem;font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--faint);font-weight:600}
+  .labels{display:grid;grid-template-columns:repeat(2,1fr);gap:.6rem}
+  .lab{
+    display:flex;align-items:center;gap:.6rem;text-align:left;background:var(--panel2);
+    color:var(--ink);border:1px solid var(--line);border-radius:10px;padding:.7rem .8rem;
+    font-family:inherit;font-size:.9rem;cursor:pointer;transition:.12s;
+  }
+  .lab:hover{border-color:var(--accent);background:#1f2636}
+  .lab.active{border-color:var(--good);background:#13241d}
+  .lab .key{
+    flex:0 0 auto;width:22px;height:22px;border-radius:6px;background:var(--bg);border:1px solid var(--line);
+    color:var(--faint);font-size:.72rem;display:flex;align-items:center;justify-content:center;
+  }
+  .addrow{display:flex;gap:.6rem;margin-top:1rem}
+  .addrow input{
+    flex:1;background:var(--panel2);border:1px solid var(--line);border-radius:10px;color:var(--ink);
+    padding:.7rem .8rem;font-family:inherit;font-size:.9rem;
+  }
+  .addrow input:focus{outline:none;border-color:var(--accent)}
+  .addrow button{background:var(--accent2);color:#1a0f33;border:none;border-radius:10px;padding:0 1.1rem;font-weight:600;cursor:pointer}
+  .nav{display:flex;justify-content:space-between;margin-top:1.4rem}
+  .nav button{background:none;border:1px solid var(--line);color:var(--muted);border-radius:8px;padding:.5rem .9rem;cursor:pointer;font-family:inherit}
+  .nav button:hover{color:var(--ink);border-color:var(--accent)}
+  .hint{color:var(--faint);font-size:.78rem;text-align:center;margin-top:1.4rem}
+  .done{text-align:center;padding:60px 20px}
+  .done h1{font-size:1.8rem}
+</style>
+</head>
+<body>
+  <div class="bar">
+    <span class="title">Label the corpus</span>
+    <span class="prog" id="prog">0 / 0</span>
+    <div class="progtrack"><div class="progfill" id="progfill"></div></div>
+    <button id="jump-unlabeled">Next unlabeled</button>
+    <input type="file" id="import" accept="application/json" hidden>
+    <button id="import-btn">Import</button>
+    <button class="primary" id="export">Export labels.json</button>
+  </div>
+
+  <div class="wrap" id="wrap"></div>
+
+<script src="data/corpus.js"></script>
+<script>
+(() => {
+  const SEED = [
+    'Basic Principles and Their Interactions',
+    'Operant behavior & training',
+    'Artificial organisms',
+    'Ethics & ethical decision-making',
+    'AI in behavior analysis',
+    'ASD / clinical service delivery',
+    'Substance use',
+    'Quantitative, computational & statistical methods',
+    'Verbal behavior',
+    'Replication, translation & meta-science',
+  ];
+  const KEY = 'bds-labels-v1';
+  const items = (window.CORPUS && window.CORPUS.items) || [];
+  const store = JSON.parse(localStorage.getItem(KEY) || '{}');
+  let labels = store.labels && store.labels.length ? store.labels.slice() : SEED.slice();
+  let assign = store.assign || {};   // id -> label
+  let i = 0;
+
+  // One-time renames applied to already-saved work on load.
+  const RENAMES = {
+    'Discounting, choice & decision-making': 'Basic Principles and Their Interactions',
+  };
+  let migrated = false;
+  labels = labels.map(l => { if (RENAMES[l]) { migrated = true; return RENAMES[l]; } return l; });
+  labels = [...new Set(labels)];
+  for (const id in assign) {
+    if (RENAMES[assign[id]]) { assign[id] = RENAMES[assign[id]]; migrated = true; }
+  }
+
+  const wrap = document.getElementById('wrap');
+  const save = () => localStorage.setItem(KEY, JSON.stringify({labels, assign}));
+  if (migrated) save();
+  const labeledCount = () => Object.keys(assign).filter(k => assign[k]).length;
+
+  function updateBar() {
+    document.getElementById('prog').textContent = `${labeledCount()} / ${items.length} labeled`;
+    document.getElementById('progfill').style.width = (100 * labeledCount() / (items.length || 1)) + '%';
+  }
+
+  function render() {
+    updateBar();
+    if (i < 0) i = 0;
+    if (i >= items.length) return renderDone();
+    const d = items[i];
+    const cur = assign[d.id] || null;
+    wrap.innerHTML = `
+      <div class="card">
+        <div class="meta">${i + 1} of ${items.length} &middot; ${d.year || 'Book'} &middot; ${d.type}</div>
+        <h1>${esc(d.title)}</h1>
+        <p class="authors">${esc(d.authors || '')}</p>
+        ${d.abstract ? `<div class="abstract">${esc(d.abstract)}</div>` : ''}
+        <div class="assigned">Current label: <b>${cur ? esc(cur) : '— none —'}</b></div>
+        <div class="labels-head">Pick a label (or press its number)</div>
+        <div class="labels" id="labels"></div>
+        <div class="addrow">
+          <input id="newlabel" placeholder="New label if none fit, then Enter">
+          <button id="addbtn">Add &amp; assign</button>
+        </div>
+        <div class="nav">
+          <button id="prev">&larr; Previous</button>
+          <button id="skip">Skip &rarr;</button>
+        </div>
+        <div class="hint">Keys: 1&ndash;9/0 assign &middot; &larr; &rarr; navigate &middot; progress saves automatically</div>
+      </div>`;
+    const box = document.getElementById('labels');
+    labels.forEach((lab, n) => {
+      const b = document.createElement('button');
+      b.className = 'lab' + (lab === cur ? ' active' : '');
+      b.innerHTML = `<span class="key">${n < 9 ? n + 1 : (n === 9 ? '0' : '')}</span><span>${esc(lab)}</span>`;
+      b.onclick = () => choose(lab);
+      box.appendChild(b);
+    });
+    document.getElementById('prev').onclick = () => { i--; render(); };
+    document.getElementById('skip').onclick = () => { i++; render(); };
+    const inp = document.getElementById('newlabel');
+    const add = () => {
+      const v = inp.value.trim();
+      if (!v) return;
+      if (!labels.includes(v)) labels.push(v);
+      choose(v);
+    };
+    document.getElementById('addbtn').onclick = add;
+    inp.onkeydown = e => { if (e.key === 'Enter') add(); };
+  }
+
+  function choose(lab) {
+    assign[items[i].id] = lab;
+    save();
+    i++;
+    render();
+  }
+
+  function renderDone() {
+    updateBar();
+    wrap.innerHTML = `<div class="done card">
+      <h1>All ${items.length} reviewed</h1>
+      <p style="color:var(--muted)">${labeledCount()} labeled across ${new Set(Object.values(assign)).size} labels.
+      Click <b>Export labels.json</b> up top and hand the file back to rebuild the map.</p>
+      <div class="nav" style="justify-content:center;gap:1rem">
+        <button id="back">&larr; Review again</button>
+        <button id="firstunl">Jump to first unlabeled</button>
+      </div></div>`;
+    document.getElementById('back').onclick = () => { i = 0; render(); };
+    document.getElementById('firstunl').onclick = jumpUnlabeled;
+  }
+
+  function jumpUnlabeled() {
+    const idx = items.findIndex(d => !assign[d.id]);
+    i = idx === -1 ? items.length : idx;
+    render();
+  }
+
+  document.addEventListener('keydown', e => {
+    if (e.target.tagName === 'INPUT') return;
+    if (e.key === 'ArrowLeft') { i--; render(); }
+    else if (e.key === 'ArrowRight') { i++; render(); }
+    else if (/^[0-9]$/.test(e.key)) {
+      const n = e.key === '0' ? 9 : (+e.key - 1);
+      if (labels[n]) choose(labels[n]);
+    }
+  });
+
+  document.getElementById('jump-unlabeled').onclick = jumpUnlabeled;
+  document.getElementById('export').onclick = () => {
+    const blob = new Blob([JSON.stringify({labels, assign}, null, 2)], {type: 'application/json'});
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'labels.json';
+    a.click();
+  };
+  document.getElementById('import-btn').onclick = () => document.getElementById('import').click();
+  document.getElementById('import').onchange = e => {
+    const f = e.target.files[0];
+    if (!f) return;
+    const r = new FileReader();
+    r.onload = () => {
+      const j = JSON.parse(r.result);
+      if (j.labels) labels = j.labels;
+      if (j.assign) assign = j.assign;
+      save(); i = 0; render();
+    };
+    r.readAsText(f);
+  };
+
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+
+  if (!items.length) {
+    wrap.innerHTML = '<div class="card">Could not load data/corpus.js. Open this file from the project folder.</div>';
+  } else {
+    render();
+  }
+})();
+</script>
+</body>
+</html>

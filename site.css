@@ -1,0 +1,199 @@
+/* Behavioral Data Science Research Lab - shared dark design system (AO aesthetic).
+   Restyles the existing content classes so page markup stays intact. */
+:root{
+  --bg:#0b0e14; --bg2:#11151f; --panel:#161b27; --panel2:#1c2230;
+  --ink:#e8ecf4; --muted:#9aa6bd; --faint:#6b7689; --line:#27304a;
+  --accent:#6cc5ff; --accent2:#a98bff; --good:#5fd6a4;
+  --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  --wrap:1080px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  margin:0; background:var(--bg); color:var(--ink); font-family:var(--sans);
+  line-height:1.6; -webkit-font-smoothing:antialiased;
+}
+a{color:var(--accent); text-decoration:none}
+a:hover{text-decoration:underline}
+img{max-width:100%}
+.wrap{max-width:var(--wrap); margin:0 auto; padding:0 24px}
+
+/* ---- Top nav ---- */
+.topnav{
+  position:sticky; top:0; z-index:50; display:flex; align-items:center;
+  justify-content:space-between; gap:1rem; padding:.7rem 24px;
+  background:rgba(11,14,20,.82); backdrop-filter:saturate(140%) blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.brand{display:flex; align-items:center; gap:.6rem; color:var(--ink); font-weight:700; letter-spacing:-.01em}
+.brand:hover{text-decoration:none}
+.brand img{width:32px; height:32px; border-radius:50%; background:#eef2f8; object-fit:contain; padding:3px}
+.brand small{display:block; font-size:.62rem; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:600}
+.brand b{font-size:.98rem; line-height:1.05}
+.navlinks{display:flex; align-items:center; gap:.3rem; list-style:none; margin:0; padding:0}
+.navlinks a{
+  color:var(--muted); font-size:.86rem; font-weight:500; padding:.45rem .7rem;
+  border-radius:8px; transition:.14s;
+}
+.navlinks a:hover{color:var(--ink); background:rgba(255,255,255,.05); text-decoration:none}
+.navlinks a.active{color:var(--accent)}
+.navlinks .live{color:var(--good)}
+.navtoggle{display:none; background:none; border:1px solid var(--line); color:var(--ink);
+  border-radius:8px; padding:.4rem .6rem; font-size:1rem; cursor:pointer}
+
+/* ---- Page hero ---- */
+.page-hero{padding:56px 0 30px; border-bottom:1px solid var(--line); margin-bottom:40px}
+.page-hero .kicker{
+  font-size:.72rem; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--accent); font-weight:600; margin-bottom:.6rem;
+}
+.page-hero h1{font-size:2.3rem; line-height:1.1; font-weight:700; margin:0; letter-spacing:-.02em}
+.page-hero p{color:var(--muted); margin:.9rem 0 0; max-width:680px; font-size:1.02rem}
+
+main{padding-bottom:80px}
+
+/* ---- Generic content helpers (mapped from old cyber-* classes) ---- */
+.cyber-h2{font-size:2rem; font-weight:700; margin:0 0 .3rem}
+.cyber-h3, .category-title{
+  font-size:.82rem; letter-spacing:.14em; text-transform:uppercase; font-weight:600;
+  color:var(--accent2); margin:0 0 1.2rem;
+}
+.cyber-text{color:var(--muted)}
+.cyber-link{color:var(--accent)}
+.cyber-divider{display:none}
+.page-header{margin-bottom:1.5rem}
+
+/* ---- Cards ---- */
+.about-card, .project-category{
+  background:var(--panel); border:1px solid var(--line); border-radius:14px;
+  padding:28px; margin-bottom:28px;
+}
+
+/* ---- About: members ---- */
+.members-grid{display:grid; grid-template-columns:1fr 1fr; gap:22px}
+.member-item{
+  background:var(--panel2); border:1px solid var(--line); border-radius:12px;
+  padding:20px; display:flex; flex-direction:column; gap:14px;
+}
+.member-avatar{flex:0 0 auto}
+.member-photo{width:84px; height:84px; border-radius:50%; overflow:hidden; border:2px solid var(--line)}
+.member-photo img{width:100%; height:100%; object-fit:cover}
+.member-info h4, .member-info h5{margin:0 0 .5rem; font-size:1.02rem; color:var(--ink); font-weight:650}
+.member-info p{margin:0 0 .7rem; font-size:.9rem; color:var(--muted)}
+.member-info p.spaced-paragraph{margin-top:.7rem}
+.member-info ul{margin:.4rem 0 .7rem 1.1rem; color:var(--muted); font-size:.9rem}
+.member-info em{color:var(--ink); font-style:italic}
+
+/* ---- About: graduates ---- */
+.graduates-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
+.graduate-item{
+  background:var(--panel2); border:1px solid var(--line); border-radius:12px;
+  padding:20px; text-align:center;
+}
+.graduate-photo{width:96px; height:96px; border-radius:50%; overflow:hidden;
+  margin:0 auto 14px; border:2px solid var(--line)}
+.graduate-photo img{width:100%; height:100%; object-fit:cover}
+.graduate-item h4{margin:0 0 .5rem; font-size:1rem}
+.dissertation-title{font-size:.84rem; color:var(--muted); font-style:italic}
+
+/* ---- Projects ---- */
+.project-item{padding:16px 0; border-top:1px solid var(--line)}
+.project-item:first-child{border-top:none; padding-top:0}
+.project-title{margin:0 0 .4rem; font-size:1.08rem; font-weight:650; color:var(--ink)}
+.project-description{margin:0; color:var(--muted); font-size:.94rem}
+
+/* ---- Publications / Books ---- */
+.publications-content > .cyber-text{margin-bottom:1.8rem}
+.publications-grid{display:flex; flex-direction:column; gap:14px}
+.publication-item{
+  background:var(--panel); border:1px solid var(--line); border-left:3px solid var(--accent);
+  border-radius:10px; padding:18px 22px;
+}
+.publication-year{
+  display:inline-block; font-size:.7rem; letter-spacing:.1em; text-transform:uppercase;
+  font-weight:600; color:var(--accent); margin-bottom:.5rem;
+}
+.publication-title{margin:0 0 .4rem; font-size:1.05rem; font-weight:650; line-height:1.35}
+.publication-authors{margin:0 0 .25rem; color:var(--ink); font-size:.9rem}
+.publication-journal{margin:0; color:var(--muted); font-size:.88rem; font-style:italic}
+.publication-links{margin-top:.9rem; display:flex; flex-wrap:wrap; gap:.5rem}
+.cyber-button{
+  display:inline-block; font-size:.74rem; letter-spacing:.04em; font-weight:600;
+  padding:.45rem .8rem; border-radius:7px; background:var(--panel2);
+  color:var(--accent); border:1px solid var(--line); transition:.14s;
+}
+.cyber-button:hover{border-color:var(--accent); text-decoration:none; background:var(--panel)}
+
+/* ---- Area deep-dive pages ---- */
+.area-back{margin:0 0 18px}
+.area-back a{font-size:.85rem; color:var(--muted)}
+.area-kicker{
+  font-size:.72rem; letter-spacing:.16em; text-transform:uppercase;
+  color:var(--accent); font-weight:600; margin-bottom:.6rem;
+}
+.about-card .cyber-text strong{color:var(--ink); font-weight:600}
+
+/* ---- Footer ---- */
+.site-footer{border-top:1px solid var(--line); padding:28px 0; color:var(--faint); font-size:.85rem}
+.site-footer .wrap{display:flex; justify-content:space-between; flex-wrap:wrap; gap:.5rem}
+.site-footer a{color:var(--muted)}
+
+/* ---- Reskin of the legacy cyberpunk shell (markup left intact) ---- */
+.cyberpunk-container{display:block}
+.cyber-grid{display:none}
+.cyber-header{border-bottom:1px solid var(--line)}
+.cyber-header .header-content{
+  max-width:var(--wrap); margin:0 auto; padding:20px 24px;
+  display:flex; align-items:center; justify-content:center; gap:16px; flex-wrap:wrap;
+}
+.lab-title{
+  display:inline-flex; align-items:baseline; flex-wrap:wrap; gap:.4rem; margin:0;
+  font-size:1.35rem; font-weight:700; letter-spacing:.02em; color:var(--ink); text-align:center;
+}
+.lab-title .glitch{color:var(--ink)}
+.lab-title .glitch::before,.lab-title .glitch::after{display:none !important}
+.lab-subtitle{
+  color:var(--accent); font-weight:600; letter-spacing:.18em;
+  text-transform:uppercase; font-size:.72rem;
+}
+.pliny-logo,.pliny-container{display:inline-block; line-height:0}
+.pliny-image{width:46px; height:46px; border-radius:50%; object-fit:contain; background:#eef2f8; padding:4px}
+
+.cyber-nav{
+  position:sticky; top:0; z-index:50;
+  background:rgba(11,14,20,.85); backdrop-filter:saturate(140%) blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav-list{
+  max-width:var(--wrap); margin:0 auto; padding:.5rem 24px; list-style:none;
+  display:flex; flex-wrap:wrap; gap:.2rem; justify-content:center;
+}
+.nav-link{
+  color:var(--muted); font-size:.78rem; letter-spacing:.06em; text-transform:uppercase;
+  font-weight:600; padding:.45rem .7rem; border-radius:8px; transition:.14s;
+}
+.nav-link:hover{color:var(--ink); background:rgba(255,255,255,.05); text-decoration:none}
+.nav-link.active{color:var(--accent)}
+
+.cyber-main{max-width:var(--wrap); margin:0 auto; padding:36px 24px 80px}
+.page-header{padding:18px 0 24px; margin-bottom:30px; border-bottom:1px solid var(--line)}
+.page-header .cyber-h2{font-size:2.1rem; text-align:center}
+
+.cyber-footer{border-top:1px solid var(--line); padding:26px 0; margin-top:40px}
+.cyber-footer .footer-content{
+  max-width:var(--wrap); margin:0 auto; padding:0 24px;
+  color:var(--faint); font-size:.85rem; text-align:center;
+}
+
+/* ---- Responsive ---- */
+@media(max-width:760px){
+  .navtoggle{display:block}
+  .navlinks{
+    position:absolute; top:100%; right:12px; flex-direction:column; align-items:stretch;
+    background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:8px;
+    min-width:200px; display:none; box-shadow:0 14px 40px rgba(0,0,0,.5);
+  }
+  .navlinks.open{display:flex}
+  .members-grid, .graduates-grid{grid-template-columns:1fr}
+  .page-hero h1{font-size:1.8rem}
+}
