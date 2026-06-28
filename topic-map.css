@@ -186,7 +186,8 @@ body{
   color:var(--accent); font-weight:600; margin-bottom:.6rem;
 }
 .synthesis h2{font-size:1.95rem; line-height:1.12; font-weight:700; margin:0 0 .8rem; letter-spacing:-.01em}
-.synthesis .lead{color:var(--muted); font-size:1.05rem; line-height:1.6; margin:0; max-width:760px}
+.synthesis .lead{color:var(--ink); font-size:1.1rem; line-height:1.6; margin:0; max-width:760px}
+.synthesis .syn-body{color:var(--muted); font-size:1rem; line-height:1.7; margin:1.1rem 0 0; max-width:760px}
 .flow{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin:28px 0}
 .flowcard{display:block; text-decoration:none; background:var(--panel); border:1px solid var(--line);
   border-radius:12px; padding:22px; border-left:3px solid var(--line); transition:border-color .14s, background .14s}
