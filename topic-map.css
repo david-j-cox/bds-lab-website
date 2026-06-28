@@ -5,14 +5,14 @@
   --sans:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
 }
 *{box-sizing:border-box}
-html,body{margin:0;height:100%}
+html,body{margin:0;height:100%;overflow-x:hidden;max-width:100%}
 body{
   background:var(--bg); color:var(--ink); font-family:var(--sans);
   -webkit-font-smoothing:antialiased;
 }
 /* The map lives in its own section below the intro hero. */
 #app{position:relative; height:82vh; min-height:520px; border-top:1px solid var(--line)}
-#map{position:absolute; inset:0; display:block; cursor:grab}
+#map{position:absolute; inset:0; display:block; cursor:grab; touch-action:none}
 #map.grabbing{cursor:grabbing}
 
 /* ---- Intro hero ---- */
@@ -24,6 +24,11 @@ body{
 .landing-hero h1{font-size:2.5rem; line-height:1.08; font-weight:700; margin:0 0 1rem; letter-spacing:-.02em}
 .landing-hero p{color:var(--muted); font-size:1.05rem; line-height:1.65; margin:0 0 1rem; max-width:780px}
 .landing-hero p strong{color:var(--ink); font-weight:600}
+.landing-hero .throughline{
+  font-size:1.1rem; color:var(--ink); font-weight:500; margin:.2rem 0 0;
+  border-left:3px solid var(--accent); padding-left:.9rem;
+}
+.landing-hero .throughline em{color:var(--accent); font-style:italic}
 .landing-hero .areas-head{
   font-size:.72rem; letter-spacing:.14em; text-transform:uppercase;
   color:var(--faint); font-weight:600; margin:1.8rem 0 .8rem;
@@ -66,6 +71,9 @@ body{
 }
 .map-nav a.lnk:hover{color:var(--ink); background:rgba(255,255,255,.06)}
 .map-nav a.lnk.live{color:var(--good)}
+.map-navtoggle{display:none; background:none; border:1px solid var(--line); color:var(--ink);
+  border-radius:8px; padding:.3rem .55rem; font-size:1.1rem; cursor:pointer; line-height:1}
+#legend-toggle{display:none}
 
 /* Masthead */
 #masthead{
@@ -201,7 +209,46 @@ body{
 }
 
 @media(max-width:720px){
-  #legend{display:none}
-  #masthead{max-width:none; padding:18px 20px}
-  #masthead h1{font-size:1.45rem}
+  /* Nav: hamburger dropdown */
+  .map-navtoggle{display:block}
+  .map-nav{padding:0 16px}
+  .map-nav .brand b{font-size:.86rem}
+  .map-nav ul{
+    position:absolute; top:52px; right:10px; flex-direction:column; align-items:stretch;
+    gap:.1rem; background:var(--panel); border:1px solid var(--line); border-radius:12px;
+    padding:8px; min-width:190px; display:none; z-index:60;
+    box-shadow:0 16px 40px rgba(0,0,0,.55);
+  }
+  .map-nav ul.open{display:flex}
+  .map-nav a.lnk{padding:.6rem .7rem; font-size:.8rem}
+
+  /* Hero */
+  .landing-hero{padding:28px 20px 26px}
+  .landing-hero h1{font-size:1.85rem}
+  .landing-hero p, .landing-hero .throughline{font-size:.98rem}
+  .landing-hero .areas{grid-template-columns:1fr}
+
+  /* Map section */
+  #app{height:74vh; min-height:440px; overflow:hidden}
+  #hint{display:none}
+
+  /* Legend becomes a bottom sheet toggled by the Topics button */
+  #legend-toggle{
+    display:block; position:absolute; bottom:14px; right:14px; z-index:40;
+    background:rgba(22,27,39,.94); color:var(--ink); border:1px solid var(--line);
+    border-radius:999px; padding:.5rem 1rem; font-family:inherit; font-size:.82rem; font-weight:600;
+    cursor:pointer; backdrop-filter:blur(8px); box-shadow:0 6px 20px rgba(0,0,0,.4);
+  }
+  #legend{
+    top:auto; bottom:0; left:0; right:0; width:100%; height:auto; max-height:60%;
+    flex-direction:column; padding:16px 18px 20px; border-left:none;
+    border-top:1px solid var(--line); background:var(--bg2);
+    transform:translateY(101%); transition:transform .25s ease; z-index:38;
+  }
+  #legend.open{transform:none}
+
+  /* Synthesis */
+  .synthesis{padding:46px 20px 24px}
+  .synthesis h2{font-size:1.55rem}
+  .flow{grid-template-columns:1fr}
 }

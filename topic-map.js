@@ -12,7 +12,8 @@
   const app = document.getElementById('app');
   // The map fills #app (a section), not the whole window.
   const W = () => app.clientWidth, H = () => app.clientHeight;
-  const local = e => { const r = canvas.getBoundingClientRect(); return [e.clientX - r.left, e.clientY - r.top]; };
+  const localXY = (cx, cy) => { const r = canvas.getBoundingClientRect(); return [cx - r.left, cy - r.top]; };
+  const local = e => localXY(e.clientX, e.clientY);
 
   let DPR = window.devicePixelRatio || 1;
   let items = [], clusters = [], centroids = [];
@@ -158,17 +159,59 @@
     if (hit) openDetail(hit);
   });
 
-  canvas.addEventListener('wheel', e => {
-    e.preventDefault();
-    const factor = Math.exp(-e.deltaY * 0.0015);
-    const [mx, my] = local(e);
-    // Zoom about cursor: keep world point under cursor fixed.
+  // Zoom about a screen point, keeping the world point under it fixed.
+  function zoomAround(mx, my, factor) {
     const wx = (mx - view.ox) / view.scale, wy = -(my - view.oy) / view.scale;
     view.scale = Math.max(fit.scale * 0.5, Math.min(fit.scale * 12, view.scale * factor));
     view.ox = mx - wx * view.scale;
     view.oy = my + wy * view.scale;
+  }
+
+  canvas.addEventListener('wheel', e => {
+    e.preventDefault();
+    const [mx, my] = local(e);
+    zoomAround(mx, my, Math.exp(-e.deltaY * 0.0015));
     draw();
   }, { passive: false });
+
+  // ---- Touch (pan with one finger, pinch to zoom, tap to open) ----
+  let tLast = null, tMoved = false, tPinch = 0;
+  const touchMid = ts => {
+    const a = localXY(ts[0].clientX, ts[0].clientY), b = localXY(ts[1].clientX, ts[1].clientY);
+    return [(a[0] + b[0]) / 2, (a[1] + b[1]) / 2];
+  };
+  const touchDist = ts => Math.hypot(ts[0].clientX - ts[1].clientX, ts[0].clientY - ts[1].clientY);
+
+  canvas.addEventListener('touchstart', e => {
+    if (e.touches.length === 1) {
+      tLast = { x: e.touches[0].clientX, y: e.touches[0].clientY }; tMoved = false;
+    } else if (e.touches.length === 2) {
+      tPinch = touchDist(e.touches); tLast = null;
+    }
+  }, { passive: true });
+
+  canvas.addEventListener('touchmove', e => {
+    e.preventDefault();
+    if (e.touches.length === 1 && tLast) {
+      const dx = e.touches[0].clientX - tLast.x, dy = e.touches[0].clientY - tLast.y;
+      if (Math.abs(dx) + Math.abs(dy) > 3) tMoved = true;
+      view.ox += dx; view.oy += dy;
+      tLast = { x: e.touches[0].clientX, y: e.touches[0].clientY };
+      draw();
+    } else if (e.touches.length === 2 && tPinch) {
+      const d = touchDist(e.touches), [mx, my] = touchMid(e.touches);
+      zoomAround(mx, my, d / tPinch); tPinch = d; tMoved = true; draw();
+    }
+  }, { passive: false });
+
+  canvas.addEventListener('touchend', e => {
+    if (!tMoved && e.changedTouches.length) {
+      const [px, py] = localXY(e.changedTouches[0].clientX, e.changedTouches[0].clientY);
+      const hit = nodeAt(px, py);
+      if (hit) openDetail(hit);
+    }
+    if (e.touches.length === 0) { tLast = null; tPinch = 0; }
+  });
 
   function showTooltip(d, px, py) {
     tooltip.innerHTML = `<div class="tt-title">${esc(d.title)}</div>
@@ -283,6 +326,14 @@
     document.querySelectorAll('#legend li').forEach(li => li.classList.remove('dim'));
     computeFit(); draw();
   });
+
+  // Mobile: hamburger nav + legend (topics) toggle.
+  const navToggle = document.querySelector('.map-navtoggle');
+  if (navToggle) navToggle.addEventListener('click', () =>
+    document.querySelector('.map-nav ul').classList.toggle('open'));
+  const legendToggle = document.getElementById('legend-toggle');
+  if (legendToggle) legendToggle.addEventListener('click', () =>
+    document.getElementById('legend').classList.toggle('open'));
 
   window.addEventListener('resize', () => { resize(); computeFit(); draw(); });
   document.addEventListener('keydown', e => {

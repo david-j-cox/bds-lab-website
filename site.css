@@ -9,9 +9,10 @@
 }
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
+html{overflow-x:hidden}
 body{
   margin:0; background:var(--bg); color:var(--ink); font-family:var(--sans);
-  line-height:1.6; -webkit-font-smoothing:antialiased;
+  line-height:1.6; -webkit-font-smoothing:antialiased; overflow-x:hidden; max-width:100%;
 }
 a{color:var(--accent); text-decoration:none}
 a:hover{text-decoration:underline}
@@ -196,4 +197,19 @@ main{padding-bottom:80px}
   .navlinks.open{display:flex}
   .members-grid, .graduates-grid{grid-template-columns:1fr}
   .page-hero h1{font-size:1.8rem}
+
+  /* Legacy cyber-* shell on small screens */
+  .cyber-header .header-content{padding:14px 16px; gap:10px}
+  .lab-title{font-size:1rem; flex-wrap:wrap; justify-content:center; text-align:center}
+  .lab-subtitle{font-size:.62rem}
+  .pliny-image{width:40px; height:40px}
+  .nav-list{padding:.4rem 8px; gap:.1rem}
+  .nav-link{font-size:.68rem; padding:.35rem .45rem; letter-spacing:.03em}
+  .cyber-main{padding:24px 16px 60px}
+  .page-header .cyber-h2{font-size:1.5rem}
+  .about-card, .project-category{padding:18px}
+  .publication-item{padding:14px 16px}
+  .publication-title{font-size:1rem}
+  .member-info p, .project-description, .cyber-text{font-size:.92rem}
+  .graphic, img{max-width:100%; height:auto}
 }
