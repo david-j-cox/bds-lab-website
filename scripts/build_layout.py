@@ -247,12 +247,14 @@ def load_manual_labels(corpus):
     if not LABELS_FILE.exists():
         return None, None
     assign = json.loads(LABELS_FILE.read_text()).get("assign", {})
+    # Items may also carry their own label (e.g. preprints from preprints.json).
+    label_of = lambda it: assign.get(it["id"]) or it.get("label")
     from collections import Counter
-    counts = Counter(assign[it["id"]] for it in corpus if assign.get(it["id"]))
+    counts = Counter(label_of(it) for it in corpus if label_of(it))
     # Largest group is id 0 (matches the legend ordering).
     ordered = [lab for lab, _ in sorted(counts.items(), key=lambda kv: (-kv[1], kv[0]))]
     index = {lab: i for i, lab in enumerate(ordered)}
-    labels = np.array([index.get(assign.get(it["id"]), -1) for it in corpus])
+    labels = np.array([index.get(label_of(it), -1) for it in corpus])
     if (labels == -1).any():
         ordered.append("Unlabeled")
         labels[labels == -1] = len(ordered) - 1

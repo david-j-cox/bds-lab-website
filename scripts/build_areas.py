@@ -10,8 +10,10 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parent.parent
 corpus = json.loads((ROOT / "data" / "corpus.json").read_text())
-items = {it["id"]: it for it in corpus["items"]}
+ITEMS = corpus["items"]
 assign = json.loads((ROOT / "data" / "labels.json").read_text())["assign"]
+# Items may carry their own label (preprints); labels.json wins otherwise.
+label_of = lambda it: assign.get(it["id"]) or it.get("label")
 
 NAV = """        <header class="cyber-header">
             <div class="header-content">
@@ -83,12 +85,12 @@ AREAS = [
         title="Integrating behavioral principles",
         labels=["Basic Principles and Their Interactions"],
         narrative=(
-            "Behavior analysis has identified dozens of principles, but principles rarely act one at "
-            "a time. This line of work uses human operant experiments to study how individual processes "
-            "&mdash; discounting, choice, reinforcement, resurgence, and the multiple control of behavior "
-            "&mdash; combine and interact to produce the behavior of a whole organism, from moment-to-moment "
+            "Behavior analysis has identified dozens of principles. Principles rarely act one at a time, "
+            "though. This line of work uses human operant experiments to study how individual processes "
+            "(e.g., discounting, choice, reinforcement, resurgence, and the multiple control of behavior) "
+            "combine and interact to produce the behavior of a whole organism, from moment-to-moment "
             "(molecular) control up to aggregate (molar) patterns. These controlled studies establish the "
-            "raw material that everything else is built on."),
+            "raw material that everything else builds on."),
         extra="",
     ),
     dict(
@@ -98,11 +100,11 @@ AREAS = [
         labels=["Artificial organisms"],
         narrative=(
             "&ldquo;What I cannot create, I do not understand.&rdquo; One way we test how behavioral "
-            "principles integrate is to <strong>build it</strong> &mdash; constructing artificial organisms "
-            "that combine principles and processes under different assumptions, then watching what reproduces "
-            "real behavior and where things break down. Where the lab studies how processes interact in living "
-            "organisms, this program asks whether the same processes, assembled from first principles, can "
-            "generate the same patterns."),
+            "principles integrate is to build them. We construct artificial organisms that combine principles "
+            "and processes under a set of assumptions, then watch what reproduces real behavior and where "
+            "things break down. Where the lab studies how processes interact in living organisms, this program "
+            "asks a related question: can the same processes, assembled from first principles, generate the "
+            "same patterns?"),
         extra=('<div class="publication-links" style="margin-top:1.4rem">'
                '<a href="ao-lab-update.html" class="cyber-button" style="font-size:.85rem;padding:.7rem 1.2rem">'
                'Open the Lab Update &rarr;</a></div>'),
@@ -119,10 +121,11 @@ AREAS = [
         ],
         narrative=(
             "Basic science earns its keep when it changes behavior and decisions in settings that matter. "
-            "This work carries validated combinations of principles out of the lab and into messier, socially "
-            "important domains &mdash; translating basic principles to non-laboratory settings, ethics and "
-            "ethical decision-making, clinical decision-making, and substance use. Out here, new constraints "
-            "reveal which principles actually matter, and the problems we meet pose fresh basic questions."),
+            "This work carries validated combinations of principles out of the lab and into messier domains "
+            "of social significance (e.g., translating basic principles to non-laboratory settings, ethics "
+            "and ethical decision-making, clinical decision-making, and substance use). Out here, new "
+            "constraints reveal which principles actually matter, and the problems we contact pose fresh "
+            "basic questions."),
         extra="",
     ),
     dict(
@@ -135,8 +138,8 @@ AREAS = [
         ],
         narrative=(
             "Running beneath every project is a common methodological spine. This area covers the quantitative, "
-            "computational, and statistical methods we use to model behavior&ndash;environment relations, and the "
-            "research methodologies &mdash; measurement, design, and analysis &mdash; that let us see interactions "
+            "computational, and statistical methods we use to model environment-behavior relations, along with "
+            "the research methodologies (e.g., measurement, design, and analysis) that let us see interactions "
             "in the first place and move findings from one level of analysis to the next."),
         extra="",
     ),
@@ -148,11 +151,12 @@ def esc(s):
 
 
 def paper_html(it):
-    yr = it["year"] if it["year"] else "Book"
+    yr = it["year"] if it["year"] else ("Preprint" if it["type"] == "preprint" else "Book")
     meta = esc(it["authors"]) + (" &middot; " if it["authors"] else "") + str(yr)
-    doi = it.get("doi")
-    if doi:
-        meta += f' &middot; <a href="https://doi.org/{esc(doi)}" target="_blank" rel="noopener">DOI</a>'
+    link = it.get("url") or (f'https://doi.org/{it["doi"]}' if it.get("doi") else None)
+    if link:
+        word = "Preprint" if it["type"] == "preprint" else "DOI"
+        meta += f' &middot; <a href="{esc(link)}" target="_blank" rel="noopener">{word}</a>'
     return (f'                    <div class="project-item">\n'
             f'                        <h4 class="project-title">'
             f'<a href="index.html#paper={it["id"]}">{esc(it["title"])}</a></h4>\n'
@@ -163,7 +167,7 @@ def paper_html(it):
 def groups_html(labels):
     out = []
     for lab in labels:
-        members = [items[i] for i, l in assign.items() if l == lab and i in items]
+        members = [it for it in ITEMS if label_of(it) == lab]
         members.sort(key=lambda it: (it["year"] or 0), reverse=True)
         if not members:
             continue
@@ -182,5 +186,5 @@ for a in AREAS:
                        narrative=a["narrative"], extra=a["extra"],
                        groups=groups_html(a["labels"]))
     (ROOT / a["file"]).write_text(html)
-    n = sum(1 for i, l in assign.items() if l in a["labels"])
+    n = sum(1 for it in ITEMS if label_of(it) in a["labels"])
     print(f"wrote {a['file']}  ({n} items)")

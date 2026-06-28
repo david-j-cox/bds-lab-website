@@ -23,6 +23,7 @@
 
   const labelOf = c => LABEL_OVERRIDE[c.id] || c.label;
   const colorOf = id => PALETTE[id % PALETTE.length];
+  const kindLabel = d => d.year ? d.year : (d.type === 'preprint' ? 'Preprint' : 'Book');
 
   // Greedy word-wrap so multi-word labels stack instead of overflowing.
   function wrapLabel(text, maxChars) {
@@ -90,27 +91,26 @@
       lines.forEach((ln, j) => ctx.fillText(ln, sx(c.x), sy(c.y) + j * 15 - (lines.length - 1) * 7.5));
     });
 
-    // Nodes
+    // Nodes: circle = paper, square = book, hollow diamond = preprint.
     items.forEach(d => {
       if (hiddenClusters.has(d.cluster)) return;
       const x = sx(d.x), y = sy(d.y);
-      const isBook = d.type === 'book';
-      const base = isBook ? 7 : 5.5;
-      const r = base * (d === hovered || d === selected ? 1.7 : 1);
+      const on = d === hovered || d === selected;
+      const isBook = d.type === 'book', isPre = d.type === 'preprint';
+      const r = (isBook ? 7 : isPre ? 6.5 : 5.5) * (on ? 1.7 : 1);
+      const col = colorOf(d.cluster);
       ctx.beginPath();
-      ctx.fillStyle = colorOf(d.cluster);
-      ctx.globalAlpha = d === hovered || d === selected ? 1 : 0.82;
-      if (isBook) {
-        ctx.rect(x - r, y - r, r * 2, r * 2);
+      if (isPre) {
+        ctx.moveTo(x, y - r); ctx.lineTo(x + r, y); ctx.lineTo(x, y + r); ctx.lineTo(x - r, y); ctx.closePath();
+        ctx.globalAlpha = on ? 1 : 0.9;
+        ctx.fillStyle = col + '22'; ctx.fill();
+        ctx.lineWidth = 2; ctx.strokeStyle = on ? '#fff' : col; ctx.stroke();
       } else {
-        ctx.arc(x, y, r, 0, Math.PI * 2);
-      }
-      ctx.fill();
-      if (d === hovered || d === selected) {
-        ctx.globalAlpha = 1;
-        ctx.lineWidth = 2;
-        ctx.strokeStyle = '#fff';
-        ctx.stroke();
+        if (isBook) ctx.rect(x - r, y - r, r * 2, r * 2);
+        else ctx.arc(x, y, r, 0, Math.PI * 2);
+        ctx.globalAlpha = on ? 1 : 0.82;
+        ctx.fillStyle = col; ctx.fill();
+        if (on) { ctx.lineWidth = 2; ctx.strokeStyle = '#fff'; ctx.stroke(); }
       }
       ctx.globalAlpha = 1;
     });
@@ -172,7 +172,7 @@
 
   function showTooltip(d, px, py) {
     tooltip.innerHTML = `<div class="tt-title">${esc(d.title)}</div>
-      <div class="tt-meta">${d.authors ? esc(d.authors) + ' &middot; ' : ''}${d.year || 'Book'}</div>`;
+      <div class="tt-meta">${d.authors ? esc(d.authors) + ' &middot; ' : ''}${kindLabel(d)}</div>`;
     tooltip.hidden = false;
     const r = tooltip.getBoundingClientRect();
     let x = px + 14, y = py + 14;
@@ -195,7 +195,7 @@
     document.getElementById('detail-title').textContent = d.title;
     document.getElementById('detail-meta').innerHTML =
       `${d.authors ? '<span>' + esc(d.authors) + '</span> &middot; ' : ''}` +
-      `${d.year ? d.year : 'Book'} &middot; ${d.type}`;
+      `${kindLabel(d)} &middot; ${d.type}`;
     const abs = document.getElementById('detail-abstract');
     abs.textContent = d.abstract || '';
     abs.style.display = d.abstract ? '' : 'none';
@@ -220,7 +220,8 @@
 
     // Links: DOI (if known) + Scholar fallback
     const links = [];
-    if (d.doi) links.push(`<a href="https://doi.org/${encodeURIComponent(d.doi)}" target="_blank" rel="noopener">View paper (DOI)</a>`);
+    if (d.url) links.push(`<a href="${esc(d.url)}" target="_blank" rel="noopener">View preprint</a>`);
+    else if (d.doi) links.push(`<a href="https://doi.org/${encodeURIComponent(d.doi)}" target="_blank" rel="noopener">View paper (DOI)</a>`);
     links.push(`<a href="https://scholar.google.com/scholar?q=${encodeURIComponent(d.title)}" target="_blank" rel="noopener">Find on Scholar</a>`);
     document.getElementById('detail-links').innerHTML = links.join('');
     detail.hidden = false;

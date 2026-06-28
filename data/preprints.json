@@ -1,0 +1,79 @@
+[
+  {
+    "id": "preprint-predicting-choice-earning-budgets-models",
+    "authors": "Cox, D. J.",
+    "title": "Predicting choice under positive and negative earning budgets: Comparisons among behavior-analytic, behavioral ecological, and reinforcement learning models",
+    "url": "https://doi.org/10.13140/RG.2.2.36414.86086",
+    "label": "Basic Principles and Their Interactions"
+  },
+  {
+    "id": "preprint-behavior-dynamic-models-foraging",
+    "authors": "Cox, D. J.",
+    "title": "Testing behavior dynamic models to predict choice in a non-stationary two-choice foraging environment",
+    "url": "https://doi.org/10.31234/osf.io/jsqwf_v1",
+    "label": "Basic Principles and Their Interactions"
+  },
+  {
+    "id": "preprint-ml-pigeon-peck-irts-choices",
+    "authors": "Cox, D. J., Drugan-Eppich, K., & Sanabria, F.",
+    "title": "Using machine learning for multiscale, nonlinear dynamical analyses of pigeon peck IRTs and side-entry choices",
+    "url": "https://doi.org/10.13140/RG.2.2.27835.78880",
+    "label": "Quantitative, computational & statistical methods"
+  },
+  {
+    "id": "preprint-dynamical-systems-behavioral-networks",
+    "authors": "Cox, D. J.",
+    "title": "Toward a dynamical systems account of behavioral networks: Integrating matching, disequilibrium theory, momentum, and Brunt-Vaisala frequency",
+    "url": "https://doi.org/10.2139/ssrn.6583485",
+    "label": "Basic Principles and Their Interactions"
+  },
+  {
+    "id": "preprint-survey-open-science-practices",
+    "authors": "Jennings, A. M., Breeman, S., Vladescu, J., & Cox, D. J.",
+    "title": "Survey of open science practices in behavior analysis",
+    "url": "https://osf.io/preprints/psyarxiv/pbn8q_v1",
+    "label": "Research Methodologies"
+  },
+  {
+    "id": "preprint-keystone-contingencies-repertoires",
+    "authors": "Perez, N., McNulty, A., & Cox, D. J.",
+    "title": "Keystone contingencies and the organization of behavioral repertoires",
+    "url": "https://doi.org/10.13140/RG.2.2.16981.95205",
+    "label": "Basic Principles and Their Interactions"
+  },
+  {
+    "id": "preprint-ai-clinical-decision-support-review",
+    "authors": "Weil, L., Jennings, A. M., Morford, Z. H., & Cox, D. J.",
+    "title": "Current support for AI-driven clinical decision support in applied behavior analysis: A concise review",
+    "url": "https://doi.org/10.13140/RG.2.2.21840.42249",
+    "label": "Clinical Decision-Making"
+  },
+  {
+    "id": "preprint-dose-response-individual-phenomenon",
+    "authors": "Cox, D. J.",
+    "title": "Dose-response for intervention is an individual, not group, phenomenon",
+    "url": "https://doi.org/10.17605/OSF.IO/RDB92",
+    "label": "Clinical Decision-Making"
+  },
+  {
+    "id": "preprint-experiential-discounting-earnings-budgets",
+    "authors": "Cox, D. J.",
+    "title": "Experiential delay and probability discounting during positive and negative earnings budgets",
+    "url": "https://osf.io/7kphr",
+    "label": "Basic Principles and Their Interactions"
+  },
+  {
+    "id": "preprint-3-9-million-aba-sessions",
+    "authors": "Sosine, J., & Cox, D. J.",
+    "title": "Initial description of 3.9 million unique ABA sessions",
+    "url": "https://osf.io/preprints/psyarxiv/pq28y",
+    "label": "Quantitative, computational & statistical methods"
+  },
+  {
+    "id": "preprint-cluster-analyses-asd",
+    "authors": "Cox, D. J., Sosine, J., & Rethink Data Team",
+    "title": "Influence of sample size, feature set, and algorithm on cluster analyses for patients with autism spectrum disorders",
+    "url": "https://psyarxiv.com/9k2yv",
+    "label": "Quantitative, computational & statistical methods"
+  }
+]

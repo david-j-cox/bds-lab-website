@@ -156,10 +156,34 @@ def build_books():
     return items
 
 
+def build_preprints():
+    """Curated preprints (not in the article folder) from data/preprints.json."""
+    path = OUT.parent / "preprints.json"
+    if not path.exists():
+        return []
+    items = []
+    for p in json.loads(path.read_text()):
+        items.append({
+            "id": p["id"],
+            "type": "preprint",
+            "year": None,
+            "title": p["title"],
+            "authors": p.get("authors", ""),
+            "filename": None,
+            "abstract": "",
+            "doi": None,
+            "url": p.get("url"),
+            "label": p.get("label"),
+        })
+    return items
+
+
 def main():
     articles = build_articles()
     books = build_books()
-    corpus = articles + books
+    preprints = build_preprints()
+    corpus = articles + books + preprints
+    print(f"preprints={len(preprints)}")
     OUT.parent.mkdir(parents=True, exist_ok=True)
     OUT.write_text(json.dumps(corpus, indent=2, ensure_ascii=False))
     n_abs = sum(1 for a in articles if a["abstract"])
