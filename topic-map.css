@@ -188,7 +188,10 @@ body{
 .synthesis h2{font-size:1.95rem; line-height:1.12; font-weight:700; margin:0 0 .8rem; letter-spacing:-.01em}
 .synthesis .lead{color:var(--muted); font-size:1.05rem; line-height:1.6; margin:0; max-width:760px}
 .flow{display:grid; grid-template-columns:repeat(2,1fr); gap:16px; margin:28px 0}
-.flowcard{background:var(--panel); border:1px solid var(--line); border-radius:12px; padding:22px; border-left:3px solid var(--line)}
+.flowcard{display:block; text-decoration:none; background:var(--panel); border:1px solid var(--line);
+  border-radius:12px; padding:22px; border-left:3px solid var(--line); transition:border-color .14s, background .14s}
+a.flowcard:hover{border-color:var(--accent); background:var(--panel2); text-decoration:none}
+.flowcard h3::after{content:" \2192"; color:var(--accent); font-weight:400}
 .flowcard.f1{border-left-color:#ffb454}
 .flowcard.f2{border-left-color:#c3a3ff}
 .flowcard.f3{border-left-color:#6cc5ff}
