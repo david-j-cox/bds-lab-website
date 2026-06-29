@@ -85,6 +85,11 @@ main{padding-bottom:80px}
 .member-info ul{margin:.4rem 0 .7rem 1.1rem; color:var(--muted); font-size:.9rem}
 .member-info em{color:var(--ink); font-style:italic}
 
+/* Principal Investigator: always a single card, so span the full width (avatar left, bio right) */
+.about-grid > .about-card:last-child .members-grid{grid-template-columns:1fr}
+.about-grid > .about-card:last-child .member-item{flex-direction:row; gap:24px; align-items:flex-start}
+.about-grid > .about-card:last-child .member-info{flex:1; min-width:0}
+
 /* ---- About: graduates ---- */
 .graduates-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px}
 .graduate-item{
@@ -196,6 +201,7 @@ main{padding-bottom:80px}
   }
   .navlinks.open{display:flex}
   .members-grid, .graduates-grid{grid-template-columns:1fr}
+  .about-grid > .about-card:last-child .member-item{flex-direction:column; gap:14px}
   .page-hero h1{font-size:1.8rem}
 
   /* Legacy cyber-* shell on small screens */
