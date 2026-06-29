@@ -1,5 +1,6 @@
 /* AO coverage grid: phenomena (rows) x approaches (cols). */
-.aogrid{display:grid;gap:3px;max-width:880px;margin:1.2rem 0 0;font-size:.82rem}
+#ao-grid{overflow-x:auto;max-width:100%}
+.aogrid{display:grid;gap:3px;max-width:1080px;min-width:860px;margin:1.2rem 0 0;font-size:.82rem}
 .aogrid .aoh{font-weight:600;color:var(--muted);padding:0 .3rem .5rem;align-self:end}
 .aogrid .aoh.col{text-align:center;font-size:.74rem;line-height:1.2;color:var(--ink)}
 .aogrid .aogroup{font-size:.7rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);

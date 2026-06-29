@@ -16,7 +16,8 @@ window.AOGRID = {
     { id: 'qlearning', label: 'Q-learning' },
     { id: 'mpr', label: 'MPR' },
     { id: 'etbd', label: 'ETBD' },
-    { id: 'integrated', label: 'Integrated-principles' },
+    { id: 'integrated', label: 'Molecular dynamics' },
+    { id: 'dynsys', label: 'Dynamical systems' },
   ],
   groups: [
     { label: 'Respondent', rows: [
@@ -62,6 +63,12 @@ window.AOGRID = {
       ['demand', 'Demand / behavioral economics (unit price)'],
       ['foraging', 'Optimal foraging / patch-leaving (MVT)'],
     ]},
+    { label: 'Dynamical-systems signatures', rows: [
+      ['behavior_networks', 'Behavior networks (multi-response coupling)'],
+      ['attractor_dynamics', 'Attractor / disequilibrium dynamics'],
+      ['oscillation', 'Oscillatory return to equilibrium (Brunt–Väisälä)'],
+      ['hysteresis', 'Path dependence / hysteresis'],
+    ]},
   ],
   // lab[col] = '*' (all rows) or [rowId, ...]. A row in both lab and field shows as 'both'.
   lab: {
@@ -73,6 +80,9 @@ window.AOGRID = {
     qlearning: ['matching', 'op_acq', 'op_ext', 'resurgence', 'choice_dyn'],
     mpr: ['single_alt', 'matching', 'choice_dyn'],
     etbd: ['matching'],
+    // integrating-behavioral-processes (Cox, 2026) + measuring-behavior-trajectories (N=60)
+    dynsys: ['matching', 'choice_dyn', 'op_ext', 'momentum', 'foraging',
+      'behavior_networks', 'attractor_dynamics', 'oscillation', 'hysteresis'],
   },
   // field[col] = [rowId, ...] (another research group's AO of this approach has demonstrated it)
   field: {
@@ -83,6 +93,8 @@ window.AOGRID = {
     mpr: [],
     etbd: ['op_acq', 'op_ext', 'matching', 'punishment', 'rpasym', 'resurgence',
       'single_alt', 'magnitude', 'discounting', 'variability', 'choice_dyn', 'reinstatement', 'vigor'],
+    // ours is the only dynamical-systems behavioral AO; no other-group field layer
+    dynsys: [],
   },
   // notes[rowId|colId] shown on hover
   notes: {
@@ -133,6 +145,16 @@ window.AOGRID = {
     'vigor|integrated': 'Free-operant response rates and the post-reinforcement pause (FR > VR) under schedules (exp018).',
     'resurgence|integrated': 'Resurgence as model mimicry; part of the resurgence study (four processes, one phenomenon).',
     'risk|integrated': 'Risk-sensitive foraging follows from the energy-budget rule (Caraco, 1980; Stephens & Krebs, 1986).',
+    // Dynamical systems (Cox, 2026)
+    'matching|dynsys': 'Matching emerges as the equilibrium of the field (allocation converges to Vᵢ/ΣVⱼ), shown as a vector field flowing to the y=x equilibrium; also fit to N=60 human data.',
+    'choice_dyn|dynsys': 'Preference re-tracks at each reversal (ABAB), tracking speed set by inertia; adaptation lags quantified in N=60 humans (measuring-behavior-trajectories).',
+    'op_ext|dynsys': 'Return-to-baseline: response rate decays exponentially when reinforcement is removed, decay rate set by behavioral-momentum history (Fig 6).',
+    'momentum|dynsys': 'Behavioral mass = resistance to change; mass grows with cumulative reinforcement, so higher-mass responses change and extinguish more slowly (Eqs 6-7).',
+    'foraging|dynsys': 'Optimal foraging / marginal value theorem fit to human allocation; 25/60 within ±5% of the computed optimum (measuring-behavior-trajectories, Fig 5).',
+    'behavior_networks|dynsys': 'Displacing one response propagates to others through a coupling matrix wᵢⱼ; simulated as a 5-response coupled network. The headline "behavior networks" construct (Eqs 11-13).',
+    'attractor_dynamics|dynsys': 'The matching surface is a restoring attractor: a disequilibrium force field F = −∇Φ pulls behavior back to equilibrium in a curved potential valley (Eqs 4-5, 10).',
+    'oscillation|dynsys': 'Displaced behavior oscillates back to equilibrium at the Brunt–Väisälä frequency ω², scaled by local reinforcer density. The namesake mechanism (Eqs 8-9).',
+    'hysteresis|dynsys': 'P(choose A) vs unobserved advantage traces a hysteresis loop between rising and falling phases (it collapses against local reinforcement rate); N=60 humans (Fig 4).',
   },
   // refs[rowId|colId] = [citation, ...] -- the AO implementations behind a cell.
   // Rendered as Google Scholar links on click. Field cells = other groups' AOs.
@@ -179,5 +201,15 @@ window.AOGRID = {
     'choice_dyn|etbd': ['Kulubekova & McDowell (2013). Latching of behavior dynamics to changing reinforcer ratios. JEAB.'],
     'reinstatement|etbd': ['McDowell and colleagues (2025). A computational model of response-dependent reinstatement.'],
     'vigor|etbd': ['Kulubekova & McDowell (2008). Behavioural Processes.'],
+    // Dynamical systems -- our work (Cox, 2026)
+    'matching|dynsys': ['Cox, D. J. (2026). Toward a Dynamical Systems Account of Behavior Networks.'],
+    'choice_dyn|dynsys': ['Cox, D. J. (2026). Toward a Dynamical Systems Account of Behavior Networks.', 'Cox, D. J. (2026). Measuring behavior trajectories (N=60 phase-transition dynamics).'],
+    'op_ext|dynsys': ['Cox, D. J. (2026). Toward a Dynamical Systems Account of Behavior Networks.'],
+    'momentum|dynsys': ['Cox, D. J. (2026). Toward a Dynamical Systems Account of Behavior Networks.'],
+    'foraging|dynsys': ['Cox, D. J. (2026). Measuring behavior trajectories (N=60 phase-transition dynamics).'],
+    'behavior_networks|dynsys': ['Cox, D. J. (2026). Toward a Dynamical Systems Account of Behavior Networks.'],
+    'attractor_dynamics|dynsys': ['Cox, D. J. (2026). Toward a Dynamical Systems Account of Behavior Networks.'],
+    'oscillation|dynsys': ['Cox, D. J. (2026). Toward a Dynamical Systems Account of Behavior Networks.'],
+    'hysteresis|dynsys': ['Cox, D. J. (2026). Measuring behavior trajectories (N=60 phase-transition dynamics).'],
   },
 };
