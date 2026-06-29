@@ -16,7 +16,7 @@
   const local = e => localXY(e.clientX, e.clientY);
 
   let DPR = window.devicePixelRatio || 1;
-  let items = [], clusters = [], centroids = [];
+  let items = [], clusters = [], centroids = [], projects = [];
   let view = { scale: 1, ox: 0, oy: 0 };
   let fit = { scale: 1, ox: 0, oy: 0 };
   let hovered = null, selected = null;
@@ -76,6 +76,25 @@
     });
   }
 
+  // Place each current project near its cluster centroid, fanned so they don't stack.
+  function positionProjects() {
+    if (!projects.length || !items.length) return;
+    const xs = items.map(d => d.x), ys = items.map(d => d.y);
+    const spread = Math.max(Math.max(...xs) - Math.min(...xs), Math.max(...ys) - Math.min(...ys)) || 1;
+    const R = spread * 0.07;
+    const byCluster = {};
+    projects.forEach(p => (byCluster[p.cluster] = byCluster[p.cluster] || []).push(p));
+    Object.keys(byCluster).forEach(cid => {
+      const cen = centroids.find(c => String(c.id) === String(cid)) || { x: 0, y: 0 };
+      const arr = byCluster[cid], n = arr.length;
+      arr.forEach((p, k) => {
+        const theta = n === 1 ? -Math.PI / 4 : (k / n) * Math.PI * 2 - Math.PI / 2;
+        p.x = cen.x + R * Math.cos(theta);
+        p.y = cen.y + R * Math.sin(theta);
+      });
+    });
+  }
+
   function draw() {
     ctx.save();
     ctx.scale(DPR, DPR);
@@ -115,10 +134,28 @@
       }
       ctx.globalAlpha = 1;
     });
+
+    // Current projects: hollow dashed rings (in-progress) near their cluster.
+    ctx.setLineDash([4, 3]);
+    projects.forEach(p => {
+      if (hiddenClusters.has(p.cluster)) return;
+      const x = sx(p.x), y = sy(p.y), on = p === hovered || p === selected;
+      const r = on ? 13 : 9;
+      ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2);
+      ctx.lineWidth = 2; ctx.globalAlpha = on ? 1 : 0.95;
+      ctx.strokeStyle = on ? '#fff' : colorOf(p.cluster); ctx.stroke();
+      ctx.globalAlpha = 1;
+    });
+    ctx.setLineDash([]);
     ctx.restore();
   }
 
   function nodeAt(px, py) {
+    // Current-project rings get priority within their radius.
+    for (const p of projects) {
+      if (hiddenClusters.has(p.cluster)) continue;
+      if (Math.hypot(px - sx(p.x), py - sy(p.y)) < 12) return p;
+    }
     let best = null, bestD = 14;
     for (const d of items) {
       if (hiddenClusters.has(d.cluster)) continue;
@@ -214,8 +251,14 @@
   });
 
   function showTooltip(d, px, py) {
-    tooltip.innerHTML = `<div class="tt-title">${esc(d.title)}</div>
-      <div class="tt-meta">${d.authors ? esc(d.authors) + ' &middot; ' : ''}${kindLabel(d)}</div>`;
+    if (d.isProject) {
+      const cl = clusters.find(k => k.id === d.cluster);
+      tooltip.innerHTML = `<div class="tt-title">${esc(d.title)}</div>
+        <div class="tt-meta">Current project &middot; ${esc(labelOf(cl))}</div>`;
+    } else {
+      tooltip.innerHTML = `<div class="tt-title">${esc(d.title)}</div>
+        <div class="tt-meta">${d.authors ? esc(d.authors) + ' &middot; ' : ''}${kindLabel(d)}</div>`;
+    }
     tooltip.hidden = false;
     const r = tooltip.getBoundingClientRect();
     let x = px + 14, y = py + 14;
@@ -232,9 +275,20 @@
     const cl = clusters.find(k => k.id === d.cluster);
     const color = colorOf(d.cluster);
     const tag = document.getElementById('detail-tag');
-    tag.textContent = labelOf(cl);
     tag.style.background = color + '22';
     tag.style.color = color;
+    if (d.isProject) {
+      tag.textContent = 'Current project · ' + labelOf(cl);
+      document.getElementById('detail-title').textContent = d.title;
+      document.getElementById('detail-meta').innerHTML = `<span>In progress</span>${d.category ? ' &middot; ' + esc(d.category) : ''}`;
+      const pabs = document.getElementById('detail-abstract');
+      pabs.textContent = d.desc || ''; pabs.style.display = d.desc ? '' : 'none';
+      document.getElementById('detail-related').innerHTML = '';
+      document.getElementById('detail-links').innerHTML = '<a href="projects.html">See all current projects &rarr;</a>';
+      detail.hidden = false; detail.scrollTop = 0;
+      return;
+    }
+    tag.textContent = labelOf(cl);
     document.getElementById('detail-title').textContent = d.title;
     document.getElementById('detail-meta').innerHTML =
       `${d.authors ? '<span>' + esc(d.authors) + '</span> &middot; ' : ''}` +
@@ -347,8 +401,10 @@
   function boot(data) {
     items = data.items;
     clusters = data.meta.clusters;
+    projects = (window.CURRENT_PROJECTS || []).map(p => ({ ...p, isProject: true }));
     resize();
     clusterCentroids();
+    positionProjects();
     computeFit();
     buildLegend();
     draw();
