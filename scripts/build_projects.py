@@ -60,6 +60,10 @@ def clean_title(name):
     return s
 
 
+# Local folders to keep off the map (title substrings, lowercase).
+EXCLUDE_TITLE = ["managerial turn"]
+
+
 def scan_review():
     """Local papers in review; None if the Dropbox folder isn't here (cloud run)."""
     if not REVIEW_DIR.exists():
@@ -69,6 +73,8 @@ def scan_review():
         if not d.is_dir() or d.name.startswith(".") or d.name.startswith("__archived") or d.name.lower().startswith("shelved"):
             continue
         title = clean_title(d.name)
+        if any(x in title.lower() for x in EXCLUDE_TITLE):
+            continue
         out.append({"title": title, "desc": "", "cluster": cluster_for(title),
                     "category": "Under review", "source": "local"})
     return out
@@ -93,7 +99,11 @@ def parse_clickup():
         return []
     url = f"https://api.clickup.com/api/v2/list/{list_id}/task?include_closed=false&subtasks=false"
     req = urllib.request.Request(url, headers={"Authorization": token})
-    data = json.loads(urllib.request.urlopen(req, timeout=30).read())
+    try:
+        data = json.loads(urllib.request.urlopen(req, timeout=30).read())
+    except Exception as e:
+        print(f"ClickUp fetch failed ({e}); keeping local projects only.")
+        return []
     line_field = os.environ.get("CLICKUP_LINE_FIELD", "research line").lower()
     out = []
     for task in data.get("tasks", []):
