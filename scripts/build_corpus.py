@@ -134,12 +134,16 @@ def build_articles():
     return items
 
 
+# Book folders to exclude from the corpus / topic map.
+EXCLUDE_BOOKS = {"CodingForBehaviorAnalysts"}
+
+
 def build_books():
     items = []
     if not BOOKS.exists():
         return items
     for d in sorted(BOOKS.iterdir()):
-        if not d.is_dir():
+        if not d.is_dir() or d.name in EXCLUDE_BOOKS:
             continue
         name = d.name
         # Strip a trailing ", Cox et al." style author tag from the title
