@@ -1,0 +1,41 @@
+/* Translation map (bipartite bridges), tooltip, and detail panel. */
+#translation-map{max-width:980px;margin:0 auto;overflow-x:auto}
+#tmap-svg{display:block;width:100%;min-width:760px}
+#tmap-svg .node-lbl{font:600 12.5px var(--sans);fill:var(--ink)}
+#tmap-svg .node-sub{font:500 10px var(--sans);fill:var(--faint)}
+#tmap-svg .bridge{fill:none;cursor:pointer;transition:opacity .12s}
+#tmap-svg .bridge.dim{opacity:.12}
+#tmap-svg .node{cursor:pointer}
+
+.tmap-cols{display:flex;justify-content:space-between;max-width:980px;margin:0 auto 4px;
+  font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--faint);font-weight:600}
+
+#tmap-tip{position:fixed;z-index:60;pointer-events:none;display:none;max-width:280px;
+  background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:.5rem .7rem;
+  font-size:.8rem;box-shadow:0 8px 28px rgba(0,0,0,.45)}
+#tmap-tip b{color:var(--ink)}
+#tmap-tip span{display:block;color:var(--muted);font-size:.72rem;margin-top:.2rem}
+
+#tmap-panel{position:fixed;top:0;right:0;height:100%;width:min(430px,92vw);background:var(--bg2);
+  border-left:1px solid var(--line);z-index:70;padding:56px 28px 40px;overflow-y:auto;
+  transform:translateX(100%);transition:transform .2s;box-shadow:-18px 0 50px rgba(0,0,0,.5)}
+#tmap-panel.open{transform:none}
+#tmap-panel .x{position:absolute;top:16px;right:20px;background:none;border:none;color:var(--muted);font-size:1.7rem;cursor:pointer}
+#tmap-panel .x:hover{color:var(--ink)}
+#tmap-panel .tag{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;font-weight:600;margin-bottom:.6rem}
+#tmap-panel h2{font-size:1.2rem;margin:0 0 .3rem;line-height:1.3}
+#tmap-panel .c{color:var(--muted);font-size:.82rem;margin:0 0 1.1rem}
+#tmap-panel .art{display:block;padding:.6rem 0;border-top:1px solid rgba(39,48,74,.5);font-size:.85rem;line-height:1.4}
+#tmap-panel .art a{color:var(--ink);text-decoration:none}
+#tmap-panel .art a:hover{color:var(--accent)}
+#tmap-panel .art .meta{color:var(--faint);font-size:.74rem}
+
+/* Full study list (grouped by domain) */
+#study-list{display:grid;gap:26px;margin-top:1.4rem}
+.dom-group h3{font-size:.82rem;letter-spacing:.12em;text-transform:uppercase;color:var(--accent2);font-weight:600;margin:0 0 .6rem}
+.dom-group h3 span{color:var(--faint);font-weight:400;margin-left:.3rem}
+.study{display:flex;flex-direction:column;gap:.15rem;padding:.7rem 0;border-top:1px solid var(--line);text-decoration:none}
+.study:first-of-type{border-top:none}
+.study:hover .st{color:var(--accent)}
+.study .st{color:var(--ink);font-size:.96rem;font-weight:500;line-height:1.35}
+.study .sm{color:var(--faint);font-size:.78rem}

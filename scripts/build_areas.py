@@ -97,25 +97,7 @@ AREAS = [
                '<a href="ao-lab-update.html" class="cyber-button" style="font-size:.85rem;padding:.7rem 1.2rem">'
                'Open the Lab Update &rarr;</a></div>'),
     ),
-    dict(
-        file="area-applied-domains.html",
-        kicker="Translational &middot; Applied",
-        title="Applied &amp; translational domains",
-        labels=[
-            "Translating Basic Principles to Non-Laboratory Settings",
-            "Ethics & ethical decision-making",
-            "Clinical Decision-Making",
-            "Substance use",
-        ],
-        narrative=(
-            "Basic science earns its keep when it changes behavior and decisions in settings that matter. "
-            "This work carries validated combinations of principles out of the lab and into messier domains "
-            "of social significance (e.g., translating basic principles to non-laboratory settings, ethics "
-            "and ethical decision-making, clinical decision-making, and substance use). Out here, new "
-            "constraints reveal which principles actually matter, and the problems we contact pose fresh "
-            "basic questions."),
-        extra="",
-    ),
+    # area-applied-domains.html is hand-built (the translation-map deck); do not generate it here.
     dict(
         file="area-methodological-backbone.html",
         kicker="Data &middot; science &middot; mathematics",
