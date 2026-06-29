@@ -45,6 +45,12 @@ TASK_RE = re.compile(
     r"download|check|fix|format|edit|set up|follow up|reach out|write up|read|review|add|update|"
     r"prepare|book|pay|renew|order|print|file|meet|call|ping|draft|outline|plan)\b",
     re.I)
+# Milestone / status / file rows that aren't projects.
+JUNK_RE = re.compile(
+    r"\.(png|jpe?g|gif|pdf|docx?|pptx?|csv|xlsx?|mov|mp4)\s*$"
+    r"|\bedits?\s+done\b|\bdraft\s+done\b|\b(proposal\s+)?submitted\s*$"
+    r"|^(intro|introduction|methods?|results?|discussion|abstract|references?|conclusion)\b",
+    re.I)
 
 # List names to skip even if discovered (safety).
 EXCLUDE_TITLE = ["managerial turn"]
@@ -106,7 +112,7 @@ def parse_clickup():
             if (t.get("status", {}) or {}).get("type", "") in ("closed", "done"):
                 continue
             title = (t.get("name") or "").strip()
-            if not title or TASK_RE.match(title):
+            if not title or TASK_RE.match(title) or JUNK_RE.search(title):
                 continue
             if any(x in title.lower() for x in EXCLUDE_TITLE):
                 continue
