@@ -7,22 +7,27 @@
   // Order matters: spokes are placed clockwise from the top, so adjacency follows this list.
   const CAPS = [
     { fam: 'Work at scale', color: '#6cc5ff', trad: 'one graph at a time', now: 'whole literatures and large datasets', papers: [
-      { kw: 'we live in interesting times', short: 'Big data intro' },
+      { kw: 'scaling n from 1', short: 'Scaling N to 1,000,000' },
       { kw: 'identifying trends in the open-access', short: 'Literature trends' },
       { kw: 'behavioral data science', short: 'Behavioral data science' }] },
     { fam: 'Modeling', color: '#a98bff', trad: 'verbal description', now: 'quantitative and computational models', papers: [
       { kw: 'the many functions of quantitative modeling', short: 'Functions of modeling' },
+      { kw: 'we live in interesting times', short: 'Big-data special section' },
       { kw: 'quantitative frontiers in the analysis', short: 'Quantitative frontiers' },
       { kw: 'of models, vectors, and matrices', short: 'Models & matrices' }] },
-    { fam: 'Machine learning', color: '#ff7a9c', trad: 'hand-scoring graphs', now: 'algorithms that read and score them', papers: [
+    { fam: 'Machine learning', color: '#ff7a9c', trad: 'hand-scoring graphs', now: 'algorithms that read, score, and predict', papers: [
+      { kw: 'recommending hours', short: 'ML for ABA hours' },
+      { kw: 'televisibility', short: 'Televisibility study' },
+      { kw: 'predicting the next response', short: 'RL predicts responses' },
       { kw: 'using ml to analyze alternating treatment graphs', short: 'ML for graphs' }] },
     { fam: 'Statistics', color: '#ffd166', trad: 'visual inspection', now: 'principled inference built for ABA', papers: [
       { kw: 'statistics for aba practitioners', short: 'Statistics for ABA' }] },
-    { fam: 'Measurement', color: '#5fd6a4', trad: 'count and rate', now: 'movement, richer agreement, adjusting tasks', papers: [
+    { fam: 'Measurement', color: '#5fd6a4', trad: 'count and rate', now: 'movement, field cameras, richer agreement, adjusting tasks', papers: [
       { kw: 'further comparison of 5-trial', short: '5-trial tasks' },
       { kw: 'data recording and analysis', short: 'Data recording' },
       { kw: 'getting more from your ioa data', short: 'IOA measures' },
-      { kw: 'escape from static flatland', short: 'Behavior as movement' }] },
+      { kw: 'escape from static flatland', short: 'Behavior as movement' },
+      { kw: 'free-ranging aves', short: 'Field camera traps' }] },
     { fam: 'Design', color: '#7ce0e0', trad: 'convention', now: 'explicit single-case logic, replication, functional terms', papers: [
       { kw: 'within-subject experimental design logic', short: 'Within-subject logic' },
       { kw: 'function matters', short: 'Function & terms' },
@@ -39,10 +44,10 @@
 
   const NS = 'http://www.w3.org/2000/svg';
   const lines = document.createElementNS(NS, 'svg');
-  lines.setAttribute('class', 'lines'); lines.setAttribute('viewBox', '0 0 1200 1200'); lines.setAttribute('preserveAspectRatio', 'none');
+  lines.setAttribute('class', 'lines'); lines.setAttribute('viewBox', '0 0 1360 1360'); lines.setAttribute('preserveAspectRatio', 'none');
   wrap.appendChild(lines);
 
-  const C = 600, r0 = 164, rstep = 118, N = CAPS.length;
+  const C = 680, r0 = 158, rstep = 110, N = CAPS.length;
   const hub = document.createElement('div'); hub.className = 'hub'; hub.style.left = (C - 98) + 'px'; hub.style.top = (C - 98) + 'px';
   hub.innerHTML = '<div class="ht">TRADITIONAL TOOLCHEST</div><div class="hs">single-subject design &middot; visual analysis &middot; descriptive statistics</div>';
   wrap.appendChild(hub);
@@ -72,7 +77,7 @@
     ln.setAttribute('stroke', c.color); ln.setAttribute('stroke-opacity', '.3'); ln.setAttribute('stroke-width', '2'); lines.appendChild(ln); g.push(ln);
     ps.forEach((p, j) => {
       const r = r0 + j * rstep, x = C + r * dx, y = C + r * dy;
-      const nd = document.createElement('div'); nd.className = 'node'; nd.style.left = (x - 54) + 'px'; nd.style.top = (y - 54) + 'px'; nd.style.borderColor = c.color;
+      const nd = document.createElement('div'); nd.className = 'node'; nd.style.left = (x - 50) + 'px'; nd.style.top = (y - 50) + 'px'; nd.style.borderColor = c.color;
       nd.innerHTML = `<div class="lbl">${esc(p.short)}</div><div class="yr">${p.it.year || ''}</div>`;
       nd.addEventListener('mousemove', ev => showTip(ev, `${esc(p.it.title)}<span class="m">${esc(c.fam)} &middot; ${p.it.year || ''} &middot; click to read</span>`));
       nd.addEventListener('mouseleave', () => tip.style.display = 'none');
