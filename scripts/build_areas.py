@@ -81,22 +81,8 @@ PAGE = """<!DOCTYPE html>
 AREAS = [
     # NOTE: area-integrating-principles.html is now a hand-built deck (the
     # combination-landscape page). It is intentionally not generated here.
-    dict(
-        file="area-artificial-organisms.html",
-        kicker="Basic research &middot; Artificial organisms",
-        title="Artificial organisms",
-        labels=["Artificial organisms"],
-        narrative=(
-            "&ldquo;What I cannot create, I do not understand.&rdquo; One way we test how behavioral "
-            "principles integrate is to build them. We construct artificial organisms that combine principles "
-            "and processes under a set of assumptions, then watch what reproduces real behavior and where "
-            "things break down. Where the lab studies how processes interact in living organisms, this program "
-            "asks a related question: can the same processes, assembled from first principles, generate the "
-            "same patterns?"),
-        extra=('<div class="publication-links" style="margin-top:1.4rem">'
-               '<a href="ao-lab-update.html" class="cyber-button" style="font-size:.85rem;padding:.7rem 1.2rem">'
-               'Open the Lab Update &rarr;</a></div>'),
-    ),
+    # area-artificial-organisms.html is now hand-built (it carries the AO coverage
+    # grid); it is intentionally not generated here.
     # area-applied-domains.html is hand-built (the translation-map deck); do not generate it here.
     dict(
         file="area-methodological-backbone.html",
