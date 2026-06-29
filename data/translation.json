@@ -1,0 +1,689 @@
+{
+  "fundamentals": [
+    {
+      "id": "beh_econ",
+      "label": "Behavioral economics and discounting",
+      "kind": "principle"
+    },
+    {
+      "id": "matching",
+      "label": "Matching Law",
+      "kind": "principle"
+    },
+    {
+      "id": "reinforcement",
+      "label": "Reinforcement and reinforcer assessment",
+      "kind": "principle"
+    },
+    {
+      "id": "verbal",
+      "label": "Verbal behavior",
+      "kind": "principle"
+    },
+    {
+      "id": "ethics_fn",
+      "label": "Functional account of ethical behavior",
+      "kind": "principle"
+    },
+    {
+      "id": "stim_control",
+      "label": "Stimulus control and equivalence-based instruction",
+      "kind": "principle"
+    },
+    {
+      "id": "design",
+      "label": "Experimental design and measurement",
+      "kind": "method"
+    },
+    {
+      "id": "modeling",
+      "label": "Quantitative, computational, and AI modeling",
+      "kind": "method"
+    }
+  ],
+  "domains": [
+    {
+      "id": "ethics",
+      "label": "Professional and research ethics"
+    },
+    {
+      "id": "clinical",
+      "label": "Clinical decision-making"
+    },
+    {
+      "id": "autism",
+      "label": "Autism and ABA service delivery"
+    },
+    {
+      "id": "substance",
+      "label": "Substance use and addiction"
+    },
+    {
+      "id": "baseball",
+      "label": "Sports (baseball)"
+    },
+    {
+      "id": "animal",
+      "label": "Animal behavior and training"
+    },
+    {
+      "id": "org",
+      "label": "Organizations and value-based care"
+    },
+    {
+      "id": "ai",
+      "label": "AI in practice"
+    },
+    {
+      "id": "health",
+      "label": "Public and sexual health"
+    }
+  ],
+  "papers": [
+    {
+      "id": "2026-a-guide-to-choosing-a-balanced-outcomes-measurement-por",
+      "title": "A guide to choosing a balanced outcomes measurement portfolio for ABA organizations",
+      "year": 2026,
+      "doi": "10.1007/s40617-026-01164-2",
+      "fund": "design",
+      "domain": "org"
+    },
+    {
+      "id": "2026-a-proof-of-concept-demonstration-for-how-to-evaluate-cl",
+      "title": "A proof of concept demonstration for how to evaluate clinical decision models",
+      "year": 2026,
+      "doi": "10.1002/bin.70094",
+      "fund": "modeling",
+      "domain": "clinical"
+    },
+    {
+      "id": "2026-choice-with-ethical-outcomes-sign-effect-commodity-effe",
+      "title": "Choice with ethical outcomes- Sign effect, commodity effect, and ethical theory preference",
+      "year": 2026,
+      "doi": "10.1002/jeab.70109",
+      "fund": "beh_econ",
+      "domain": "ethics"
+    },
+    {
+      "id": "2025-a-data-driven-algorithmic-approach-to-recommending-hour",
+      "title": "A data‐driven algorithmic approach to recommending hours of ABA for Individuals with ASD",
+      "year": 2025,
+      "doi": "10.1002/bin.70014",
+      "fund": "modeling",
+      "domain": "autism"
+    },
+    {
+      "id": "2025-apa-health-advisory-on-the-use-of-generative-ai-chatbot",
+      "title": "APA Health advisory on the use of generative AI chatbots and wellness applications for mental health",
+      "year": 2025,
+      "doi": null,
+      "fund": "ethics_fn",
+      "domain": "ai"
+    },
+    {
+      "id": "2025-delay-discounting-and-teacher-decision-making-of-behavi",
+      "title": "Delay discounting and teacher decision-making of behavioral interventions",
+      "year": 2025,
+      "doi": "10.1002/bin.70058",
+      "fund": "beh_econ",
+      "domain": "clinical"
+    },
+    {
+      "id": "2025-ethical-behavior-analysis-in-the-age-of-ai-the-importan",
+      "title": "Ethical behavior analysis in the age of AI- The importance of understanding model building while formal AI literacy curricula are developed",
+      "year": 2025,
+      "doi": "10.1007/s40614-025-00459-z",
+      "fund": "ethics_fn",
+      "domain": "ai"
+    },
+    {
+      "id": "2025-evaluation-of-statement-accuracy-on-ethical-decision-ma",
+      "title": "Evaluation of statement accuracy on ethical decision-making",
+      "year": 2025,
+      "doi": "10.1007/s40617-023-00843-8",
+      "fund": "ethics_fn",
+      "domain": "ethics"
+    },
+    {
+      "id": "2025-influence-of-televisibility-and-harm-probability-on-cli",
+      "title": "Influence of televisibility and harm probability on clinical-ethical decision making",
+      "year": 2025,
+      "doi": "10.1007/s40617-023-00824-x",
+      "fund": "beh_econ",
+      "domain": "clinical"
+    },
+    {
+      "id": "2025-practice-parameters-for-ai-use-in-aba",
+      "title": "Practice Parameters for AI Use in ABA",
+      "year": 2025,
+      "doi": null,
+      "fund": "modeling",
+      "domain": "ai"
+    },
+    {
+      "id": "2025-toward-collapsing-the-is-ought-distinction-an-intro-to-",
+      "title": "Toward collapsing the is-ought distinction- An intro to the special issue on data-informed ethics in behavior analysis",
+      "year": 2025,
+      "doi": "10.1007/s40617-025-01080-x",
+      "fund": "ethics_fn",
+      "domain": "ethics"
+    },
+    {
+      "id": "2024-a-qualitative-analysis-of-expert-interviews-on-safety-r",
+      "title": "A qualitative analysis of expert interviews on safety risk",
+      "year": 2024,
+      "doi": "10.1177/17446295241277920",
+      "fund": "design",
+      "domain": "clinical"
+    },
+    {
+      "id": "2024-starting-the-conversation-around-the-ethical-use-of-ai-",
+      "title": "Starting the conversation around the ethical use of AI in ABA",
+      "year": 2024,
+      "doi": "10.1007/s40617-023-00868-z",
+      "fund": "ethics_fn",
+      "domain": "ai"
+    },
+    {
+      "id": "2024-the-challenges-ahead-concepts-analytics-and-ethics-of-v",
+      "title": "The challenges ahead- Concepts, analytics, and ethics of VBC in ABA",
+      "year": 2024,
+      "doi": "10.1007/s40617-024-00937-x",
+      "fund": "modeling",
+      "domain": "org"
+    },
+    {
+      "id": "2024-the-promises-and-possibilities-of-ai-in-the-delivery-of",
+      "title": "The promises and possibilities of AI in the delivery of behavior analytic services",
+      "year": 2024,
+      "doi": "10.1007/s40617-023-00864-3",
+      "fund": "modeling",
+      "domain": "ai"
+    },
+    {
+      "id": "2023-an-artificial-intelligence-driven-system-to-predict-asd",
+      "title": "An Artificial Intelligence Driven System to Predict ASD Outcomes in ABA",
+      "year": 2023,
+      "doi": null,
+      "fund": "modeling",
+      "domain": "autism"
+    },
+    {
+      "id": "2023-efficacy-of-edible-and-leisure-reinforcers-with-domesti",
+      "title": "Efficacy of edible and leisure reinforcers with domestic dogs",
+      "year": 2023,
+      "doi": "10.3390/ani13193073",
+      "fund": "reinforcement",
+      "domain": "animal"
+    },
+    {
+      "id": "2023-examination-of-ethical-decision-making-models-across-di",
+      "title": "Examination of ethical decision-making models across disciplines",
+      "year": 2023,
+      "doi": "10.1007/s40617-022-00753-1",
+      "fund": "ethics_fn",
+      "domain": "ethics"
+    },
+    {
+      "id": "2022-discounting-under-severe-weather-threat",
+      "title": "Discounting under severe weather threat",
+      "year": 2022,
+      "doi": "10.1175/WCAS-D-20-0178.1",
+      "fund": "beh_econ",
+      "domain": "health"
+    },
+    {
+      "id": "2022-ethical-decision-making-and-ebps",
+      "title": "Ethical decision-making and EBPs",
+      "year": 2022,
+      "doi": "10.1007/978-3-030-96478-8_4",
+      "fund": "ethics_fn",
+      "domain": "ethics"
+    },
+    {
+      "id": "2022-ethical-principles-and-values-guiding-modern-scientific",
+      "title": "Ethical principles and values guiding modern scientific research",
+      "year": 2022,
+      "doi": "10.1016/B978-0-323-90969-3.00008-6",
+      "fund": "ethics_fn",
+      "domain": "ethics"
+    },
+    {
+      "id": "2022-practical-ethics-for-effective-treatment-of-autism-spec",
+      "title": "Practical Ethics for Effective Treatment of Autism Spectrum Disorder",
+      "year": 2022,
+      "doi": null,
+      "fund": "ethics_fn",
+      "domain": "autism"
+    },
+    {
+      "id": "2022-research-ethics-in-behavior-analysis",
+      "title": "Research Ethics in Behavior Analysis",
+      "year": 2022,
+      "doi": null,
+      "fund": "ethics_fn",
+      "domain": "ethics"
+    },
+    {
+      "id": "2022-what-s-the-big-idea",
+      "title": "What's the big IDEA",
+      "year": 2022,
+      "doi": "10.1007/s40617-021-00673-6",
+      "fund": "design",
+      "domain": "autism"
+    },
+    {
+      "id": "2021-a-creative-destruction-approach-to-replication-implicit",
+      "title": "A creative destruction approach to replication- Implicit work and sex morality across cultures",
+      "year": 2021,
+      "doi": "10.1016/j.jesp.2020.104060",
+      "fund": "ethics_fn",
+      "domain": "ethics"
+    },
+    {
+      "id": "2021-a-proof-of-concept-analysis-of-decision-making-with-tim",
+      "title": "A proof of concept analysis of decision-making with time-series data",
+      "year": 2021,
+      "doi": "10.1007/s40732-020-00451-w",
+      "fund": "modeling",
+      "domain": "clinical"
+    },
+    {
+      "id": "2021-descriptive-and-normative-ethical-behavior-appear-to-be",
+      "title": "Descriptive and normative ethical behavior appear to be functionally distinct",
+      "year": 2021,
+      "doi": "10.1002/jaba.761",
+      "fund": "ethics_fn",
+      "domain": "ethics"
+    },
+    {
+      "id": "2021-predicting-changes-in-substance-use-following-psychedel",
+      "title": "Predicting changes in substance use following psychedelic experiences- NLP of psychedelic session narratives",
+      "year": 2021,
+      "doi": "10.1080/00952990.2021.1910830",
+      "fund": "modeling",
+      "domain": "substance"
+    },
+    {
+      "id": "2021-scaling-n-from-1-to-1-000-000-application-of-the-gml-to",
+      "title": "Scaling N from 1 to 1,000,000- Application of the GML to big data contexts",
+      "year": 2021,
+      "doi": "10.1007/s40614-021-00298-8",
+      "fund": "matching",
+      "domain": "ai"
+    },
+    {
+      "id": "2021-sexual-arousal-discounting-devaluing-condom-protected-s",
+      "title": "Sexual arousal discounting- Devaluing condom-protected sex as a function of reduced arousal",
+      "year": 2021,
+      "doi": "10.1007/s10508-020-01907-4",
+      "fund": "beh_econ",
+      "domain": "health"
+    },
+    {
+      "id": "2021-sexual-discounting-a-systematic-review-of-discounting-p",
+      "title": "Sexual discounting- A systematic review of discounting processes and sexual behavior",
+      "year": 2021,
+      "doi": "10.1037/pha0000402",
+      "fund": "beh_econ",
+      "domain": "health"
+    },
+    {
+      "id": "2021-the-influence-of-eft-and-graphic-warnign-labels-on-dd-a",
+      "title": "The influence of EFT and graphic warnign labels on DD and cigarette demand",
+      "year": 2021,
+      "doi": "10.3390/ijerph182312637",
+      "fund": "beh_econ",
+      "domain": "substance"
+    },
+    {
+      "id": "2021-verbal-behavior-related-to-drug-reinforcement-in-polysu",
+      "title": "Verbal behavior related to drug reinforcement in polysubstance cannabis users- Comparison across drugs",
+      "year": 2021,
+      "doi": "10.1037/pha0000404",
+      "fund": "verbal",
+      "domain": "substance"
+    },
+    {
+      "id": "2020-a-guide-to-establishing-ethics-committees-in-behavioral",
+      "title": "A guide to establishing ethics committees in behavioral health settings",
+      "year": 2020,
+      "doi": "10.1007/s40617-020-00455-6",
+      "fund": "ethics_fn",
+      "domain": "org"
+    },
+    {
+      "id": "2020-a-proposed-process-for-risk-mitigation-during-the-covid",
+      "title": "A proposed process for risk mitigation during the COVID-19 pandemic",
+      "year": 2020,
+      "doi": "10.1007/s40617-020-00430-1",
+      "fund": "ethics_fn",
+      "domain": "health"
+    },
+    {
+      "id": "2020-a-review-of-the-literature-on-staff-training-strategies",
+      "title": "A review of the literature on staff training strategies that minimize trainer involvement",
+      "year": 2020,
+      "doi": "10.1002/bin.1727",
+      "fund": "reinforcement",
+      "domain": "org"
+    },
+    {
+      "id": "2020-dd-and-pd-in-cud-comprehensive-examination-of-money-coc",
+      "title": "DD and PD in CUD- Comprehensive examination of money, cocaine, and health outomes using gains and losses at multiple magnitudes",
+      "year": 2020,
+      "doi": "10.1037/pha0000341",
+      "fund": "beh_econ",
+      "domain": "substance"
+    },
+    {
+      "id": "2020-kratom-user-demographics-use-patterns-and-implications-",
+      "title": "Kratom- User demographics, use patterns, and implications for the opioid epidemic",
+      "year": 2020,
+      "doi": "10.1016/j.drugalcdep.2020.107849",
+      "fund": "design",
+      "domain": "substance"
+    },
+    {
+      "id": "2019-an-evaluation-of-explicit-ethical-statements-in-telehea",
+      "title": "An evaluation of explicit ethical statements in telehealth research with individuals with ASD",
+      "year": 2019,
+      "doi": null,
+      "fund": "ethics_fn",
+      "domain": "autism"
+    },
+    {
+      "id": "2019-ethical-considerations-in-interdisciplinary-treatments",
+      "title": "Ethical considerations in interdisciplinary treatments",
+      "year": 2019,
+      "doi": "10.1007/978-3-030-13027-5_4",
+      "fund": "ethics_fn",
+      "domain": "autism"
+    },
+    {
+      "id": "2019-still-lost-in-translation",
+      "title": "Still lost in translation",
+      "year": 2019,
+      "doi": "10.1352/1934-9556-57.4.339",
+      "fund": "ethics_fn",
+      "domain": "autism"
+    },
+    {
+      "id": "2018-any-reward-will-do-effects-of-a-reverse-reward-continge",
+      "title": "Any reward will do- Effects of a reverse-reward contingency on size preference with pet dogs (Canis lupus familiaris)",
+      "year": 2018,
+      "doi": "10.3758/s13420-018-0343-0",
+      "fund": "reinforcement",
+      "domain": "animal"
+    },
+    {
+      "id": "2018-how-to-identify-ethical-practices-in-organizations-prio",
+      "title": "How to identify ethical practices in organizations prior to employment",
+      "year": 2018,
+      "doi": "10.1007/s40617-018-0235-y",
+      "fund": "ethics_fn",
+      "domain": "org"
+    },
+    {
+      "id": "2018-lost-in-translation-a-reply-to-shyman-2016",
+      "title": "Lost in translation- A reply to Shyman (2016)",
+      "year": 2018,
+      "doi": "10.1352/1934-9556-56.5.278",
+      "fund": "ethics_fn",
+      "domain": "autism"
+    },
+    {
+      "id": "2017-application-of-the-matching-law-to-pitch-selection-in-p",
+      "title": "Application of the matching law to pitch selection in professional baseball",
+      "year": 2017,
+      "doi": "10.1002/jaba.381",
+      "fund": "matching",
+      "domain": "baseball"
+    },
+    {
+      "id": "2012-from-interdisciplinary-to-integrated-care-of-the-child-",
+      "title": "From Interdisciplinary to Integrated Care of the Child with Autism - the Essential Role for a Code of Ethics",
+      "year": 2012,
+      "doi": "10.1007/s10803-012-1530-z",
+      "fund": "ethics_fn",
+      "domain": "autism"
+    },
+    {
+      "id": "book-aba-for-business-and-technology-applications",
+      "title": "ABA for Business and Technology Applications",
+      "year": null,
+      "doi": null,
+      "fund": "reinforcement",
+      "domain": "org"
+    },
+    {
+      "id": "book-aba-for-clinical-educational-and-training-applications",
+      "title": "ABA for Clinical, Educational, and Training Applications",
+      "year": null,
+      "doi": null,
+      "fund": "reinforcement",
+      "domain": "clinical"
+    },
+    {
+      "id": "book-practical-ethics-for-effective-treatment-of-asd-1st-ed",
+      "title": "Practical Ethics for Effective Treatment of ASD (1st Ed)",
+      "year": null,
+      "doi": null,
+      "fund": "ethics_fn",
+      "domain": "autism"
+    },
+    {
+      "id": "book-practical-ethics-for-effective-treatment-of-asd-2nd-ed",
+      "title": "Practical Ethics for Effective Treatment of ASD (2nd Ed)",
+      "year": null,
+      "doi": null,
+      "fund": "ethics_fn",
+      "domain": "autism"
+    },
+    {
+      "id": "book-research-ethics-in-behavior-analysis-from-laboratory-to",
+      "title": "Research Ethics in Behavior Analysis- From Laboratory to Clinic and Classroom",
+      "year": null,
+      "doi": null,
+      "fund": "ethics_fn",
+      "domain": "ethics"
+    }
+  ],
+  "edges": [
+    {
+      "fund": "design",
+      "domain": "org",
+      "papers": [
+        "2026-a-guide-to-choosing-a-balanced-outcomes-measurement-por"
+      ]
+    },
+    {
+      "fund": "modeling",
+      "domain": "clinical",
+      "papers": [
+        "2026-a-proof-of-concept-demonstration-for-how-to-evaluate-cl",
+        "2021-a-proof-of-concept-analysis-of-decision-making-with-tim"
+      ]
+    },
+    {
+      "fund": "beh_econ",
+      "domain": "ethics",
+      "papers": [
+        "2026-choice-with-ethical-outcomes-sign-effect-commodity-effe"
+      ]
+    },
+    {
+      "fund": "modeling",
+      "domain": "autism",
+      "papers": [
+        "2025-a-data-driven-algorithmic-approach-to-recommending-hour",
+        "2023-an-artificial-intelligence-driven-system-to-predict-asd"
+      ]
+    },
+    {
+      "fund": "ethics_fn",
+      "domain": "ai",
+      "papers": [
+        "2025-apa-health-advisory-on-the-use-of-generative-ai-chatbot",
+        "2025-ethical-behavior-analysis-in-the-age-of-ai-the-importan",
+        "2024-starting-the-conversation-around-the-ethical-use-of-ai-"
+      ]
+    },
+    {
+      "fund": "beh_econ",
+      "domain": "clinical",
+      "papers": [
+        "2025-delay-discounting-and-teacher-decision-making-of-behavi",
+        "2025-influence-of-televisibility-and-harm-probability-on-cli"
+      ]
+    },
+    {
+      "fund": "ethics_fn",
+      "domain": "ethics",
+      "papers": [
+        "2025-evaluation-of-statement-accuracy-on-ethical-decision-ma",
+        "2025-toward-collapsing-the-is-ought-distinction-an-intro-to-",
+        "2023-examination-of-ethical-decision-making-models-across-di",
+        "2022-ethical-decision-making-and-ebps",
+        "2022-ethical-principles-and-values-guiding-modern-scientific",
+        "2022-research-ethics-in-behavior-analysis",
+        "2021-a-creative-destruction-approach-to-replication-implicit",
+        "2021-descriptive-and-normative-ethical-behavior-appear-to-be",
+        "book-research-ethics-in-behavior-analysis-from-laboratory-to"
+      ]
+    },
+    {
+      "fund": "modeling",
+      "domain": "ai",
+      "papers": [
+        "2025-practice-parameters-for-ai-use-in-aba",
+        "2024-the-promises-and-possibilities-of-ai-in-the-delivery-of"
+      ]
+    },
+    {
+      "fund": "design",
+      "domain": "clinical",
+      "papers": [
+        "2024-a-qualitative-analysis-of-expert-interviews-on-safety-r"
+      ]
+    },
+    {
+      "fund": "modeling",
+      "domain": "org",
+      "papers": [
+        "2024-the-challenges-ahead-concepts-analytics-and-ethics-of-v"
+      ]
+    },
+    {
+      "fund": "reinforcement",
+      "domain": "animal",
+      "papers": [
+        "2023-efficacy-of-edible-and-leisure-reinforcers-with-domesti",
+        "2018-any-reward-will-do-effects-of-a-reverse-reward-continge"
+      ]
+    },
+    {
+      "fund": "beh_econ",
+      "domain": "health",
+      "papers": [
+        "2022-discounting-under-severe-weather-threat",
+        "2021-sexual-arousal-discounting-devaluing-condom-protected-s",
+        "2021-sexual-discounting-a-systematic-review-of-discounting-p"
+      ]
+    },
+    {
+      "fund": "ethics_fn",
+      "domain": "autism",
+      "papers": [
+        "2022-practical-ethics-for-effective-treatment-of-autism-spec",
+        "2019-an-evaluation-of-explicit-ethical-statements-in-telehea",
+        "2019-ethical-considerations-in-interdisciplinary-treatments",
+        "2019-still-lost-in-translation",
+        "2018-lost-in-translation-a-reply-to-shyman-2016",
+        "2012-from-interdisciplinary-to-integrated-care-of-the-child-",
+        "book-practical-ethics-for-effective-treatment-of-asd-1st-ed",
+        "book-practical-ethics-for-effective-treatment-of-asd-2nd-ed"
+      ]
+    },
+    {
+      "fund": "design",
+      "domain": "autism",
+      "papers": [
+        "2022-what-s-the-big-idea"
+      ]
+    },
+    {
+      "fund": "modeling",
+      "domain": "substance",
+      "papers": [
+        "2021-predicting-changes-in-substance-use-following-psychedel"
+      ]
+    },
+    {
+      "fund": "matching",
+      "domain": "ai",
+      "papers": [
+        "2021-scaling-n-from-1-to-1-000-000-application-of-the-gml-to"
+      ]
+    },
+    {
+      "fund": "beh_econ",
+      "domain": "substance",
+      "papers": [
+        "2021-the-influence-of-eft-and-graphic-warnign-labels-on-dd-a",
+        "2020-dd-and-pd-in-cud-comprehensive-examination-of-money-coc"
+      ]
+    },
+    {
+      "fund": "verbal",
+      "domain": "substance",
+      "papers": [
+        "2021-verbal-behavior-related-to-drug-reinforcement-in-polysu"
+      ]
+    },
+    {
+      "fund": "ethics_fn",
+      "domain": "org",
+      "papers": [
+        "2020-a-guide-to-establishing-ethics-committees-in-behavioral",
+        "2018-how-to-identify-ethical-practices-in-organizations-prio"
+      ]
+    },
+    {
+      "fund": "ethics_fn",
+      "domain": "health",
+      "papers": [
+        "2020-a-proposed-process-for-risk-mitigation-during-the-covid"
+      ]
+    },
+    {
+      "fund": "reinforcement",
+      "domain": "org",
+      "papers": [
+        "2020-a-review-of-the-literature-on-staff-training-strategies",
+        "book-aba-for-business-and-technology-applications"
+      ]
+    },
+    {
+      "fund": "design",
+      "domain": "substance",
+      "papers": [
+        "2020-kratom-user-demographics-use-patterns-and-implications-"
+      ]
+    },
+    {
+      "fund": "matching",
+      "domain": "baseball",
+      "papers": [
+        "2017-application-of-the-matching-law-to-pitch-selection-in-p"
+      ]
+    },
+    {
+      "fund": "reinforcement",
+      "domain": "clinical",
+      "papers": [
+        "book-aba-for-clinical-educational-and-training-applications"
+      ]
+    }
+  ]
+}
