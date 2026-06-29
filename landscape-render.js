@@ -64,7 +64,7 @@
       fm.refs.forEach(i => { const a = D.articles[i]; h += `<div class="art"><a href="${esc(a.u)}" target="_blank" rel="noopener">${esc(a.t)}</a><div class="meta">${esc(a.a)}${a.y ? ' &middot; ' + a.y : ''}</div></div>`; });
     } else {
       const subj = encodeURIComponent(`Collaboration: ${rp.label} × ${cp.label}`);
-      h += `<div class="tag open">Open frontier</div><h3>${title}</h3><p class="c">No one has co-studied this pair yet. Want to take it on with us?</p><a class="cta" href="mailto:cox.david.j@gmail.com?subject=${subj}">Propose this study &rarr;</a>`;
+      h += `<div class="tag open">Open frontier</div><h3>${title}</h3><p class="c">No one has co-studied this pair yet. Want to take it on with us?</p><a class="cta" href="mailto:dcox@endicott.edu?subject=${subj}">Propose this study &rarr;</a>`;
     }
     pbody.innerHTML = h; panel.classList.add('open'); panel.scrollTop = 0;
   }
