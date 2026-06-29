@@ -84,21 +84,8 @@ AREAS = [
     # area-artificial-organisms.html is now hand-built (it carries the AO coverage
     # grid); it is intentionally not generated here.
     # area-applied-domains.html is hand-built (the translation-map deck); do not generate it here.
-    dict(
-        file="area-methodological-backbone.html",
-        kicker="Data &middot; science &middot; mathematics",
-        title="Methodological backbone",
-        labels=[
-            "Quantitative, computational & statistical methods",
-            "Research Methodologies",
-        ],
-        narrative=(
-            "Running beneath every project is a common methodological spine. This area covers the quantitative, "
-            "computational, and statistical methods we use to model environment-behavior relations, along with "
-            "the research methodologies (e.g., measurement, design, and analysis) that let us see interactions "
-            "in the first place and move findings from one level of analysis to the next."),
-        extra="",
-    ),
+    # area-methodological-backbone.html is hand-built (the "expanded toolchest"
+    # radial deck); it is intentionally not generated here.
 ]
 
 

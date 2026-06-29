@@ -9,21 +9,28 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="methods.css">
+    <style>
+      .deck{max-width:1000px;margin:0 auto;padding:8px 28px 90px}
+      .deck-hero{padding:26px 0 38px;border-bottom:1px solid var(--line);margin-bottom:44px}
+      .deck .kicker{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:.6rem}
+      .deck-hero h1{font-size:2.6rem;line-height:1.08;font-weight:700;margin:0 0 1rem;letter-spacing:-.02em}
+      .deck-hero p{font-size:1.12rem;color:var(--muted);line-height:1.65;max-width:740px;margin:0}
+      .deck-sec{margin:0 0 60px}
+      .deck-sec h2{font-size:1.7rem;font-weight:700;margin:0 0 1rem;letter-spacing:-.01em}
+      .deck-sec>p{color:var(--muted);font-size:1.04rem;line-height:1.72;max-width:740px;margin:0 0 1.1rem}
+      .map-note{font-size:.82rem;color:var(--faint);margin-top:1rem;max-width:740px}
+      .collab .cta-big{display:inline-block;margin-top:1.1rem;padding:.7rem 1.2rem;border-radius:9px;background:var(--accent);color:#06223a;font-weight:600;text-decoration:none}
+    </style>
 </head>
 <body>
     <div class="cyberpunk-container">
         <header class="cyber-header">
             <div class="header-content">
-                <h1 class="lab-title">
-                    <span class="glitch">BEHAVIORAL DATA SCIENCE</span>
-                    <span class="lab-subtitle">RESEARCH LAB</span>
-                </h1>
-                <div class="pliny-logo"><div class="pliny-container">
-                    <img src="images/Pliny-the-Pigeon.png" alt="Pliny the Pigeon" class="pliny-image">
-                </div></div>
+                <h1 class="lab-title"><span class="glitch">BEHAVIORAL DATA SCIENCE</span><span class="lab-subtitle">RESEARCH LAB</span></h1>
+                <div class="pliny-logo"><div class="pliny-container"><img src="images/Pliny-the-Pigeon.png" alt="Pliny the Pigeon" class="pliny-image"></div></div>
             </div>
         </header>
-
         <nav class="cyber-nav">
             <ul class="nav-list">
                 <li><a href="index.html" class="nav-link">TOPIC MAP</a></li>
@@ -35,130 +42,52 @@
             </ul>
         </nav>
 
-        <main class="cyber-main">
+        <main class="deck">
             <p class="area-back"><a href="index.html">&larr; Back to the topic map</a></p>
-            <section class="page-header" style="text-align:left;border:none;margin-bottom:18px">
-                <div class="area-kicker">Data &middot; science &middot; mathematics</div>
-                <h2 class="cyber-h2" style="text-align:left">Methodological backbone</h2>
+
+            <section class="deck-hero">
+                <div class="kicker">Methodological backbone &middot; a line of research</div>
+                <h1>New questions need new tools.</h1>
+                <p>Behavior analysis has a powerful, time-tested toolkit: single-subject design, visual analysis,
+                   and descriptive statistics. To ask and answer questions the field has not been able to ask
+                   before, we have to reach past it and leverage state-of-the-art technologies and analytic
+                   approaches. This line of work builds and shares those tools, expanding what a behavior analyst
+                   can do.</p>
             </section>
 
-            <div class="about-card">
-                <p class="cyber-text" style="font-size:1.02rem;color:var(--ink)">Running beneath every project is a common methodological spine. This area covers the quantitative, computational, and statistical methods we use to model environment-behavior relations, along with the research methodologies (e.g., measurement, design, and analysis) that let us see interactions in the first place and move findings from one level of analysis to the next.</p>
-                
-            </div>
-            <div class="project-category">
-                <h3 class="category-title">Quantitative, computational &amp; statistical methods <span style="color:var(--faint);font-weight:400">(18)</span></h3>
-                <div class="project-list">
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2026-of-models-vectors-and-matrices-advancing-analyses-of-th">Of models, vectors, and matrices- Advancing analyses of the multiple control of behavior</a></h4>
-                        <p class="project-description">Cox &middot; 2026</p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2026-using-ml-to-analyze-alternating-treatment-graphs">Using ML to analyze alternating treatment graphs</a></h4>
-                        <p class="project-description">Kausch et al &middot; 2026 &middot; <a href="https://doi.org/10.1007/s10864-026-09616-z" target="_blank" rel="noopener">DOI</a></p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2025-chapter-8-behavioral-data-science">Chapter 8- Behavioral data science</a></h4>
-                        <p class="project-description">Cox &middot; 2025 &middot; <a href="https://doi.org/10.1016/B978-0-443-22358-7.00014-9" target="_blank" rel="noopener">DOI</a></p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2025-escape-from-static-flatland-how-might-behavior-as-movem">Escape from static flatland- How might behavior as movement be captured in publications</a></h4>
-                        <p class="project-description">Cox &middot; 2025 &middot; <a href="https://doi.org/10.17605/OSF.IO/PW6B8" target="_blank" rel="noopener">DOI</a></p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2025-getting-more-from-your-ioa-data-alternative-measures-to">Getting more from your IOA data- Alternative measures to total, occurrence, and non-occurrence agreement</a></h4>
-                        <p class="project-description">Cox et al &middot; 2025 &middot; <a href="https://doi.org/10.1002/bin.70031" target="_blank" rel="noopener">DOI</a></p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2025-sqab-2024-quantitative-frontiers-in-the-analysis-of-beh">SQAB 2024- Quantitative frontiers in the analysis of behavior</a></h4>
-                        <p class="project-description">Sanabria et al &middot; 2025 &middot; <a href="https://doi.org/10.1007/s40614-025-00457-1" target="_blank" rel="noopener">DOI</a></p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2024-readme-the-code-to-create-the-cover-toc-graphs">README- The code to create the cover &amp; ToC graphs</a></h4>
-                        <p class="project-description">Cox &middot; 2024</p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2024-the-logic-and-code-behind-the-cover-toc-graphs">The logic and code behind the cover &amp; ToC graphs</a></h4>
-                        <p class="project-description">Cox &middot; 2024 &middot; <a href="https://doi.org/10.17605/OSF.IO/B6XUH" target="_blank" rel="noopener">DOI</a></p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2024-we-live-in-interesting-times-intro-to-the-special-secti">We live in interesting times- Intro to the special section on big data &amp; behavior science</a></h4>
-                        <p class="project-description">Cox &amp; Young &middot; 2024 &middot; <a href="https://doi.org/10.1007/s40614-024-00400-w" target="_blank" rel="noopener">DOI</a></p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2023-data-recording-and-analysis">Data recording and analysis</a></h4>
-                        <p class="project-description">Cox et al &middot; 2023 &middot; <a href="https://doi.org/10.1016/B978-0-323-99594-8.00009-X" target="_blank" rel="noopener">DOI</a></p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2023-identifying-trends-in-the-open-access-behavior-analytic">Identifying trends in the open-access behavior analytic literature via computational analyses (I)- Simple descriptions of text</a></h4>
-                        <p class="project-description">Sosine &amp; Cox &middot; 2023 &middot; <a href="https://doi.org/10.1007/s40616-022-00179-4" target="_blank" rel="noopener">DOI</a></p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2023-statistics-for-aba-practitioners-and-researchers">Statistics for ABA Practitioners and Researchers</a></h4>
-                        <p class="project-description">Cox &amp; Vladescu &middot; 2023</p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2019-the-many-functions-of-quantitative-modeling">The many functions of quantitative modeling</a></h4>
-                        <p class="project-description">Cox &middot; 2019 &middot; <a href="https://doi.org/10.1007/s42113-019-00048-9" target="_blank" rel="noopener">DOI</a></p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=book-codingforbehavioranalysts">CodingForBehaviorAnalysts</a></h4>
-                        <p class="project-description">Book</p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=book-statistics-for-aba-practitioners-and-researchers">Statistics for ABA Practitioners and Researchers</a></h4>
-                        <p class="project-description">Book</p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=preprint-ml-pigeon-peck-irts-choices">Using machine learning for multiscale, nonlinear dynamical analyses of pigeon peck IRTs and side-entry choices</a></h4>
-                        <p class="project-description">Cox, D. J., Drugan-Eppich, K., &amp; Sanabria, F. &middot; Preprint &middot; <a href="https://doi.org/10.13140/RG.2.2.27835.78880" target="_blank" rel="noopener">Preprint</a></p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=preprint-3-9-million-aba-sessions">Initial description of 3.9 million unique ABA sessions</a></h4>
-                        <p class="project-description">Sosine, J., &amp; Cox, D. J. &middot; Preprint &middot; <a href="https://osf.io/preprints/psyarxiv/pq28y" target="_blank" rel="noopener">Preprint</a></p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=preprint-cluster-analyses-asd">Influence of sample size, feature set, and algorithm on cluster analyses for patients with autism spectrum disorders</a></h4>
-                        <p class="project-description">Cox, D. J., Sosine, J., &amp; Rethink Data Team &middot; Preprint &middot; <a href="https://psyarxiv.com/9k2yv" target="_blank" rel="noopener">Preprint</a></p>
-                    </div>
-                </div>
-            </div>
-            <div class="project-category">
-                <h3 class="category-title">Research Methodologies <span style="color:var(--faint);font-weight:400">(6)</span></h3>
-                <div class="project-list">
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2022-training-staff-to-create-equivalence-based-instruction-">Training staff to create equivalence-based instruction materials in Qualtrics</a></h4>
-                        <p class="project-description">Marano-Frezza et al &middot; 2022 &middot; <a href="https://doi.org/10.1007/s40732-021-00497-4" target="_blank" rel="noopener">DOI</a></p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2019-a-multidisciplinary-replication-of-upper-s-1974-unsucee">A multidisciplinary replication of Upper's (1974) unsuceesful self-treatment of writer's block</a></h4>
-                        <p class="project-description">Brodhead et al &middot; 2019 &middot; <a href="https://doi.org/10.1007/s40617-018-00290-w" target="_blank" rel="noopener">DOI</a></p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2018-function-matters-a-review-of-terminological-differences">Function matters- A review of terminological differences in applied and basic clicker training research</a></h4>
-                        <p class="project-description">Dorey &amp; Cox &middot; 2018 &middot; <a href="https://doi.org/10.7717/peerj.5621" target="_blank" rel="noopener">DOI</a></p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2018-further-comparison-of-5-trial-adjusting-delay-and-proba">Further comparison of 5-trial adjusting delay and probability tasks over a wide range of amounts</a></h4>
-                        <p class="project-description">Miranda et al &middot; 2018 &middot; <a href="https://doi.org/10.1016/j.beproc.2018.08.004" target="_blank" rel="noopener">DOI</a></p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2016-a-brief-overview-of-within-subject-experimental-design-">A brief overview of within-subject experimental design logic for individuals with ASD</a></h4>
-                        <p class="project-description">Cox &middot; 2016</p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=preprint-survey-open-science-practices">Survey of open science practices in behavior analysis</a></h4>
-                        <p class="project-description">Jennings, A. M., Breeman, S., Vladescu, J., &amp; Cox, D. J. &middot; Preprint &middot; <a href="https://osf.io/preprints/psyarxiv/pbn8q_v1" target="_blank" rel="noopener">Preprint</a></p>
-                    </div>
-                </div>
-            </div>
+            <section class="deck-sec">
+                <h2>Expanding the repertoire</h2>
+                <p>Each new method is a tool added to the chest, and a new question it lets you ask. We model the
+                   structure of behavior, work at the scale of whole literatures, bring machine learning and modern
+                   statistics to behavioral data, measure behavior in new ways, and package the methods so others
+                   can use them too. The point is not novelty for its own sake; it is reaching questions the
+                   standard toolkit leaves out of range.</p>
+            </section>
+
+            <section class="deck-sec">
+                <h2>The expanded toolchest</h2>
+                <p>The field's traditional methods sit at the center. Each colored spoke is a new capability, and
+                   each project radiates outward along it (oldest nearest the center, newest farthest), so the
+                   repertoire visibly grows. Hover a node to see the paper, click to read it, and click a spoke
+                   label for what that capability lets you ask.</p>
+                <div class="methods-centerpiece"><div class="methods-scroll"><div id="methods-radial"></div></div></div>
+                <p class="map-note">Distance from the center is the year of the work; the spoke color marks the
+                   capability. Nineteen methods papers across two threads (quantitative, computational, and
+                   statistical methods, and research methodologies).</p>
+            </section>
+
+            <section class="deck-sec collab">
+                <h2>The open frontier</h2>
+                <p>The fastest way to ask a new question is to pick up a tool you have not used yet. If you want to
+                   learn how one of these methods works, or to bring one to a question in your own research, we
+                   would like to help. The aim is a field that can ask and answer questions it could not before.</p>
+                <a class="cta-big" href="mailto:cox.david.j@gmail.com?subject=Learning%20a%20new%20method">Learn a new tool with us &rarr;</a>
+            </section>
         </main>
 
-        <footer class="cyber-footer">
-            <div class="footer-content">
-                <p>&copy; 2025 Behavioral Data Science Research Lab</p>
-            </div>
-        </footer>
+        <footer class="cyber-footer"><div class="footer-content"><p>&copy; 2025 Behavioral Data Science Research Lab</p></div></footer>
     </div>
+<script src="data/corpus.js"></script>
+<script src="methods-render.js"></script>
 </body>
 </html>

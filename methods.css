@@ -1,0 +1,35 @@
+/* Methodological backbone — the radial "expanded toolchest". */
+.methods-centerpiece{width:100vw;position:relative;left:50%;transform:translateX(-50%);margin:1.4rem 0 0}
+.methods-scroll{overflow-x:auto}
+#methods-radial{position:relative;width:1200px;height:1200px;margin:0 auto}
+#methods-radial svg.lines{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+#methods-radial .hub{position:absolute;width:196px;height:196px;border-radius:50%;background:var(--panel);border:1.5px solid var(--line);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px}
+#methods-radial .hub .ht{font-size:.86rem;font-weight:700;letter-spacing:.07em;color:var(--ink);line-height:1.3}
+#methods-radial .hub .hs{font-size:.76rem;color:var(--faint);margin-top:.5rem;line-height:1.45}
+#methods-radial .node{position:absolute;width:108px;height:108px;border-radius:50%;background:var(--panel);border:2px solid var(--line);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:10px;cursor:pointer;transition:transform .12s}
+#methods-radial .node:hover{transform:scale(1.08);z-index:5}
+#methods-radial .node .lbl{font-size:.82rem;font-weight:600;color:var(--ink);line-height:1.2}
+#methods-radial .node .yr{font-size:.7rem;color:var(--faint);margin-top:.25rem}
+#methods-radial .caplabel{position:absolute;font-size:.82rem;font-weight:700;letter-spacing:.04em;cursor:pointer;white-space:nowrap}
+#methods-radial .caplabel:hover{text-decoration:underline}
+#methods-radial .dim{opacity:.16;transition:opacity .15s}
+
+#methods-panel{position:fixed;top:0;right:0;height:100%;width:min(440px,92vw);background:var(--bg2);border-left:1px solid var(--line);
+  z-index:80;padding:56px 28px 40px;overflow-y:auto;transform:translateX(100%);transition:transform .2s;box-shadow:-18px 0 50px rgba(0,0,0,.5)}
+#methods-panel.open{transform:none}
+#methods-panel .x{position:absolute;top:16px;right:20px;background:none;border:none;color:var(--muted);font-size:1.7rem;cursor:pointer}
+#methods-panel .x:hover{color:var(--ink)}
+#methods-panel .fam{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;font-weight:700;margin-bottom:.5rem}
+#methods-panel h2{font-size:1.4rem;margin:0 0 .8rem;line-height:1.25;color:var(--ink)}
+#methods-panel .contrast{font-size:.95rem;color:var(--muted);line-height:1.6;margin:0 0 1.2rem;padding:.8rem .9rem;background:var(--panel);border-radius:9px}
+#methods-panel .contrast b{color:var(--ink)} #methods-panel .contrast .ar{color:var(--accent)}
+#methods-panel .ph{font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--faint);font-weight:600;margin-bottom:.5rem}
+#methods-panel a.paper{display:block;color:var(--ink);text-decoration:none;font-size:.92rem;line-height:1.4;padding:.5rem 0;border-top:1px solid rgba(39,48,74,.6)}
+#methods-panel a.paper:first-of-type{border-top:none}
+#methods-panel a.paper:hover{color:var(--accent)} #methods-panel a.paper .yr{color:var(--faint);font-size:.78rem}
+
+#methods-tip{position:fixed;z-index:90;pointer-events:none;display:none;max-width:300px;background:var(--panel);border:1px solid var(--line);
+  border-radius:9px;padding:.55rem .7rem;font-size:.84rem;box-shadow:0 8px 28px rgba(0,0,0,.5)}
+#methods-tip .m{display:block;color:var(--muted);font-size:.74rem;margin-top:.25rem}
