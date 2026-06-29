@@ -17,7 +17,7 @@ window.AOGRID = {
     { id: 'mpr', label: 'MPR' },
     { id: 'etbd', label: 'ETBD' },
     { id: 'integrated', label: 'Molecular dynamics' },
-    { id: 'dynsys', label: 'Dynamical systems' },
+    { id: 'dynsys', label: 'Dynamical Integrated Principles' },
   ],
   groups: [
     { label: 'Respondent', rows: [
