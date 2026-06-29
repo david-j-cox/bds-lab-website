@@ -3,27 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Integrating behavioral principles - Behavioral Data Science Research Lab</title>
+    <title>Integrating principles - Behavioral Data Science Research Lab</title>
     <link rel="icon" type="image/png" href="images/Pliny-the-Pigeon.png">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="site.css">
+    <link rel="stylesheet" href="landscape.css">
+    <style>
+      .deck{max-width:1000px;margin:0 auto;padding:8px 28px 90px}
+      .deck-hero{padding:26px 0 38px;border-bottom:1px solid var(--line);margin-bottom:44px}
+      .deck .kicker{font-size:.72rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:.6rem}
+      .deck-hero h1{font-size:2.6rem;line-height:1.08;font-weight:700;margin:0 0 1rem;letter-spacing:-.02em}
+      .deck-hero p{font-size:1.12rem;color:var(--muted);line-height:1.65;max-width:740px;margin:0}
+      .deck-sec{margin:0 0 60px}
+      .deck-sec h2{font-size:1.7rem;font-weight:700;margin:0 0 1rem;letter-spacing:-.01em}
+      .deck-sec>p{color:var(--muted);font-size:1.04rem;line-height:1.72;max-width:740px;margin:0 0 1.1rem}
+      .deck-sec a.inl{color:var(--accent);text-decoration:none}
+      .deck-sec a.inl:hover{text-decoration:underline}
+      .flags{margin-top:1.5rem;display:grid;gap:14px}
+      .flag{display:block;background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:18px 20px;transition:border-color .14s,background .14s}
+      .flag[data-fig]{cursor:help}
+      .flag:hover{border-color:var(--accent2);background:var(--panel2)}
+      .flag .yr{display:inline-block;font-size:.72rem;letter-spacing:.08em;font-weight:700;color:var(--accent2);margin-bottom:.25rem}
+      .flag h4{margin:0 0 .35rem;font-size:1.1rem;color:var(--ink);font-weight:650}
+      .flag h4 .ghint{font-size:.66rem;color:var(--faint);font-weight:500;letter-spacing:.04em;margin-left:.5rem;text-transform:uppercase}
+      .flag .m{color:var(--muted);font-size:.86rem;margin:0}
+      .flag .m a{color:var(--accent);text-decoration:none}
+      .flag .m a:hover{text-decoration:underline}
+      .flag .finding{color:#c5cde0;font-size:.92rem;line-height:1.6;margin-top:.7rem;padding-left:.85rem;border-left:2px solid var(--accent2);max-width:700px}
+      #flag-pop{position:fixed;z-index:80;pointer-events:none;display:none;padding:8px;background:#fff;border-radius:10px;border:1px solid var(--line);box-shadow:0 16px 54px rgba(0,0,0,.65)}
+      #flag-pop img{display:block;max-width:460px;max-height:380px;border-radius:4px}
+      .collab .cta-big{display:inline-block;margin-top:1.1rem;padding:.7rem 1.2rem;border-radius:9px;background:var(--accent);color:#06223a;font-weight:600;text-decoration:none}
+      .matrix-note{font-size:.82rem;color:var(--faint);margin-top:.7rem}
+    </style>
 </head>
 <body>
     <div class="cyberpunk-container">
         <header class="cyber-header">
             <div class="header-content">
-                <h1 class="lab-title">
-                    <span class="glitch">BEHAVIORAL DATA SCIENCE</span>
-                    <span class="lab-subtitle">RESEARCH LAB</span>
-                </h1>
-                <div class="pliny-logo"><div class="pliny-container">
-                    <img src="images/Pliny-the-Pigeon.png" alt="Pliny the Pigeon" class="pliny-image">
-                </div></div>
+                <h1 class="lab-title"><span class="glitch">BEHAVIORAL DATA SCIENCE</span><span class="lab-subtitle">RESEARCH LAB</span></h1>
+                <div class="pliny-logo"><div class="pliny-container"><img src="images/Pliny-the-Pigeon.png" alt="Pliny the Pigeon" class="pliny-image"></div></div>
             </div>
         </header>
-
         <nav class="cyber-nav">
             <ul class="nav-list">
                 <li><a href="index.html" class="nav-link">TOPIC MAP</a></li>
@@ -35,101 +57,147 @@
             </ul>
         </nav>
 
-        <main class="cyber-main">
+        <main class="deck">
             <p class="area-back"><a href="index.html">&larr; Back to the topic map</a></p>
-            <section class="page-header" style="text-align:left;border:none;margin-bottom:18px">
-                <div class="area-kicker">Basic research &middot; Human operant</div>
-                <h2 class="cyber-h2" style="text-align:left">Integrating behavioral principles</h2>
+
+            <section class="deck-hero">
+                <div class="kicker">Integrating principles &middot; a line of research</div>
+                <h1>Life is complex and multiply controlled.</h1>
+                <p>Behavior is never under a single influence. At any moment, what an organism does is
+                   jointly controlled by many variables at once (e.g., the size of an outcome, how long
+                   until it arrives, how likely it is, what it costs, and what came just before). Behavior
+                   analysis has named dozens of principles that each shape behavior on their own. The
+                   harder, more honest question is how they combine.</p>
             </section>
 
-            <div class="about-card">
-                <p class="cyber-text" style="font-size:1.02rem;color:var(--ink)">Behavior analysis has identified dozens of principles. Principles rarely act one at a time, though. This line of work uses human operant experiments to study how individual processes (e.g., discounting, choice, reinforcement, resurgence, and the multiple control of behavior) combine and interact to produce the behavior of a whole organism, from moment-to-moment (molecular) control up to aggregate (molar) patterns. These controlled studies establish the raw material that everything else builds on.</p>
-                
-            </div>
-            <div class="project-category">
-                <h3 class="category-title">Basic Principles and Their Interactions <span style="color:var(--faint);font-weight:400">(18)</span></h3>
-                <div class="project-list">
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2026-evaluating-the-combined-effects-of-effort-and-probabili">Evaluating the combined effects of effort and probability on monetary discounting</a></h4>
-                        <p class="project-description">Drugan-Eppich &amp; Cox &middot; 2026 &middot; <a href="https://doi.org/10.1002/jeab.70118" target="_blank" rel="noopener">DOI</a></p>
+            <section class="deck-sec">
+                <h2>A principle in isolation describes a slice</h2>
+                <p>Studying a principle alone tells you what one variable does when everything else is held
+                   still. Real behavior is rarely so tidy. Consider a single choice: a smaller reward now,
+                   or a larger one later. Its value depends on the amount, the delay, the probability, the
+                   effort to obtain it, whether it is a gain or a loss, and the budget the organism is
+                   working within, all at the same time. Study any one of these alone and you describe a
+                   slice. Study how two of them interact and you begin to describe behavior.</p>
+            </section>
+
+            <section class="deck-sec">
+                <div class="kicker">The map</div>
+                <h2>The combination landscape</h2>
+                <p>To see the whole problem at once, it helps to lay it out. Below is every behavioral
+                   process paired with every other. There is, tellingly, no settled list of these
+                   principles to begin from. Miltenberger and Flores
+                   (<a class="inl" href="https://pmc.ncbi.nlm.nih.gov/articles/PMC11411046/" target="_blank" rel="noopener">2024</a>)
+                   surveyed 144 behavior analysts and found consensus on only 16 operant and 5 respondent
+                   terms, which is close to the catalog-derived set used here.</p>
+                <p>A cell is shaded where the field has co-studied a pair (drawn from the 11,920-paper
+                   <a class="inl" href="https://david-j-cox.github.io/catalog-of-principles-and-processes/" target="_blank" rel="noopener">Behavioral Process Catalog</a>),
+                   highlighted where our lab has taken one on, and left dark where no one has. Hover for a
+                   count; click any cell to read the studies, or to propose an open one with us.</p>
+                <div class="ls-legend">
+                    <span><i class="sw" style="background:#6cc5ff"></i> studied by the field</span>
+                    <span><i class="sw" style="background:#a98bff"></i> studied by our lab</span>
+                    <span><i class="sw" style="background:rgba(255,255,255,.06)"></i> open (no one yet)</span>
+                </div>
+                <div id="landscape-matrix"></div>
+                <p class="matrix-note">26 processes shown. Process list and lab mappings are working drafts.</p>
+                <p style="margin-top:1.6rem">Two things stand out. First, the field has worked densely in
+                   one corner (the classic operant processes and their pairwise combinations) and sparsely
+                   everywhere else. Second, of all the pairings on the board, only a handful have ever been
+                   co-studied. The combination space is almost entirely unexplored.</p>
+            </section>
+
+            <section class="deck-sec">
+                <h2>What our lab has taken on</h2>
+                <p>Our combination studies start in the value of choice. We have crossed delay with
+                   probability, effort with probability, amount with delay, and gains with losses across
+                   both. We have asked how the economic context an organism sits in (its earnings budget)
+                   reshapes those functions, and how verbal stimuli move risky choice. Each study adds one
+                   cell, and each cell narrows the gap between what we can model in isolation and how
+                   behavior actually allocates.</p>
+                <div class="flags">
+                    <div class="flag" data-fig="images/figures/fig-effort-prob.png">
+                        <div class="yr">2026</div>
+                        <h4>Effort &times; Probability <span class="ghint">&#9656; hover for the graph</span></h4>
+                        <div class="m">Combined effects of effort and probability on monetary discounting &middot; Drugan-Eppich &amp; Cox &middot; <a href="https://doi.org/10.1002/jeab.70118" target="_blank" rel="noopener">read paper &rarr;</a></div>
+                        <div class="finding">With <em>N</em> = 61, probability discounting steepened at higher effort and effort discounting steepened at lower probability. Effort and probability interact to set choice, and of nine candidate models the general theory of discounting fit best (AICc).</div>
                     </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2026-verbal-frontiers-combining-words-in-the-wild-computatio">Verbal frontiers- Combining words in the wild, computational modeling, and behavior analysis to explore verbal communities</a></h4>
-                        <p class="project-description">Cox &middot; 2026 &middot; <a href="https://doi.org/10.1007/s40614-025-00484-y" target="_blank" rel="noopener">DOI</a></p>
+                    <div class="flag" data-fig="images/figures/fig-econ-context.png">
+                        <div class="yr">2023</div>
+                        <h4>Economic context &times; Delay, Probability, and Amount <span class="ghint">&#9656; hover for the graph</span></h4>
+                        <div class="m">Effects of economic context and reward amount on discounting &middot; Anderson et al. &middot; <a href="https://doi.org/10.1002/jeab.868" target="_blank" rel="noopener">read paper &rarr;</a></div>
+                        <div class="finding">With <em>n</em> = 213, participants discounted more when the bank amount was small relative to the outcome (a low economic context). Economic context also attenuated the magnitude effect in probability discounting.</div>
                     </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2025-extinction-in-free-ranging-aves-in-competition-with-sci">Extinction in Free-Ranging Aves in Competition with Sciurus carolinensis</a></h4>
-                        <p class="project-description">Cox &middot; 2025 &middot; <a href="https://doi.org/10.1002/jeab.70053" target="_blank" rel="noopener">DOI</a></p>
+                    <div class="flag" data-fig="images/figures/fig-gains-losses.png">
+                        <div class="yr">2020</div>
+                        <h4>Gains vs losses &times; Delay and Probability <span class="ghint">&#9656; hover for the graph</span></h4>
+                        <div class="m">Multiplicative vs additive hyperbolic and hyperboloid discounting &middot; Bialaszek et al. &middot; <a href="https://doi.org/10.1371/journal.pone.0233337" target="_blank" rel="noopener">read paper &rarr;</a></div>
+                        <div class="finding">Across delayed lotteries spanning gains and losses, choice was best described by a three-parameter multiplicative model in which delay and probability are jointly (psychophysically) scaled, rather than added.</div>
                     </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2024-experience-with-reduced-nicotine-cigarettes-and-whether">Experience with reduced-nicotine cigarettes and whether this decreases smoking and substitution for full-nicotine cigarettes</a></h4>
-                        <p class="project-description">Naude et al &middot; 2024 &middot; <a href="https://doi.org/10.1002/jeab.4223" target="_blank" rel="noopener">DOI</a></p>
+                    <div class="flag" data-fig="images/figures/fig-second-outcome.png">
+                        <div class="yr">2018</div>
+                        <h4>Multiple outcomes &times; Delay &times; Probability &times; Gains vs Losses <span class="ghint">&#9656; hover for the graph</span></h4>
+                        <div class="m">Influence of second outcome on monetary discounting &middot; Cox &amp; Dallery &middot; <a href="https://doi.org/10.1016/j.beproc.2018.05.012" target="_blank" rel="noopener">read paper &rarr;</a></div>
+                        <div class="finding">Each choice involved two outcomes, each delayed and probabilistic and spanning gains and losses. The second outcome's probability mattered more than its delay, raising a future loss's probability shifted preference toward the larger-later option, and a multiplicative model best described the discounting of the two outcomes.</div>
                     </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2023-effects-of-economic-context-and-reward-amount-on-delay-">Effects of economic context and reward amount on delay and probability discounting</a></h4>
-                        <p class="project-description">Anderson et al &middot; 2023 &middot; <a href="https://doi.org/10.1002/jeab.868" target="_blank" rel="noopener">DOI</a></p>
+                    <div class="flag" data-fig="images/figures/fig-verbal-prob.png">
+                        <div class="yr">2018</div>
+                        <h4>Verbal behavior &times; Probability <span class="ghint">&#9656; hover for the graph</span></h4>
+                        <div class="m">Verbal behavior and risky choice in humans &middot; Cox &amp; Dallery &middot; <a href="https://doi.org/10.1016/j.beproc.2018.09.002" target="_blank" rel="noopener">read paper &rarr;</a></div>
+                        <div class="finding">Contacting gains in isolation reversed the description-experience gap (uncertain gains preferred when described). Intermixing gains with losses restored the typical gap, so verbal framing and outcome context jointly move risky choice.</div>
                     </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2020-comparison-of-multiplicative-and-additive-hyperbolic-an">Comparison of multiplicative and additive hyperbolic and hyperboloid discounting models in delayed lotteries involving gains and losses</a></h4>
-                        <p class="project-description">Bialaszek et al &middot; 2020 &middot; <a href="https://doi.org/10.1371/journal.pone.0233337" target="_blank" rel="noopener">DOI</a></p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2019-multiple-control-responses-and-resurgence-of-human-beha">Multiple control responses and resurgence of human behavior</a></h4>
-                        <p class="project-description">Cox et al &middot; 2019 &middot; <a href="https://doi.org/10.1016/j.beproc.2018.12.003" target="_blank" rel="noopener">DOI</a></p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2018-influence-of-second-outcome-on-monetary-discounting">Influence of second outcome on monetary discounting</a></h4>
-                        <p class="project-description">Cox &amp; Dallery &middot; 2018 &middot; <a href="https://doi.org/10.1016/j.beproc.2018.05.012" target="_blank" rel="noopener">DOI</a></p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2018-verbal-behavior-and-risky-choice-in-humans-exploring-th">Verbal behavior and risky choice in humans- Exploring the boundaries of the description-experience gap</a></h4>
-                        <p class="project-description">Cox &amp; Dallery &middot; 2018 &middot; <a href="https://doi.org/10.1016/j.beproc.2018.09.002" target="_blank" rel="noopener">DOI</a></p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2017-differences-in-delay-but-not-probability-discounting-in">Differences in delay, but not probability discounting, in current smokers, e-cigarette users, &amp; never smokers</a></h4>
-                        <p class="project-description">Bialaszek et al &middot; 2017 &middot; <a href="https://doi.org/10.1007/s40732-017-0244-1" target="_blank" rel="noopener">DOI</a></p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2017-evaluating-resurgence-procedures-in-a-human-operant-lab">Evaluating resurgence procedures in a human operant laboratory</a></h4>
-                        <p class="project-description">Bolivar et al &middot; 2017 &middot; <a href="https://doi.org/10.1016/j.beproc.2017.05.004" target="_blank" rel="noopener">DOI</a></p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2016-developing-coalitions-for-effective-action-the-five-hor">Developing coalitions for effective action- The five horsemen of the modern world by Daniel Callahan</a></h4>
-                        <p class="project-description">Cox &middot; 2016 &middot; <a href="https://doi.org/10.5210/bsi.v.25i0.6871" target="_blank" rel="noopener">DOI</a></p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=2016-effects-of-delay-and-probability-combinations-on-discou">Effects of delay and probability combinations on discounting in humans</a></h4>
-                        <p class="project-description">Cox &amp; Dallery &middot; 2016 &middot; <a href="https://doi.org/10.1016/j.beproc.2016.08.002" target="_blank" rel="noopener">DOI</a></p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=preprint-predicting-choice-earning-budgets-models">Predicting choice under positive and negative earning budgets: Comparisons among behavior-analytic, behavioral ecological, and reinforcement learning models</a></h4>
-                        <p class="project-description">Cox, D. J. &middot; Preprint &middot; <a href="https://doi.org/10.13140/RG.2.2.36414.86086" target="_blank" rel="noopener">Preprint</a></p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=preprint-behavior-dynamic-models-foraging">Testing behavior dynamic models to predict choice in a non-stationary two-choice foraging environment</a></h4>
-                        <p class="project-description">Cox, D. J. &middot; Preprint &middot; <a href="https://doi.org/10.31234/osf.io/jsqwf_v1" target="_blank" rel="noopener">Preprint</a></p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=preprint-dynamical-systems-behavioral-networks">Toward a dynamical systems account of behavioral networks: Integrating matching, disequilibrium theory, momentum, and Brunt-Vaisala frequency</a></h4>
-                        <p class="project-description">Cox, D. J. &middot; Preprint &middot; <a href="https://doi.org/10.2139/ssrn.6583485" target="_blank" rel="noopener">Preprint</a></p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=preprint-keystone-contingencies-repertoires">Keystone contingencies and the organization of behavioral repertoires</a></h4>
-                        <p class="project-description">Perez, N., McNulty, A., &amp; Cox, D. J. &middot; Preprint &middot; <a href="https://doi.org/10.13140/RG.2.2.16981.95205" target="_blank" rel="noopener">Preprint</a></p>
-                    </div>
-                    <div class="project-item">
-                        <h4 class="project-title"><a href="index.html#paper=preprint-experiential-discounting-earnings-budgets">Experiential delay and probability discounting during positive and negative earnings budgets</a></h4>
-                        <p class="project-description">Cox, D. J. &middot; Preprint &middot; <a href="https://osf.io/7kphr" target="_blank" rel="noopener">Preprint</a></p>
+                    <div class="flag" data-fig="images/figures/fig-delay-prob.png">
+                        <div class="yr">2016</div>
+                        <h4>Delay &times; Probability <span class="ghint">&#9656; hover for the graph</span></h4>
+                        <div class="m">Effects of delay and probability combinations on discounting in humans &middot; Cox &amp; Dallery &middot; <a href="https://doi.org/10.1016/j.beproc.2016.08.002" target="_blank" rel="noopener">read paper &rarr;</a></div>
+                        <div class="finding">Across <em>n</em> = 212 and <em>n</em> = 98, delay and probability interact to set the value of money. A magnitude effect appeared for probabilistic gains and losses but not for delayed losses, and the 5-trial and adjusting-amount methods agreed in 6 of 7 comparisons.</div>
                     </div>
                 </div>
-            </div>
+            </section>
+
+            <section class="deck-sec">
+                <h2>Scaling with AI and machine learning</h2>
+                <p>Cell by cell is slow, and the space is vast. So the second half of this line moves from
+                   studying combinations one at a time to modeling them at scale. We took the generalized
+                   matching law from an N of one to an N of a million
+                   (<a class="inl" href="https://doi.org/10.1007/s40614-021-00298-8" target="_blank" rel="noopener">Cox et al., 2022</a>),
+                   used natural language processing to read behavior from text, and integrated
+                   reinforcement-learning models with behavior science to predict the next response
+                   (<a class="inl" href="https://doi.org/10.1007/s40614-025-00444-6" target="_blank" rel="noopener">Cox &amp; Santos, 2025</a>).
+                   The aim is to let computational and AI methods explore the combination space faster than
+                   hand-run experiments can, and to feed what they find back into the lab. This is where this
+                   line meets the <a class="inl" href="area-artificial-organisms.html">artificial-organisms</a> work.</p>
+            </section>
+
+            <section class="deck-sec collab">
+                <h2>The open frontier</h2>
+                <p>The point of the map is the dark. Every open cell is a study no one has run, and an
+                   invitation. If one of them is yours, we would like to run it with you. Click an open cell
+                   above to propose it, or reach out directly.</p>
+                <a class="cta-big" href="mailto:cox.david.j@gmail.com?subject=Collaboration%20on%20a%20combination%20study">Propose a study with us &rarr;</a>
+            </section>
         </main>
 
-        <footer class="cyber-footer">
-            <div class="footer-content">
-                <p>&copy; 2025 Behavioral Data Science Research Lab</p>
-            </div>
-        </footer>
+        <footer class="cyber-footer"><div class="footer-content"><p>&copy; 2025 Behavioral Data Science Research Lab</p></div></footer>
     </div>
+<script src="data/landscape.js"></script>
+<script src="landscape-render.js"></script>
+<script>
+(function () {
+  var pop = document.createElement('div'); pop.id = 'flag-pop';
+  var img = document.createElement('img'); pop.appendChild(img); document.body.appendChild(pop);
+  document.querySelectorAll('.flag[data-fig]').forEach(function (f) {
+    f.addEventListener('mouseenter', function () { img.src = f.dataset.fig; pop.style.display = 'block'; });
+    f.addEventListener('mousemove', function (e) {
+      var r = pop.getBoundingClientRect();
+      var x = e.clientX + 20, y = e.clientY + 20;
+      if (x + r.width > innerWidth - 12) x = e.clientX - r.width - 20;
+      if (y + r.height > innerHeight - 12) y = innerHeight - r.height - 12;
+      if (y < 12) y = 12;
+      pop.style.left = x + 'px'; pop.style.top = y + 'px';
+    });
+    f.addEventListener('mouseleave', function () { pop.style.display = 'none'; });
+  });
+})();
+</script>
 </body>
 </html>

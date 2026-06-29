@@ -79,20 +79,8 @@ PAGE = """<!DOCTYPE html>
 """
 
 AREAS = [
-    dict(
-        file="area-integrating-principles.html",
-        kicker="Basic research &middot; Human operant",
-        title="Integrating behavioral principles",
-        labels=["Basic Principles and Their Interactions"],
-        narrative=(
-            "Behavior analysis has identified dozens of principles. Principles rarely act one at a time, "
-            "though. This line of work uses human operant experiments to study how individual processes "
-            "(e.g., discounting, choice, reinforcement, resurgence, and the multiple control of behavior) "
-            "combine and interact to produce the behavior of a whole organism, from moment-to-moment "
-            "(molecular) control up to aggregate (molar) patterns. These controlled studies establish the "
-            "raw material that everything else builds on."),
-        extra="",
-    ),
+    # NOTE: area-integrating-principles.html is now a hand-built deck (the
+    # combination-landscape page). It is intentionally not generated here.
     dict(
         file="area-artificial-organisms.html",
         kicker="Basic research &middot; Artificial organisms",
