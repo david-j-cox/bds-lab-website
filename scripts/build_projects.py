@@ -96,6 +96,7 @@ def existing_local():
 def parse_clickup():
     token, list_id = os.environ.get("CLICKUP_API_TOKEN"), os.environ.get("CLICKUP_LIST_ID")
     if not (token and list_id):
+        print(f"ClickUp: token set={bool(token)}, list_id set={bool(list_id)} -> skipping ClickUp pull.")
         return []
     url = f"https://api.clickup.com/api/v2/list/{list_id}/task?include_closed=false&subtasks=false"
     req = urllib.request.Request(url, headers={"Authorization": token})
