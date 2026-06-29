@@ -29,7 +29,7 @@ LINE_TO_CLUSTER = [
     ("sample size", 3), ("feature set", 3), ("algorithm", 3), ("cluster analys", 3), ("multiscale", 3),
     ("embedding", 3), ("machine learning", 3), ("diffusion model", 3), ("nlp", 3), ("llm", 3),
     ("computational", 3), ("analytic", 3), ("quantitative", 3), ("tensor", 3), ("big data", 3),
-    ("financial literacy", 3), ("ai", 3), ("data", 3),
+    ("citation analysis", 3), ("bibliometric", 3), ("financial literacy", 3), ("ai", 3), ("data", 3),
     ("matching", 2), ("momentum", 2), ("discount", 2), ("probabilist", 2), ("reinforcement", 2),
     ("choice", 2), ("preference", 2), ("resurgence", 2), ("reoccurrence", 2), ("operant", 2),
     ("respondent", 2), ("variability", 2), ("contingenc", 2), ("instruction following", 2),
@@ -37,6 +37,7 @@ LINE_TO_CLUSTER = [
     ("measurement", 5), ("design", 5), ("methodolog", 5), ("immersion", 5),
     ("substance", 7), ("drug", 7), ("nicotine", 7),
     ("non-lab", 0), ("translat", 0), ("organization", 0), ("managerial", 0), ("verbal communit", 0),
+    ("birding", 0), ("conservation", 0), ("welfare", 0), ("ecology", 0),
 ]
 
 # Titles that are action items / milestones, not projects.
