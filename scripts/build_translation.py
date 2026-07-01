@@ -13,6 +13,8 @@ from collections import Counter
 ROOT = Path(__file__).resolve().parent.parent
 corpus = {it["id"]: it for it in json.loads((ROOT / "data" / "corpus.json").read_text())["items"]}
 assign = json.loads((ROOT / "data" / "labels.json").read_text())["assign"]
+# Items may carry their own label (preprints/in-press); labels.json wins otherwise.
+label_of = lambda it: assign.get(it["id"]) or it.get("label")
 APPLIED = {"Translating Basic Principles to Non-Laboratory Settings",
            "Ethics & ethical decision-making", "Clinical Decision-Making", "Substance use"}
 
@@ -36,6 +38,7 @@ DOMAINS = [
     ("org", "Organizations and value-based care"),
     ("ai", "AI in practice"),
     ("health", "Public and sexual health"),
+    ("education", "Education"),
 ]
 
 # (title substring, fundamental, domain) -- first match wins.
@@ -91,6 +94,7 @@ MAP = [
     ("application of the matching law to pitch selection", "matching", "baseball"),
     ("aba for business and technology applications", "reinforcement", "org"),
     ("aba for clinical, educational, and training applications", "reinforcement", "clinical"),
+    ("assignment choice on quiz performance", "reinforcement", "education"),
 ]
 
 
@@ -103,7 +107,7 @@ def classify(title):
 
 
 def main():
-    applied = [corpus[i] for i, l in assign.items() if l in APPLIED and i in corpus]
+    applied = [it for it in corpus.values() if label_of(it) in APPLIED]
     papers, unmapped = [], []
     edges = {}
     for it in sorted(applied, key=lambda x: -(x["year"] or 0)):
@@ -111,7 +115,8 @@ def main():
         if not f:
             unmapped.append(it["title"][:60]); continue
         papers.append({"id": it["id"], "title": it["title"], "year": it["year"],
-                       "doi": it.get("doi"), "fund": f, "domain": d})
+                       "doi": it.get("doi"), "type": it.get("type", "article"),
+                       "fund": f, "domain": d})
         edges.setdefault((f, d), []).append(it["id"])
 
     out = {

@@ -161,7 +161,9 @@ def build_books():
 
 
 def build_preprints():
-    """Curated preprints (not in the article folder) from data/preprints.json."""
+    """Curated preprints/in-press manuscripts (not in the article folder), from
+    data/preprints.json. Most are "preprint"; a manuscript accepted but not yet
+    assigned a DOI/volume can be marked "type": "inpress" instead."""
     path = OUT.parent / "preprints.json"
     if not path.exists():
         return []
@@ -169,7 +171,7 @@ def build_preprints():
     for p in json.loads(path.read_text()):
         items.append({
             "id": p["id"],
-            "type": "preprint",
+            "type": p.get("type", "preprint"),
             "year": None,
             "title": p["title"],
             "authors": p.get("authors", ""),

@@ -24,7 +24,7 @@
 
   const labelOf = c => LABEL_OVERRIDE[c.id] || c.label;
   const colorOf = id => PALETTE[id % PALETTE.length];
-  const kindLabel = d => d.year ? d.year : (d.type === 'preprint' ? 'Preprint' : 'Book');
+  const kindLabel = d => d.year ? d.year : (d.type === 'preprint' ? 'Preprint' : d.type === 'inpress' ? 'In press' : 'Book');
 
   // Greedy word-wrap so multi-word labels stack instead of overflowing.
   function wrapLabel(text, maxChars) {
@@ -116,7 +116,7 @@
       if (hiddenClusters.has(d.cluster)) return;
       const x = sx(d.x), y = sy(d.y);
       const on = d === hovered || d === selected;
-      const isBook = d.type === 'book', isPre = d.type === 'preprint';
+      const isBook = d.type === 'book', isPre = d.type === 'preprint' || d.type === 'inpress';
       const r = (isBook ? 7 : isPre ? 6.5 : 5.5) * (on ? 1.7 : 1);
       const col = colorOf(d.cluster);
       ctx.beginPath();
