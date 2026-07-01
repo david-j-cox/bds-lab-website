@@ -9,6 +9,7 @@
   const COLOR = { beh_econ: '#6cc5ff', matching: '#a98bff', reinforcement: '#5fd6a4', verbal: '#ffb454',
     ethics_fn: '#ff7a9c', stim_control: '#7ce0e0', design: '#c3a3ff', modeling: '#ffd166' };
   const flbl = Object.fromEntries(F.map(f => [f.id, f.label])), dlbl = Object.fromEntries(DM.map(d => [d.id, d.label]));
+  const yearLbl = p => p.year || (p.type === 'inpress' ? 'In press' : p.type === 'preprint' ? 'Preprint' : 'Book');
 
   const fOut = {}, dIn = {};
   F.forEach(f => fOut[f.id] = 0); DM.forEach(d => dIn[d.id] = 0);
@@ -85,7 +86,7 @@
     h += `<h2>${esc(flbl[e.fund])} &rarr; ${esc(dlbl[e.domain])}</h2><p class="c">${e.papers.length} stud${e.papers.length > 1 ? 'ies' : 'y'}</p>`;
     e.papers.forEach(id => {
       const p = paperById[id], link = p.doi ? `https://doi.org/${p.doi}` : `https://scholar.google.com/scholar?q=${encodeURIComponent(p.title)}`;
-      h += `<div class="art"><a href="${esc(link)}" target="_blank" rel="noopener">${esc(p.title)}</a><div class="meta">${p.year || 'Book'}</div></div>`;
+      h += `<div class="art"><a href="${esc(link)}" target="_blank" rel="noopener">${esc(p.title)}</a><div class="meta">${yearLbl(p)}</div></div>`;
     });
     pb.innerHTML = h; panel.classList.add('open'); panel.scrollTop = 0;
   }
@@ -100,7 +101,7 @@
       h += `<div class="dom-group"><h3>${esc(d.label)} <span>${ps.length}</span></h3>`;
       ps.forEach(p => {
         const link = p.doi ? `https://doi.org/${p.doi}` : `https://scholar.google.com/scholar?q=${encodeURIComponent(p.title)}`;
-        h += `<a class="study" href="${esc(link)}" target="_blank" rel="noopener"><span class="st">${esc(p.title)}</span><span class="sm">${esc(flbl[p.fund])} &middot; ${p.year || 'Book'}</span></a>`;
+        h += `<a class="study" href="${esc(link)}" target="_blank" rel="noopener"><span class="st">${esc(p.title)}</span><span class="sm">${esc(flbl[p.fund])} &middot; ${yearLbl(p)}</span></a>`;
       });
       h += `</div>`;
     });
