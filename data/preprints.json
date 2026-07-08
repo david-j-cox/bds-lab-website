@@ -1,5 +1,12 @@
 [
   {
+    "id": "inreview-merging-nlp-computational-quantitative-analyses-vb",
+    "type": "inreview",
+    "authors": "Cox, D. J., Javed, A., Hacker, J., & Ott, J.",
+    "title": "Merging natural language processing with computational & quantitative analyses of verbal behavior",
+    "label": "Quantitative, computational & statistical methods"
+  },
+  {
     "id": "inpress-assignment-choice-quiz-performance-online-education",
     "type": "inpress",
     "authors": "Foley, K., Zane, T., Weiss, M. J., Cox, D. J., & Gavoni, P.",
