@@ -163,7 +163,8 @@ def build_books():
 def build_preprints():
     """Curated preprints/in-press manuscripts (not in the article folder), from
     data/preprints.json. Most are "preprint"; a manuscript accepted but not yet
-    assigned a DOI/volume can be marked "type": "inpress" instead."""
+    assigned a DOI/volume can be marked "type": "inpress", and one still under
+    peer review can be marked "type": "inreview"."""
     path = OUT.parent / "preprints.json"
     if not path.exists():
         return []

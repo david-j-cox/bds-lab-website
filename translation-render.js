@@ -9,7 +9,7 @@
   const COLOR = { beh_econ: '#6cc5ff', matching: '#a98bff', reinforcement: '#5fd6a4', verbal: '#ffb454',
     ethics_fn: '#ff7a9c', stim_control: '#7ce0e0', design: '#c3a3ff', modeling: '#ffd166' };
   const flbl = Object.fromEntries(F.map(f => [f.id, f.label])), dlbl = Object.fromEntries(DM.map(d => [d.id, d.label]));
-  const yearLbl = p => p.year || (p.type === 'inpress' ? 'In press' : p.type === 'preprint' ? 'Preprint' : 'Book');
+  const yearLbl = p => p.year || (p.type === 'inpress' ? 'In press' : p.type === 'preprint' ? 'Preprint' : p.type === 'inreview' ? 'In review' : 'Book');
 
   const fOut = {}, dIn = {};
   F.forEach(f => fOut[f.id] = 0); DM.forEach(d => dIn[d.id] = 0);
