@@ -65,17 +65,32 @@ def extract_doi(raw: str):
     return m.group(0).rstrip(".,;)")
 
 
-def pdf_extract(path: Path, max_chars: int = 1500):
-    """Return (abstract, doi) from the first two pages of a PDF."""
+def _pdftotext(path: Path, first: int, last: int):
     try:
         out = subprocess.run(
-            ["pdftotext", "-f", "1", "-l", "2", "-nopgbrk", str(path), "-"],
+            ["pdftotext", "-f", str(first), "-l", str(last), "-nopgbrk", str(path), "-"],
             capture_output=True, timeout=30,
         )
-        raw = out.stdout.decode("utf-8", "ignore")
+        return out.stdout.decode("utf-8", "ignore")
     except Exception:
+        return None
+
+
+def pdf_extract(path: Path, max_chars: int = 1500):
+    """Return (abstract, doi) from the front matter of a PDF.
+
+    Pages 1-2 hold the abstract for nearly every paper. A long author block can
+    push it further back (a 50-author crowdsourced paper runs three pages of
+    affiliations), so widen the scan when no abstract heading turns up.
+    """
+    raw = _pdftotext(path, 1, 2)
+    if raw is None:
         return "", None
     doi = extract_doi(raw)
+    if not _abstract_marks(raw):
+        wider = _pdftotext(path, 1, 4)
+        if wider and _abstract_marks(wider, window=9000):
+            return _abstract_from_raw(wider, max_chars, window=9000), doi
     return _abstract_from_raw(raw, max_chars), doi
 
 
@@ -90,12 +105,17 @@ def _polish(text: str) -> str:
     return text.strip()
 
 
-def _abstract_from_raw(raw: str, max_chars: int) -> str:
+def _abstract_marks(raw: str, window: int = 3500):
+    """Abstract headings inside the front matter, in document order."""
+    return [mm for mm in ABSTRACT_RE.finditer(raw) if mm.start() < window]
+
+
+def _abstract_from_raw(raw: str, max_chars: int, window: int = 3500) -> str:
     # Prefer the real abstract: the chunk after an "Abstract" heading, cut at
     # "Keywords"/"Introduction".
     # Use the last marker within the front matter (Elsevier puts the spaced
     # "a b s t r a c t" after the keywords block).
-    marks = [mm for mm in ABSTRACT_RE.finditer(raw) if mm.start() < 3500]
+    marks = _abstract_marks(raw, window)
     if marks:
         m = marks[-1]
         chunk = raw[m.end(): m.end() + 2500]
