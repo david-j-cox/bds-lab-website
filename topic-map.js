@@ -20,7 +20,10 @@
   let view = { scale: 1, ox: 0, oy: 0 };
   let fit = { scale: 1, ox: 0, oy: 0 };
   let hovered = null, selected = null;
-  const hiddenClusters = new Set();
+  // Clicking topics focuses them: an empty set means "show everything at full
+  // strength", otherwise anything outside the set fades into the background.
+  const focusedClusters = new Set();
+  const isMuted = id => focusedClusters.size > 0 && !focusedClusters.has(id);
 
   const labelOf = c => LABEL_OVERRIDE[c.id] || c.label;
   const colorOf = id => PALETTE[id % PALETTE.length];
@@ -104,31 +107,30 @@
     ctx.textAlign = 'center';
     ctx.font = '600 13px Inter, sans-serif';
     centroids.forEach(c => {
-      if (hiddenClusters.has(c.id)) return;
       const cl = clusters.find(k => k.id === c.id);
-      ctx.fillStyle = colorOf(c.id) + 'cc';
+      ctx.fillStyle = colorOf(c.id) + (isMuted(c.id) ? '30' : 'cc');
       const lines = wrapLabel(labelOf(cl), 22);
       lines.forEach((ln, j) => ctx.fillText(ln, sx(c.x), sy(c.y) + j * 15 - (lines.length - 1) * 7.5));
     });
 
     // Nodes: circle = paper, square = book, hollow diamond = preprint.
     items.forEach(d => {
-      if (hiddenClusters.has(d.cluster)) return;
       const x = sx(d.x), y = sy(d.y);
-      const on = d === hovered || d === selected;
+      const muted = isMuted(d.cluster);
+      const on = !muted && (d === hovered || d === selected);
       const isBook = d.type === 'book', isPre = d.type === 'preprint' || d.type === 'inpress' || d.type === 'inreview';
       const r = (isBook ? 7 : isPre ? 6.5 : 5.5) * (on ? 1.7 : 1);
       const col = colorOf(d.cluster);
       ctx.beginPath();
       if (isPre) {
         ctx.moveTo(x, y - r); ctx.lineTo(x + r, y); ctx.lineTo(x, y + r); ctx.lineTo(x - r, y); ctx.closePath();
-        ctx.globalAlpha = on ? 1 : 0.9;
+        ctx.globalAlpha = muted ? 0.12 : on ? 1 : 0.9;
         ctx.fillStyle = col + '22'; ctx.fill();
         ctx.lineWidth = 2; ctx.strokeStyle = on ? '#fff' : col; ctx.stroke();
       } else {
         if (isBook) ctx.rect(x - r, y - r, r * 2, r * 2);
         else ctx.arc(x, y, r, 0, Math.PI * 2);
-        ctx.globalAlpha = on ? 1 : 0.82;
+        ctx.globalAlpha = muted ? 0.12 : on ? 1 : 0.82;
         ctx.fillStyle = col; ctx.fill();
         if (on) { ctx.lineWidth = 2; ctx.strokeStyle = '#fff'; ctx.stroke(); }
       }
@@ -138,11 +140,11 @@
     // Current projects: hollow dashed rings (in-progress) near their cluster.
     ctx.setLineDash([4, 3]);
     projects.forEach(p => {
-      if (hiddenClusters.has(p.cluster)) return;
-      const x = sx(p.x), y = sy(p.y), on = p === hovered || p === selected;
+      const muted = isMuted(p.cluster);
+      const x = sx(p.x), y = sy(p.y), on = !muted && (p === hovered || p === selected);
       const r = on ? 13 : 9;
       ctx.beginPath(); ctx.arc(x, y, r, 0, Math.PI * 2);
-      ctx.lineWidth = 2; ctx.globalAlpha = on ? 1 : 0.95;
+      ctx.lineWidth = 2; ctx.globalAlpha = muted ? 0.12 : on ? 1 : 0.95;
       ctx.strokeStyle = on ? '#fff' : colorOf(p.cluster); ctx.stroke();
       ctx.globalAlpha = 1;
     });
@@ -153,12 +155,12 @@
   function nodeAt(px, py) {
     // Current-project rings get priority within their radius.
     for (const p of projects) {
-      if (hiddenClusters.has(p.cluster)) continue;
+      if (isMuted(p.cluster)) continue;
       if (Math.hypot(px - sx(p.x), py - sy(p.y)) < 12) return p;
     }
     let best = null, bestD = 14;
     for (const d of items) {
-      if (hiddenClusters.has(d.cluster)) continue;
+      if (isMuted(d.cluster)) continue;
       const dx = px - sx(d.x), dy = py - sy(d.y);
       const dist = Math.hypot(dx, dy);
       if (dist < bestD) { bestD = dist; best = d; }
@@ -290,9 +292,11 @@
     }
     tag.textContent = labelOf(cl);
     document.getElementById('detail-title').textContent = d.title;
+    // kindLabel already names the kind for anything without a year (Preprint,
+    // Book, In press), so the raw type would only repeat it there.
     document.getElementById('detail-meta').innerHTML =
       `${d.authors ? '<span>' + esc(d.authors) + '</span> &middot; ' : ''}` +
-      `${kindLabel(d)} &middot; ${d.type}`;
+      `${kindLabel(d)}${d.year ? ' &middot; ' + esc(d.type) : ''}`;
     const abs = document.getElementById('detail-abstract');
     abs.textContent = d.abstract || '';
     abs.style.display = d.abstract ? '' : 'none';
@@ -329,10 +333,12 @@
   // Fly the map to centre a node, then open its detail (deep-exploration loop).
   function navigateTo(d) {
     if (!d) return;
-    hiddenClusters.delete(d.cluster);
-    document.querySelectorAll('#legend li').forEach((li, i) => {
-      if (clusters.filter(c => c.count > 0)[i]?.id === d.cluster) li.classList.remove('dim');
-    });
+    // Following a related paper out of the focused topics pulls its topic into
+    // focus, so the node we fly to is actually visible when we land.
+    if (isMuted(d.cluster)) {
+      focusedClusters.add(d.cluster);
+      syncLegend();
+    }
     const targetScale = Math.max(view.scale, fit.scale * 2.4);
     const rightInset = W() > 720 ? Math.min(440, W() * 0.92) : 0;
     const tx = (W() - rightInset) / 2, ty = H() / 2;
@@ -363,21 +369,34 @@
     ul.innerHTML = '';
     clusters.filter(c => c.count > 0).forEach(c => {
       const li = document.createElement('li');
+      li.dataset.cluster = c.id;
       li.innerHTML = `<span class="swatch" style="background:${colorOf(c.id)}"></span>
         <span class="legend-text">${esc(labelOf(c))}<span class="n">${c.count}</span></span>`;
       li.addEventListener('click', () => {
-        if (hiddenClusters.has(c.id)) hiddenClusters.delete(c.id);
-        else hiddenClusters.add(c.id);
-        li.classList.toggle('dim');
+        // Click focuses a topic; clicking it again releases the focus. Several
+        // topics can be held in focus at once.
+        if (focusedClusters.has(c.id)) focusedClusters.delete(c.id);
+        else focusedClusters.add(c.id);
+        syncLegend();
         draw();
       });
       ul.appendChild(li);
     });
   }
 
+  // Mirror the focus set onto the legend: focused topics read as on, the rest
+  // recede. With nothing focused, every topic sits at rest.
+  function syncLegend() {
+    document.querySelectorAll('#legend li').forEach(li => {
+      const id = Number(li.dataset.cluster);
+      li.classList.toggle('on', focusedClusters.has(id));
+      li.classList.toggle('dim', isMuted(id));
+    });
+  }
+
   document.getElementById('reset-view').addEventListener('click', () => {
-    hiddenClusters.clear();
-    document.querySelectorAll('#legend li').forEach(li => li.classList.remove('dim'));
+    focusedClusters.clear();
+    syncLegend();
     computeFit(); draw();
   });
 

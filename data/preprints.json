@@ -1,7 +1,8 @@
 [
   {
     "id": "inreview-merging-nlp-computational-quantitative-analyses-vb",
-    "type": "inreview",
+    "type": "preprint",
+    "url": "https://doi.org/10.13140/RG.2.2.10723.92967",
     "authors": "Cox, D. J., Javed, A., Hacker, J., & Ott, J.",
     "title": "Merging natural language processing with computational & quantitative analyses of verbal behavior",
     "label": "Quantitative, computational & statistical methods"
