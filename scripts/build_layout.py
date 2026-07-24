@@ -120,6 +120,45 @@ def _separate(points, radii, iters=300, seed=SEED):
     return pos
 
 
+def _member_targets(members, ci, cvecs, centers):
+    """Per-member pull direction toward the *other* islands each member resembles.
+
+    For member i, weight the unit direction to every other island by how much
+    more similar i is to that island's centroid than to the average other
+    island. Members that fit their own cluster evenly get a near-zero target
+    (they stay central); a member that leans toward one neighbour gets a target
+    pointing at that neighbour's island.
+    """
+    k = len(centers)
+    mask = np.ones(k, dtype=bool)
+    mask[ci] = False
+    dirs = centers - centers[ci]  # (k, 2) island-to-island directions
+    norms = np.linalg.norm(dirs, axis=1, keepdims=True)
+    norms[norms == 0] = 1
+    dirs = dirs / norms
+    sim = members @ cvecs.T  # (n, k) affinity to each island centroid
+    other = sim[:, mask]
+    rel = other - other.mean(axis=1, keepdims=True)
+    w = np.clip(rel, 0, None)  # only above-average affinities pull
+    return w @ dirs[mask]
+
+
+def _orient(local, targets):
+    """Rigidly rotate/flip `local` to best align members with their targets.
+
+    Orthogonal Procrustes: preserves all intra-cluster distances (the island's
+    shape and size are untouched); only its orientation on the map changes so
+    boundary members face the neighbouring islands they most resemble.
+    """
+    L = local - local.mean(0)
+    M = L.T @ targets
+    if np.linalg.norm(M) < 1e-9:
+        return local
+    U, _, Vt = np.linalg.svd(M)
+    R = U @ Vt  # 2x2 orthogonal (rotation or reflection)
+    return L @ R + local.mean(0)
+
+
 def island_layout(unit, labels, seed=SEED):
     """Two-level 'topic islands' layout.
 
@@ -155,6 +194,11 @@ def island_layout(unit, labels, seed=SEED):
             local = np.array([[-radii[ci] * 0.4, 0], [radii[ci] * 0.4, 0]])
         else:
             local = np.zeros((1, 2))
+        # Boundary-aware orientation: spin the island so members drift toward the
+        # neighbouring islands they most resemble. Intra-cluster distances are
+        # preserved exactly; only the island's orientation on the map changes.
+        if len(idx) >= 2:
+            local = _orient(local, _member_targets(m, ci, cvecs, centers))
         local += rng.normal(0, radii[ci] * 0.05, local.shape)
         pos[idx] = centers[ci] + local
     return pos
