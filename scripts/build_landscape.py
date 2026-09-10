@@ -29,9 +29,9 @@ FIELD_CORPUS = ROOT.parent / "thesis-scaffold" / "data" / "corpus.json"
 LAB_CORPUS = ROOT / "data" / "corpus.json"
 OUT = ROOT / "data" / "landscape.json"
 
-# Most-cited articles kept per cell for the click-through panel. The full count
-# is reported separately, so capping here only trims the reading list.
-REFS_PER_CELL = 8
+# Every matching article is listed per cell, ordered most-cited first. Keeping
+# the whole list costs about 66 KB gzipped over an 8-per-cell cap, which is
+# cheap next to sending someone away with a truncated reading list.
 TITLE_CAP = 150
 
 # Collaborations and preprints behind lab cells whose PDFs are not in the lab
@@ -122,14 +122,13 @@ def main():
     scanned, articles, field_refs = build_field()
     lab_cells = build_lab()
 
-    # Keep only the most-cited articles per cell, then drop articles nothing
-    # points at any more so the payload stays small.
+    # Order each cell's reading list most-cited first.
     field = []
     keep = set()
     for (a, b), idxs in field_refs.items():
-        top = sorted(idxs, key=lambda i: -articles[i]["c"])[:REFS_PER_CELL]
-        keep.update(top)
-        field.append({"a": a, "b": b, "n": len(idxs), "refs": top})
+        ordered = sorted(idxs, key=lambda i: -articles[i]["c"])
+        keep.update(ordered)
+        field.append({"a": a, "b": b, "n": len(ordered), "refs": ordered})
     remap = {old: new for new, old in enumerate(sorted(keep))}
     kept = [{k: v for k, v in articles[i].items() if k != "c"} for i in sorted(keep)]
     for f in field:

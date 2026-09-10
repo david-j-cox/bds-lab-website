@@ -70,15 +70,14 @@
       const t = href ? `<a href="${esc(href)}" target="_blank" rel="noopener">${esc(a.t)}</a>` : esc(a.t);
       return `<div class="art">${t}<div class="meta">${esc(a.a)}${a.y ? ' &middot; ' + a.y : ''}</div></div>`;
     }).join('');
-    const shown = n => n > 8 ? ', 8 most cited shown' : '';
     if (lab) {
       h += `<div class="tag lab">Our lab</div><h3>${title}</h3>`;
       lab.forEach(s => h += `<div class="art"><a href="https://doi.org/${esc(s.doi)}" target="_blank" rel="noopener">${esc(s.study)}</a></div>`);
       if (fm && fm.n) {
-        h += `<p class="c" style="margin-top:1.4rem">${fm.n} other paper${fm.n > 1 ? 's' : ''} in the field co-study this pair${shown(fm.n)}</p>` + fieldList();
+        h += `<p class="c" style="margin-top:1.4rem">${fm.n} other paper${fm.n > 1 ? 's' : ''} in the field co-study this pair, most cited first</p>` + fieldList();
       }
     } else if (fm && fm.n) {
-      h += `<div class="tag field">Studied by the field</div><h3>${title}</h3><p class="c">${fm.n} paper${fm.n > 1 ? 's' : ''} co-study this pair${shown(fm.n)}</p>`;
+      h += `<div class="tag field">Studied by the field</div><h3>${title}</h3><p class="c">${fm.n} paper${fm.n > 1 ? 's' : ''} co-study this pair, most cited first</p>`;
       h += fieldList();
     } else {
       const subj = encodeURIComponent(`Collaboration: ${rp.label} × ${cp.label}`);
