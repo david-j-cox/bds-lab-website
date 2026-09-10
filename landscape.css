@@ -5,9 +5,13 @@
 #lsm .cell.diag{background:var(--panel2)}
 #lsm .cell.field{background:rgba(108,197,255,var(--a,.3));cursor:pointer}
 #lsm .cell.lab{background:var(--accent2);cursor:pointer}
+/* Both: our lab in the upper-left triangle, the field's count in the lower-right. */
+#lsm .cell.both{cursor:pointer;
+  background:linear-gradient(to bottom right,
+    var(--accent2) 0 50%, rgba(108,197,255,var(--a,.3)) 50% 100%)}
 #lsm .cell.open{background:rgba(255,255,255,.035);cursor:pointer}
 #lsm .cell.open:hover{background:rgba(255,255,255,.12)}
-#lsm .cell.field:hover,#lsm .cell.lab:hover{outline:1px solid #fff}
+#lsm .cell.field:hover,#lsm .cell.lab:hover,#lsm .cell.both:hover{outline:1px solid #fff}
 #lsm .rowlbl{font-size:11px;color:var(--muted);white-space:nowrap;text-align:right;padding-right:8px;
   display:flex;align-items:center;justify-content:flex-end}
 #lsm .collbl{writing-mode:vertical-rl;transform:rotate(180deg);font-size:11px;color:var(--muted);
@@ -16,6 +20,7 @@
 .ls-legend{display:flex;gap:1.3rem;flex-wrap:wrap;margin:0 0 18px;font-size:.82rem;color:var(--muted)}
 .ls-legend span{display:inline-flex;align-items:center;gap:.4rem}
 .ls-legend .sw{width:13px;height:13px;border-radius:3px}
+.ls-legend .sw.both{background:linear-gradient(to bottom right,#a98bff 0 50%,#6cc5ff 50% 100%)}
 
 #ls-tip{position:fixed;z-index:60;pointer-events:none;display:none;max-width:280px;
   background:var(--panel);border:1px solid var(--line);border-radius:9px;padding:.55rem .7rem;
