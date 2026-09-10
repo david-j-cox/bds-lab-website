@@ -29,14 +29,8 @@
     "label": "Quantitative, computational & statistical methods"
   },
   {
-    "id": "preprint-dynamical-systems-behavioral-networks",
-    "authors": "Cox, D. J.",
-    "title": "Toward a dynamical systems account of behavioral networks: Integrating matching, disequilibrium theory, momentum, and Brunt-Vaisala frequency",
-    "url": "https://doi.org/10.2139/ssrn.6583485",
-    "label": "Basic Principles and Their Interactions"
-  },
-  {
-    "id": "preprint-survey-open-science-practices",
+    "id": "inpress-survey-open-science-practices",
+    "type": "inpress",
     "authors": "Jennings, A. M., Breeman, S., Vladescu, J., & Cox, D. J.",
     "title": "Survey of open science practices in behavior analysis",
     "url": "https://osf.io/preprints/psyarxiv/pbn8q_v1",
