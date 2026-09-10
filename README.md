@@ -26,7 +26,7 @@ Underneath all three is the same bet: that a rigorous, quantitative, data-driven
 
 ## About this repository
 
-This repository is the source for the lab's public website, a static site built with plain HTML, CSS, and JavaScript. It includes an interactive topic map of the lab's publications, books, and preprints; per-line-of-research pages under `area-*.html`; and a current-projects feed pulled from ClickUp and refreshed weekly by `.github/workflows/refresh-projects.yml`.
+This repository is the source for the lab's public website, a static site built with plain HTML, CSS, and JavaScript. It includes an interactive topic map of the lab's publications, books, and preprints; per-line-of-research pages under `area-*.html`; and a hand-curated set of current projects placed on that map.
 
 ```
 bds-lab-website/
@@ -46,5 +46,8 @@ The site has no runtime dependencies and can be previewed by opening `index.html
 - `build_corpus.py` reads PDFs from `~/Dropbox/Articles`, and it takes each article's title from the **filename**, so a typo there ships to the public topic map. Run `build_layout.py` after it to place the new items.
 - `build_landscape.py` needs the sibling `thesis-scaffold` repo for its 46,988-article field corpus, and it reports the counts the "combination landscape" prose quotes. Re-run it and the prose may need rewording.
 - `build_areas.py` is **stale and should not be run**. The `area-*.html` pages have been rewritten by hand since it last ran, and it would overwrite that prose.
+- `build_projects.py` publishes only what is in `data/current-projects.json`, which is curated by hand. `clickup_draft.py` dumps open ClickUp tasks to a gitignored draft as raw material for that curation; it publishes nothing, because task names are internal working titles.
+
+Note that GitHub Pages serves the whole repository, so anything committed here is publicly reachable, including this README and everything under `scripts/`.
 
 Lab members are listed on the [About](about.html) page. If you work in one of the domains above and want a behavioral-science partner on a question, or if you want to bring one of our methods to a question in your own research, reach out through the site.

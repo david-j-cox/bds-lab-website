@@ -1,3 +1,6 @@
 __pycache__/
 *.pyc
 .DS_Store
+
+# ClickUp task dump: internal working titles, never published.
+scripts/clickup-draft.json
