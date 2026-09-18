@@ -29,14 +29,6 @@
     "label": "Quantitative, computational & statistical methods"
   },
   {
-    "id": "inpress-survey-open-science-practices",
-    "type": "inpress",
-    "authors": "Jennings, A. M., Breeman, S., Vladescu, J., & Cox, D. J.",
-    "title": "Survey of open science practices in behavior analysis",
-    "url": "https://osf.io/preprints/psyarxiv/pbn8q_v1",
-    "label": "Research Methodologies"
-  },
-  {
     "id": "preprint-keystone-contingencies-repertoires",
     "authors": "Perez, N., McNulty, A., & Cox, D. J.",
     "title": "Keystone contingencies and the organization of behavioral repertoires",
