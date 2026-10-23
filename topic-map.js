@@ -26,7 +26,23 @@
   const isMuted = id => focusedClusters.size > 0 && !focusedClusters.has(id);
 
   const labelOf = c => LABEL_OVERRIDE[c.id] || c.label;
-  const colorOf = id => PALETTE[id % PALETTE.length];
+  // Colors follow the topic label, not the cluster id: build_layout.py numbers
+  // clusters by size, so ids shift when papers move between topics. Same
+  // label -> color pairs as publications.js.
+  const TOPIC_COLORS = {
+    'Translating Basic Principles to Non-Laboratory Settings': '#3b8acd',
+    'Ethics & ethical decision-making': '#ab78fd',
+    'Quantitative, computational & statistical methods': '#1ff7df',
+    'Basic Principles and Their Interactions': '#fecb28',
+    'Clinical Decision-Making': '#fe87ba',
+    'Research Methodologies': '#379062',
+    'Artificial organisms': '#7dc1fb',
+    'Substance use': '#e84d37',
+  };
+  const colorOf = id => {
+    const c = clusters.find(k => k.id === id);
+    return (c && TOPIC_COLORS[c.label]) || PALETTE[id % PALETTE.length];
+  };
   const kindLabel = d => d.year ? d.year : (d.type === 'preprint' ? 'Preprint' : d.type === 'inpress' ? 'In press' : d.type === 'inreview' ? 'In review' : 'Book');
 
   // Greedy word-wrap so multi-word labels stack instead of overflowing.

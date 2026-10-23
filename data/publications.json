@@ -2,11 +2,11 @@
   "clusters": [
     {
       "id": 0,
-      "label": "Translating Basic Principles to Non-Laboratory Settings"
+      "label": "Ethics & ethical decision-making"
     },
     {
       "id": 1,
-      "label": "Ethics & ethical decision-making"
+      "label": "Translating Basic Principles to Non-Laboratory Settings"
     },
     {
       "id": 2,
@@ -96,7 +96,7 @@
       "venue": "Operants",
       "link": "https://www.behavioral-data-science.org/documents/Cox-2026-what-should-we-tell-our-students.pdf",
       "map": "inpress-what-should-we-tell-our-students",
-      "cluster": 0,
+      "cluster": 1,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
       "id": "inpress-what-should-we-tell-our-students",
       "topics": [
@@ -117,7 +117,7 @@
       "venue": "Under review at Behavior Analysis in Practice",
       "link": "https://doi.org/10.13140/RG.2.2.11859.75046",
       "map": "inreview-extending-conversation-ethical-ai-aba",
-      "cluster": 1,
+      "cluster": 0,
       "topic": "Ethics & ethical decision-making",
       "id": "inreview-extending-the-conversation-around-the-ethical-use-of-ai-in-ab",
       "topics": [
@@ -125,7 +125,9 @@
         2,
         4
       ],
-      "forms": [],
+      "forms": [
+        "Discussion/Theoretical"
+      ],
       "primary": 1
     },
     {
@@ -385,8 +387,8 @@
       "link": "https://doi.org/10.1002/bin.70094",
       "status": "published",
       "map": "2026-a-proof-of-concept-demonstration-for-how-to-evaluate-cl",
-      "cluster": 0,
-      "topic": "Translating Basic Principles to Non-Laboratory Settings",
+      "cluster": 4,
+      "topic": "Clinical Decision-Making",
       "id": "2026-a-proof-of-concept-demonstration-for-how-to-evaluate-clinical-dec",
       "topics": [
         4,
@@ -406,7 +408,7 @@
       "link": "http://dx.doi.org/10.13140/RG.2.2.12332.03200",
       "status": "published",
       "map": "2026-choice-with-ethical-outcomes-sign-effect-commodity-effe",
-      "cluster": 1,
+      "cluster": 0,
       "topic": "Ethics & ethical decision-making",
       "id": "2026-choice-with-ethical-outcomes-sign-effect-commodity-effect-ethical",
       "topics": [
@@ -571,7 +573,7 @@
       "link": "https://doi.org/10.1007/s10864-026-09645-8",
       "status": "published",
       "map": "2026-the-effects-of-assignment-choice-on-quiz-performance-an",
-      "cluster": 0,
+      "cluster": 1,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
       "id": "2026-the-effects-of-assignment-choice-on-quiz-performance-and-student",
       "topics": [
@@ -634,8 +636,8 @@
       "link": "https://doi.org/10.1002/bin.70014",
       "status": "published",
       "map": "2025-a-data-driven-algorithmic-approach-to-recommending-hour",
-      "cluster": 0,
-      "topic": "Translating Basic Principles to Non-Laboratory Settings",
+      "cluster": 4,
+      "topic": "Clinical Decision-Making",
       "id": "2025-a-data-driven-algorithmic-approach-to-recommending-hours-of-aba-f",
       "topics": [
         4
@@ -654,8 +656,8 @@
       "venue": "Operants, 2025, Quarter IV",
       "link": "https://www.behavioral-data-science.org/documents/Cox-2025-operants-uplevel-behavior-analysis.pdf",
       "map": "2025-an-invitation-from-artificial-intelligence",
-      "cluster": 0,
-      "topic": "Translating Basic Principles to Non-Laboratory Settings",
+      "cluster": 2,
+      "topic": "Quantitative, computational & statistical methods",
       "id": "2025-an-invitation-from-artificial-intelligence",
       "topics": [
         2,
@@ -675,7 +677,7 @@
       "link": "https://www.apa.org/topics/artificial-intelligence-machine-learning/health-advisory-ai-chatbots-wellness-apps-mental-health.pdf",
       "status": "published",
       "map": "2025-apa-health-advisory-on-the-use-of-generative-ai-chatbot",
-      "cluster": 1,
+      "cluster": 0,
       "topic": "Ethics & ethical decision-making",
       "id": "2025-apa-health-advisory-on-the-use-of-generative-ai-chatbots-and-well",
       "topics": [
@@ -695,7 +697,7 @@
       "link": null,
       "status": "published",
       "map": "book-aba-for-business-and-technology-applications",
-      "cluster": 0,
+      "cluster": 1,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
       "id": "2025-applied-behavior-analysis-for-business-and-technology-application",
       "topics": [],
@@ -713,7 +715,7 @@
       "link": null,
       "status": "published",
       "map": "book-aba-for-clinical-educational-and-training-applications",
-      "cluster": 0,
+      "cluster": 1,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
       "id": "2025-applied-behavior-analysis-for-clinical-educational-and-training-a",
       "topics": [],
@@ -773,7 +775,7 @@
       "link": "https://doi.org/10.1002/bin.70058",
       "status": "published",
       "map": "2025-delay-discounting-and-teacher-decision-making-of-behavi",
-      "cluster": 0,
+      "cluster": 1,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
       "id": "2025-delay-discounting-and-teacher-decision-making-of-behavioral-inter",
       "topics": [
@@ -815,7 +817,7 @@
       "link": "https://doi.org/10.1007/s40614-025-00459-z",
       "status": "published",
       "map": "2025-ethical-behavior-analysis-in-the-age-of-ai-the-importan",
-      "cluster": 1,
+      "cluster": 0,
       "topic": "Ethics & ethical decision-making",
       "id": "2025-ethical-behavior-analysis-in-the-age-of-artificial-intelligence-a",
       "topics": [
@@ -835,7 +837,7 @@
       "link": "https://doi.org/10.1007/s40617-023-00843-8",
       "status": "published",
       "map": "2025-evaluation-of-statement-accuracy-on-ethical-decision-ma",
-      "cluster": 0,
+      "cluster": 1,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
       "id": "2025-evaluation-of-statement-accuracy-on-ethical-decision-making",
       "topics": [
@@ -897,7 +899,7 @@
       "link": "https://doi.org/10.1007/s40617-023-00824-x",
       "status": "published",
       "map": "2025-influence-of-televisibility-and-harm-probability-on-cli",
-      "cluster": 0,
+      "cluster": 1,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
       "id": "2025-influence-of-televisibility-and-harm-probability-on-clinical-ethi",
       "topics": [
@@ -962,7 +964,7 @@
       "status": "published",
       "map": "2025-toward-collapsing-the-is-ought-distinction-an-intro-to-",
       "cluster": 0,
-      "topic": "Translating Basic Principles to Non-Laboratory Settings",
+      "topic": "Ethics & ethical decision-making",
       "id": "2025-toward-collapsing-the-is-ought-distinction-an-introduction-to-the",
       "topics": [
         1
@@ -1061,7 +1063,7 @@
       "link": "https://doi.org/10.1007/s40617-023-00868-z",
       "status": "published",
       "map": "2024-starting-the-conversation-around-the-ethical-use-of-ai-",
-      "cluster": 1,
+      "cluster": 0,
       "topic": "Ethics & ethical decision-making",
       "id": "2024-starting-the-conversation-around-the-ethical-use-of-artificial-in",
       "topics": [
@@ -1083,7 +1085,7 @@
       "link": "https://doi.org/10.1007/s40617-024-00937-x",
       "status": "published",
       "map": "2024-the-challenges-ahead-concepts-analytics-and-ethics-of-v",
-      "cluster": 0,
+      "cluster": 1,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
       "id": "2024-the-challenges-ahead-concepts-analytics-and-ethics-of-value-based",
       "topics": [
@@ -1168,7 +1170,7 @@
       "link": "https://osf.io/3t9zc/",
       "status": "published",
       "map": "2023-an-artificial-intelligence-driven-system-to-predict-asd",
-      "cluster": 0,
+      "cluster": 1,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
       "id": "2023-an-artificial-intelligence-driven-system-to-predict-asd-outcomes",
       "topics": [
@@ -1231,7 +1233,7 @@
       "link": "https://doi.org/10.3390/ani13193073",
       "status": "published",
       "map": "2023-efficacy-of-edible-and-leisure-reinforcers-with-domesti",
-      "cluster": 0,
+      "cluster": 1,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
       "id": "2023-efficacy-of-edible-and-leisure-reinforcers-with-domestic-dogs",
       "topics": [
@@ -1251,7 +1253,7 @@
       "link": "https://doi.org/10.1007/s40617-022-00753-1",
       "status": "published",
       "map": "2023-examination-of-ethical-decision-making-models-across-di",
-      "cluster": 1,
+      "cluster": 0,
       "topic": "Ethics & ethical decision-making",
       "id": "2023-examination-of-ethical-decision-making-models-across-disciplines",
       "topics": [
@@ -1333,7 +1335,7 @@
       "link": "https://doi.org/10.1175/WCAS-D-20-0178.1",
       "status": "published",
       "map": "2022-discounting-under-severe-weather-threat",
-      "cluster": 0,
+      "cluster": 1,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
       "id": "2022-discounting-under-severe-weather-threat",
       "topics": [
@@ -1353,7 +1355,7 @@
       "link": "https://link.springer.com/chapter/10.1007/978-3-030-96478-8_4",
       "status": "published",
       "map": "2022-ethical-decision-making-and-ebps",
-      "cluster": 1,
+      "cluster": 0,
       "topic": "Ethics & ethical decision-making",
       "id": "2022-ethical-decision-making-and-evidenced-based-practices",
       "topics": [
@@ -1374,7 +1376,7 @@
       "link": null,
       "status": "published",
       "map": "2022-ethical-principles-and-values-guiding-modern-scientific",
-      "cluster": 1,
+      "cluster": 0,
       "topic": "Ethics & ethical decision-making",
       "id": "2022-ethical-principles-and-values-guiding-modern-scientific-research",
       "topics": [
@@ -1395,7 +1397,7 @@
       "link": null,
       "status": "published",
       "map": "book-practical-ethics-for-effective-treatment-of-asd-2nd-ed",
-      "cluster": 1,
+      "cluster": 0,
       "topic": "Ethics & ethical decision-making",
       "id": "2022-practical-ethics-for-effective-treatment-of-autism-spectrum-disor",
       "topics": [
@@ -1454,7 +1456,7 @@
       "link": null,
       "status": "published",
       "map": "2022-research-ethics-in-behavior-analysis",
-      "cluster": 1,
+      "cluster": 0,
       "topic": "Ethics & ethical decision-making",
       "id": "2022-research-ethics-in-behavior-analysis-from-laboratory-to-clinic-an",
       "topics": [
@@ -1475,7 +1477,7 @@
       "link": "https://doi.org/10.1007/s40614-021-00298-8",
       "status": "published",
       "map": "2021-scaling-n-from-1-to-1-000-000-application-of-the-gml-to",
-      "cluster": 0,
+      "cluster": 1,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
       "id": "2022-scaling-n-from-1-to-1-000-000-application-of-the-generalized-matc",
       "topics": [
@@ -1537,7 +1539,7 @@
       "link": "https://doi.org/10.1016/j.jesp.2020.104060",
       "status": "published",
       "map": "2021-a-creative-destruction-approach-to-replication-implicit",
-      "cluster": 1,
+      "cluster": 0,
       "topic": "Ethics & ethical decision-making",
       "id": "2021-a-creative-destruction-approach-to-replication-implicit-work-and",
       "topics": [
@@ -1558,7 +1560,7 @@
       "link": "https://doi.org/10.1007/s40732-020-00451-w",
       "status": "published",
       "map": "2021-a-proof-of-concept-analysis-of-decision-making-with-tim",
-      "cluster": 0,
+      "cluster": 1,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
       "id": "2021-a-proof-of-concept-analysis-of-decision-making-with-time-series-d",
       "topics": [
@@ -1579,7 +1581,7 @@
       "link": "https://doi.org/10.1002/jaba.761",
       "status": "published",
       "map": "2021-descriptive-and-normative-ethical-behavior-appear-to-be",
-      "cluster": 0,
+      "cluster": 1,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
       "id": "2021-descriptive-and-normative-ethical-behavior-appear-to-be-functiona",
       "topics": [
@@ -1681,7 +1683,7 @@
       "link": "https://doi.org/10.1007/s10508-020-01907-4",
       "status": "published",
       "map": "2021-sexual-arousal-discounting-devaluing-condom-protected-s",
-      "cluster": 0,
+      "cluster": 1,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
       "id": "2021-sexual-arousal-discounting-devaluing-condom-protected-sex-as-a-fu",
       "topics": [
@@ -1701,7 +1703,7 @@
       "link": "https://doi.org/10.1037/pha0000402",
       "status": "published",
       "map": "2021-sexual-discounting-a-systematic-review-of-discounting-p",
-      "cluster": 0,
+      "cluster": 1,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
       "id": "2021-sexual-discounting-a-systematic-review-of-discounting-processes-a",
       "topics": [
@@ -1721,8 +1723,8 @@
       "venue": "International Journal of Environmental Research and Public Health, 18(23), 12637",
       "link": "https://doi.org/10.3390/ijerph182312637",
       "status": "published",
-      "map": "2021-the-influence-of-eft-and-graphic-warnign-labels-on-dd-a",
-      "cluster": 0,
+      "map": "2021-the-influence-of-eft-and-graphic-warning-labels-on-dd-a",
+      "cluster": 1,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
       "id": "2021-the-influence-of-episodic-future-thinking-and-graphic-warning-lab",
       "topics": [
@@ -1745,7 +1747,7 @@
       "link": "https://doi.org/10.1037/pha0000404",
       "status": "published",
       "map": "2021-verbal-behavior-related-to-drug-reinforcement-in-polysu",
-      "cluster": 0,
+      "cluster": 1,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
       "id": "2021-verbal-behavior-related-to-drug-reinforcement-in-polysubstance-ca",
       "topics": [
@@ -1767,7 +1769,7 @@
       "link": "https://doi.org/10.1007/s40617-020-00455-6",
       "status": "published",
       "map": "2020-a-guide-to-establishing-ethics-committees-in-behavioral",
-      "cluster": 1,
+      "cluster": 0,
       "topic": "Ethics & ethical decision-making",
       "id": "2020-a-guide-to-establishing-ethics-committees",
       "topics": [
@@ -1787,7 +1789,7 @@
       "link": "https://doi.org/10.1007/s40617-020-00430-1",
       "status": "published",
       "map": "2020-a-proposed-process-for-risk-mitigation-during-the-covid",
-      "cluster": 1,
+      "cluster": 0,
       "topic": "Ethics & ethical decision-making",
       "id": "2020-a-proposed-process-for-risk-mitigation-during-the-covid-19-pandem",
       "topics": [
@@ -1848,7 +1850,7 @@
       "link": "https://doi.org/10.1037/pha0000341",
       "status": "published",
       "map": "2020-dd-and-pd-in-cud-comprehensive-examination-of-money-coc",
-      "cluster": 0,
+      "cluster": 1,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
       "id": "2020-delay-and-probability-discounting-in-cocaine-use-disorder-compreh",
       "topics": [
@@ -1908,7 +1910,7 @@
       "link": "https://doi.org/10.1037/bar0000094",
       "status": "published",
       "map": "2019-an-evaluation-of-explicit-ethical-statements-in-telehea",
-      "cluster": 1,
+      "cluster": 0,
       "topic": "Ethics & ethical decision-making",
       "id": "2019-an-evaluation-of-explicit-ethical-statements-in-telehealth-resear",
       "topics": [
@@ -1928,7 +1930,7 @@
       "link": "https://link.springer.com/chapter/10.1007/978-3-030-13027-5_4",
       "status": "published",
       "map": "2019-ethical-considerations-in-interdisciplinary-treatments",
-      "cluster": 1,
+      "cluster": 0,
       "topic": "Ethics & ethical decision-making",
       "id": "2019-ethical-considerations-in-interdisciplinary-treatments",
       "topics": [
@@ -1968,7 +1970,7 @@
       "link": "https://doi.org/10.1352/1934-9556-57.4.339",
       "status": "published",
       "map": "2019-still-lost-in-translation",
-      "cluster": 1,
+      "cluster": 0,
       "topic": "Ethics & ethical decision-making",
       "id": "2019-still-lost-in-translation",
       "topics": [
@@ -2008,7 +2010,7 @@
       "link": "https://doi.org/10.3758/s13420-018-0343-0",
       "status": "published",
       "map": "2018-any-reward-will-do-effects-of-a-reverse-reward-continge",
-      "cluster": 0,
+      "cluster": 1,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
       "id": "2018-any-reward-will-do-effects-of-reversed-contingencies-on-size-pref",
       "topics": [
@@ -2069,7 +2071,7 @@
       "link": "https://doi.org/10.1007/s40617-018-0235-y",
       "status": "published",
       "map": "2018-how-to-identify-ethical-practices-in-organizations-prio",
-      "cluster": 1,
+      "cluster": 0,
       "topic": "Ethics & ethical decision-making",
       "id": "2018-how-to-identify-ethical-practices-in-organizations-prior-to-emplo",
       "topics": [
@@ -2109,7 +2111,7 @@
       "link": "https://doi.org/10.1352/1934-9556-56.5.278",
       "status": "published",
       "map": "2018-lost-in-translation-a-reply-to-shyman-2016",
-      "cluster": 1,
+      "cluster": 0,
       "topic": "Ethics & ethical decision-making",
       "id": "2018-lost-in-translation-a-reply-to-shyman-2016",
       "topics": [
@@ -2129,7 +2131,7 @@
       "link": null,
       "status": "published",
       "map": "book-practical-ethics-for-effective-treatment-of-asd-1st-ed",
-      "cluster": 1,
+      "cluster": 0,
       "topic": "Ethics & ethical decision-making",
       "id": "2018-practical-ethics-for-effective-treatment-of-autism-spectrum-disor",
       "topics": [
@@ -2170,7 +2172,7 @@
       "link": "https://doi.org/10.1002/jaba.381",
       "status": "published",
       "map": "2017-application-of-the-matching-law-to-pitch-selection-in-p",
-      "cluster": 0,
+      "cluster": 1,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
       "id": "2017-application-of-the-matching-law-to-pitch-selection-in-professiona",
       "topics": [
@@ -2290,7 +2292,7 @@
       "link": "https://doi.org/10.1007/s10803-012-1530-z",
       "status": "published",
       "map": "2012-from-interdisciplinary-to-integrated-care-of-the-child-",
-      "cluster": 1,
+      "cluster": 0,
       "topic": "Ethics & ethical decision-making",
       "id": "2012-from-interdisciplinary-to-integrated-care-of-the-child-with-autis",
       "topics": [
