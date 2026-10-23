@@ -82,7 +82,12 @@ def parse_citation(md, kind_hint=None):
             link = bare.group(0).rstrip(".")
             rest = rest.replace(bare.group(0), "").strip()
 
-    chapter = re.search(r"\.\s+In\s+.*?\(Eds?\.?\)", rest)
+    # a chapter's title ends where the editor list begins: ". In D. A. Name"
+    # or ". J. Leaf, ... (Eds.)" (the CV writes both forms)
+    chapter = re.search(r"\.\s+(?:In\s+)?\**[A-Z]\.\s?(?:[A-Z]\.\s?)*\**\s?[A-Z][\wÀ-ſ-]+", rest)
+    if chapter and not (rest[chapter.start():].lstrip(". ").startswith("In ")
+                        or re.search(r"\((?:Eds?|eds?)\.?\)", rest[chapter.start():])):
+        chapter = None
     if kind_hint == "book":
         kind = "book"
         # title is the italic span when present, else up to the publisher
@@ -104,7 +109,9 @@ def parse_citation(md, kind_hint=None):
         title, venue = (rest[:star], rest[star:]) if star > 0 else (rest, "")
     title = plain(title).rstrip(". ")
     venue = plain(venue).strip(" .").lstrip(". ")
-    venue = re.sub(r"\s*ISBN:?\s*[\dX-]+", "", venue).strip(" .")
+    venue = re.sub(r"\s*ISBN:?\s*[\dX-]+", "", venue)
+    venue = re.sub(r"\s*Preprint Link:?", "", venue)
+    venue = re.sub(r"\.{2,}", ".", venue).strip(" .")
     return {"kind": kind, "year": year, "authors": authors, "title": title,
             "venue": venue, "link": link}
 
@@ -189,7 +196,13 @@ def main():
         hit = next((cid for frag, cid in forced.items() if frag.lower() in p["title"].lower()), None)
         if hit is None:
             pool = [it for it in items if it["type"] in ("article", "book")]
-            best = max(pool, key=lambda it: similarity(p["title"], it["title"]))
+            # overlap is scored against the shorter title, so a long title that
+            # merely contains these words can tie; prefer the same year, then
+            # the closer length
+            n = len(tokens(p["title"]))
+            best = max(pool, key=lambda it: (round(similarity(p["title"], it["title"]), 3),
+                                             it.get("year") == p["year"],
+                                             -abs(len(tokens(it["title"])) - n)))
             score = similarity(p["title"], best["title"])
             yr_ok = best.get("year") in (None, p["year"]) or best["type"] == "book"
             hit = best["id"] if score >= 0.6 and yr_ok else None

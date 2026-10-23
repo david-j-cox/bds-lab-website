@@ -55,20 +55,16 @@
                         <span class="sr-only">Search titles, authors, and venues</span>
                         <input type="search" id="pubs-q" placeholder="Search titles, authors, venues" autocomplete="off">
                     </label>
-                    <div class="pubs-view" role="group" aria-label="View">
-                        <button type="button" data-view="index" aria-pressed="true">Index</button>
-                        <button type="button" data-view="cards" aria-pressed="false">Cards</button>
-                    </div>
                 </div>
                 <div class="pubs-row pubs-chips" id="pubs-topics" aria-label="Topics"></div>
                 <div class="pubs-row pubs-chips" id="pubs-types" aria-label="Types"></div>
                 <div class="pubs-years">
                     <svg id="pubs-hist" role="img" aria-label="Publications per year; drag to filter by years"></svg>
-                    <div class="pubs-years-label"><span id="pubs-range"></span><button type="button" id="pubs-reset" class="pubs-link">Clear filters</button></div>
+                    <div class="pubs-years-label"><span id="pubs-range"></span></div>
                 </div>
             </section>
 
-            <p class="pubs-count" id="pubs-count" aria-live="polite"></p>
+            <div class="pubs-status"><p class="pubs-count" id="pubs-count" aria-live="polite"></p><button type="button" id="pubs-reset" class="pubs-clear">Clear filters</button></div>
             <section id="pubs-list" class="pubs-list"></section>
         </main>
 

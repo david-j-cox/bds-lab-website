@@ -1,7 +1,7 @@
 /* Publications page. Renders window.PUBS (data/publications.js, built by
-   scripts/build_publications.py) as a filterable index or card grid. Filters:
-   text search, topic (topic-map clusters), type, and a year range brushed on
-   the histogram. The chosen view is remembered per visitor. */
+   scripts/build_publications.py) as a filterable index grouped by year.
+   Filters: text search, topic (topic-map clusters), type, and a year range
+   brushed on the histogram. */
 (function () {
   const D = window.PUBS;
   if (!D) return;
@@ -29,10 +29,7 @@
   const years = items.filter(p => p.year).map(p => p.year);
   const minY = Math.min(...years), maxY = Math.max(...years);
 
-  const state = { q: '', topics: new Set(), types: new Set(), range: null, view: 'index' };
-  try { state.view = localStorage.getItem('pubs-view') || 'index'; } catch (e) { /* storage blocked */ }
-  const urlView = new URLSearchParams(location.search).get('view');   // shareable ?view=cards
-  if (urlView === 'cards' || urlView === 'index') state.view = urlView;
+  const state = { q: '', topics: new Set(), types: new Set(), range: null };
 
   const $ = id => document.getElementById(id);
   const list = $('pubs-list');
@@ -80,7 +77,7 @@
       metaHTML(p);
   }
 
-  // ---- views
+  // ---- index
   function groups(shown) {
     const out = [];
     for (const [status, label, sub] of STATUS_GROUPS) {
@@ -93,22 +90,12 @@
     return out;
   }
   function renderIndex(shown) {
-    list.className = 'pubs-list';
     list.innerHTML = groups(shown).map(g => `
       <div class="ix-group">
         <div class="ix-label${g.words ? ' words' : ''}">${esc(g.label)}<small>${g.items.length} ${g.items.length === 1 ? 'work' : 'works'}</small></div>
         <div class="ix-entries">${g.items.map(p =>
           `<article class="ix-entry" style="--c:${colorOf(p.cluster)}">${entryBody(p)}</article>`).join('')}</div>
       </div>`).join('');
-  }
-  function renderCards(shown) {
-    list.className = 'pubs-list cards';
-    const ordered = groups(shown).flatMap(g => g.items.map(p => [g, p]));
-    list.innerHTML = ordered.map(([g, p]) => `
-      <article class="card" style="--c:${colorOf(p.cluster)}">
-        <div class="e-year">${esc(g.words ? g.label : p.year)}</div>
-        ${entryBody(p)}
-      </article>`).join('');
   }
 
   // ---- chips
@@ -203,11 +190,6 @@
 
   // ---- wiring
   $('pubs-q').addEventListener('input', e => { state.q = e.target.value.trim().toLowerCase(); render(); });
-  document.querySelectorAll('.pubs-view button').forEach(b => b.addEventListener('click', () => {
-    state.view = b.dataset.view;
-    try { localStorage.setItem('pubs-view', state.view); } catch (e) { /* storage blocked */ }
-    render();
-  }));
   $('pubs-reset').addEventListener('click', () => {
     state.q = ''; $('pubs-q').value = '';
     state.topics.clear(); state.types.clear(); state.range = null;
@@ -220,24 +202,33 @@
     `${total} articles, chapters, books, reports, and works in progress, ${minY} to the present. ` +
     'Filter by topic or type, drag across the timeline to choose years, or search.';
 
+  // names the active filters, e.g. "Showing 74 of 107: Articles, 2018 to 2022"
+  function activeFilters() {
+    const parts = [];
+    if (state.q) parts.push(`"${state.q}"`);
+    if (state.topics.size) parts.push(D.clusters.filter(c => state.topics.has(c.id)).map(c => c.label).join(' or '));
+    if (state.types.size) parts.push(TYPES.filter(([k]) => state.types.has(k)).map(([, l]) => l).join(' or '));
+    if (state.range) parts.push(state.range[0] === state.range[1] ? `${state.range[0]}` : `${state.range[0]} to ${state.range[1]}`);
+    return parts;
+  }
+
   function render() {
     const shown = items.filter(p => passes(p));
-    document.querySelectorAll('.pubs-view button').forEach(b =>
-      b.setAttribute('aria-pressed', String(b.dataset.view === state.view)));
     renderChips();
     renderHist();
-    const filtered = state.q || state.topics.size || state.types.size || state.range;
-    $('pubs-reset').hidden = !filtered;
+    const active = activeFilters();
+    $('pubs-reset').hidden = !active.length;
     $('pubs-range').textContent = state.range
       ? (state.range[0] === state.range[1] ? `${state.range[0]}` : `${state.range[0]} to ${state.range[1]}`)
       : `All years, ${minY} to ${maxY}`;
-    $('pubs-count').textContent = filtered ? `Showing ${shown.length} of ${total}` : `${total} works`;
+    $('pubs-count').innerHTML = active.length
+      ? `Showing <b>${shown.length}</b> of ${total}: ${esc(active.join(', '))}`
+      : `All ${total} works`;
     if (!shown.length) {
-      list.className = 'pubs-list';
       list.innerHTML = '<p class="pubs-empty">Nothing matches those filters.</p>';
       return;
     }
-    (state.view === 'cards' ? renderCards : renderIndex)(shown);
+    renderIndex(shown);
   }
   render();
 })();

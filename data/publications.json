@@ -308,11 +308,11 @@
       "id": "2026-of-models-vectors-matrices-advancing-analyses-of-the-multiple-con"
     },
     {
-      "kind": "article",
+      "kind": "chapter",
       "year": 2026,
       "authors": "Cox, D.J., Weil, L., Farrow, J., Jennings, A., Santos, C., & Sosine, J.",
-      "title": "Reinforcement learning in behavior science and artificial intelligence. In D. A. Hantula, D. Crone-Todd, & T. V. J. Layng Digital Technologies in Behavior Science: Theoretical and Practical Applications",
-      "venue": "Routledge.. Preprint Link:",
+      "title": "Reinforcement learning in behavior science and artificial intelligence",
+      "venue": "In D. A. Hantula, D. Crone-Todd, & T. V. J. Layng Digital Technologies in Behavior Science: Theoretical and Practical Applications. Routledge",
       "link": "https://psyarxiv.com/ue5vx",
       "status": "published",
       "map": "2026-rl-in-behavior-science-and-ai",
@@ -458,9 +458,9 @@
       "venue": "White paper",
       "link": "https://www.casproviders.org/practice-parameters-for-ai",
       "status": "published",
-      "map": "2025-an-invitation-from-artificial-intelligence",
-      "cluster": 0,
-      "topic": "Translating Basic Principles to Non-Laboratory Settings",
+      "map": "2025-practice-parameters-for-ai-use-in-aba",
+      "cluster": 4,
+      "topic": "Clinical Decision-Making",
       "id": "2025-casp-practice-parameters-for-using-artificial-intelligence-in-app"
     },
     {
@@ -815,17 +815,17 @@
       "id": "2022-discounting-under-severe-weather-threat"
     },
     {
-      "kind": "article",
+      "kind": "chapter",
       "year": 2022,
       "authors": "Marya, V.G., Castillo, V.D., & Cox, D.J.",
-      "title": "Ethical decision-making and evidenced-based practices. J. Leaf, J. Cihon, J.L. Ferguson, & M.J. Weiss (Eds.), Handbook of Applied Behavior Analysis Interventions for Autism",
-      "venue": "Autism and Child Psychopathology Series. Springer, Cham",
+      "title": "Ethical decision-making and evidenced-based practices",
+      "venue": "J. Leaf, J. Cihon, J.L. Ferguson, & M.J. Weiss (Eds.), Handbook of Applied Behavior Analysis Interventions for Autism. Autism and Child Psychopathology Series. Springer, Cham",
       "link": "https://link.springer.com/chapter/10.1007/978-3-030-96478-8_4",
       "status": "published",
       "map": "2022-ethical-decision-making-and-ebps",
       "cluster": 1,
       "topic": "Ethics & ethical decision-making",
-      "id": "2022-ethical-decision-making-and-evidenced-based-practices-j-leaf-j-ci"
+      "id": "2022-ethical-decision-making-and-evidenced-based-practices"
     },
     {
       "kind": "chapter",
