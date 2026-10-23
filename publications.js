@@ -217,6 +217,97 @@
     return parts;
   }
 
+  // ---- export: whatever is currently shown, as BibTeX, RIS, or APA text
+  let current = [];
+  const isInitials = s => /^(?:[A-Z][a-z]?\.?\s?-?\s?)+$/.test(s) && !/^(?:Jr|Sr|I{2,3}|IV)\.?$/.test(s);
+  // "Cox, D.J., Garcia-Romeu, A., & Johnson, M.W." -> [["Cox","D.J."], ...];
+  // a corporate author stays whole
+  function people(a) {
+    const t = String(a || '').replace(/\s*,?\s*&\s*/g, ', ').split(/,\s*/).filter(Boolean);
+    const out = [];
+    for (let i = 0; i < t.length; i++) {
+      if (/^\.{3}|\u2026/.test(t[i])) continue;                       // "..." in long author lists
+      if (/^(?:Jr|Sr|I{2,3}|IV)\.?$/.test(t[i]) && out.length) {     // "Hardy, J. H., III."
+        out[out.length - 1][1] = (out[out.length - 1][1] || '') + ' ' + t[i]; continue;
+      }
+      if (t[i + 1] && isInitials(t[i + 1])) { out.push([t[i], t[i + 1]]); i++; }
+      else out.push([t[i]]);
+    }
+    return out;
+  }
+  // "Journal Name, 71(4), 349-366" -> {journal, volume, number, pages}
+  function venueParts(v) {
+    const m = String(v || '').match(/^(.*?),\s*(\d+)(?:\(([^)]+)\))?(?:,\s*([\w\u2013-]+))?\.?$/);
+    return m ? { journal: m[1], volume: m[2], number: m[3], pages: m[4] } : { journal: v || '' };
+  }
+  const doiOf = url => (String(url || '').match(/doi\.org\/(10\..+)$/i) || [])[1];
+  const plainStatus = { inpress: 'In press', inreview: 'Manuscript under review', preprint: 'Preprint' };
+  function bibKey(p, used) {
+    const who = (people(p.authors)[0] || ['anon'])[0].normalize('NFD').replace(/[^A-Za-z]/g, '');
+    const word = (p.title.toLowerCase().match(/[a-z]{4,}/) || ['work'])[0];
+    let k = `${who}${p.year || p.status}${word}`, n = 1;
+    while (used.has(k)) k = `${who}${p.year || p.status}${word}${++n}`;
+    used.add(k);
+    return k;
+  }
+  function toBib(list) {
+    const used = new Set();
+    return list.map(p => {
+      const f = [], v = venueParts(p.venue), doi = doiOf(p.link);
+      const auth = people(p.authors).map(([s, g]) => g ? `${s}, ${g}` : `{${s}}`).join(' and ');
+      let type = 'article';
+      f.push(['title', `{${p.title}}`], ['author', auth]);
+      if (p.year) f.push(['year', p.year]);
+      if (p.status !== 'published') { type = 'unpublished'; f.push(['note', [plainStatus[p.status], p.venue].filter(Boolean).join('. ')]); }
+      else if (p.kind === 'chapter') { type = 'incollection'; f.push(['booktitle', p.venue.replace(/^In\s+/, '')]); }
+      else if (p.kind === 'book') { type = 'book'; f.push(['publisher', p.venue]); }
+      else if (p.kind === 'report') { type = 'techreport'; f.push(['institution', p.authors]); }
+      else { f.push(['journal', v.journal]); if (v.volume) f.push(['volume', v.volume]); if (v.number) f.push(['number', v.number]); if (v.pages) f.push(['pages', v.pages.replace(/[-\u2013]/, '--')]); }
+      if (doi) f.push(['doi', doi]); else if (p.link) f.push(['url', p.link]);
+      return `@${type}{${bibKey(p, used)},\n` + f.map(([k, x]) => `  ${k} = {${x}}`).join(',\n') + '\n}';
+    }).join('\n\n') + '\n';
+  }
+  function toRis(list) {
+    return list.map(p => {
+      const r = [], v = venueParts(p.venue), doi = doiOf(p.link);
+      const ty = p.status !== 'published' ? 'UNPB' : { chapter: 'CHAP', book: 'BOOK', report: 'RPRT' }[p.kind] || 'JOUR';
+      r.push(['TY', ty]);
+      people(p.authors).forEach(([s, g]) => r.push(['AU', g ? `${s}, ${g}` : s]));
+      r.push(['TI', p.title]);
+      if (p.year) r.push(['PY', p.year]);
+      if (ty === 'JOUR') { r.push(['JO', v.journal]); if (v.volume) r.push(['VL', v.volume]); if (v.number) r.push(['IS', v.number]);
+        if (v.pages) { const [sp, ep] = v.pages.split(/[-\u2013]/); r.push(['SP', sp]); if (ep) r.push(['EP', ep]); } }
+      else if (p.venue) r.push([ty === 'CHAP' ? 'T2' : ty === 'BOOK' ? 'PB' : 'N1', p.venue]);
+      if (doi) r.push(['DO', doi]);
+      if (p.link) r.push(['UR', p.link]);
+      r.push(['ER', '']);
+      return r.map(([k, x]) => `${k}  - ${x}`).join('\r\n');
+    }).join('\r\n\r\n') + '\r\n';
+  }
+  // APA 7: in-press work is "(in press)"; undated manuscripts and preprints
+  // are "(n.d.)" with a bracketed description after the title
+  const apaNote = { inreview: ' [Manuscript submitted for publication]', preprint: ' [Preprint]' };
+  function toApa(list) {
+    return list.map(p => {
+      const when = p.year || (p.status === 'inpress' ? 'in press' : 'n.d.');
+      const title = p.title.replace(/[.?!]?$/, m => m || '.').replace(/\.$/, '') + (apaNote[p.status] || '') + (/[?!]$/.test(p.title) && !apaNote[p.status] ? '' : '.');
+      return [`${p.authors} (${when}).`, title, p.venue ? `${p.venue}.` : '', p.link || '']
+        .filter(Boolean).join(' ');
+    }).join('\n\n') + '\n';
+  }
+  $('pubs-export').addEventListener('click', e => {
+    const fmt = e.target.dataset && e.target.dataset.fmt;
+    if (!fmt) return;
+    const [text, ext, mime] = fmt === 'bib' ? [toBib(current), 'bib', 'application/x-bibtex']
+      : fmt === 'ris' ? [toRis(current), 'ris', 'application/x-research-info-systems']
+      : [toApa(current), 'txt', 'text/plain'];
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(new Blob([text], { type: mime + ';charset=utf-8' }));
+    a.download = `cox-lab-publications.${ext}`;
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+  });
+
   function render() {
     const shown = items.filter(p => passes(p));
     renderChips();
@@ -226,11 +317,13 @@
     $('pubs-range').textContent = state.range
       ? (state.range[0] === state.range[1] ? `${state.range[0]}` : `${state.range[0]} to ${state.range[1]}`)
       : `All years, ${minY} to ${maxY}`;
-    // the status line appears only while a filter is on
+    // the count line names the filters only while one is on
     $('pubs-count').innerHTML = active.length
       ? `Showing <b>${shown.length}</b> of ${total}: ${esc(active.join(', '))}`
       : '';
-    $('pubs-count').closest('.pubs-status').hidden = !active.length;
+    current = shown;
+    $('pubs-export-n').textContent = `Download ${shown.length === total ? 'all ' + total : shown.length} as`;
+    $('pubs-export').hidden = !shown.length;
     if (!shown.length) {
       list.innerHTML = '<p class="pubs-empty">Nothing matches those filters.</p>';
       return;
