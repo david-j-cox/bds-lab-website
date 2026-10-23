@@ -57,6 +57,7 @@
 .e-meta{display:flex; flex-wrap:wrap; gap:.25rem .9rem; margin-top:.45rem; font-size:.76rem; color:var(--faint)}
 .e-meta a{color:var(--muted)}
 .e-meta a:hover{color:var(--accent)}
+.e-topics + .e-meta{margin-top:.2rem}
 .e-topic{display:inline-flex; align-items:center; gap:.35rem}
 .e-topic .dot{width:7px; height:7px; border-radius:50%; background:var(--c)}
 .e-kind{text-transform:uppercase; letter-spacing:.12em; font-size:.66rem}

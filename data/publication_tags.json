@@ -1,0 +1,520 @@
+{
+  "_note": "Topic and form tags per publication (keys are ids in data/publications.json), set by David in the Publication Tagger. build_publications.py reads this; an entry here replaces the single topic-map cluster on the publications page.",
+  "_topics": [
+    "Translating Basic Principles to Non-Laboratory Settings",
+    "Ethics & ethical decision-making",
+    "Quantitative, computational & statistical methods",
+    "Basic Principles and Their Interactions",
+    "Clinical Decision-Making",
+    "Research Methodologies",
+    "Artificial organisms",
+    "Substance use",
+    "Verbal Behavior",
+    "History of Behavior Analysis"
+  ],
+  "_forms": [
+    "Empirical",
+    "Discussion/Theoretical",
+    "Literature Review",
+    "Editorial",
+    "Book Review",
+    "Magazine Article",
+    "Book",
+    "Book Chapter",
+    "Industry Guidelines & White Papers"
+  ],
+  "inpress-what-should-we-tell-our-students": [
+    "Translating Basic Principles to Non-Laboratory Settings",
+    "Discussion/Theoretical",
+    "Magazine Article"
+  ],
+  "inreview-extending-the-conversation-around-the-ethical-use-of-ai-in-ab": [
+    "Ethics & ethical decision-making",
+    "Quantitative, computational & statistical methods",
+    "Clinical Decision-Making"
+  ],
+  "inreview-merging-natural-language-processing-with-computational-quanti": [
+    "Quantitative, computational & statistical methods",
+    "Research Methodologies",
+    "Verbal Behavior",
+    "Discussion/Theoretical"
+  ],
+  "inreview-what-is-presented-and-what-is-published-comparing-topic-distr": [
+    "Quantitative, computational & statistical methods",
+    "Verbal Behavior",
+    "History of Behavior Analysis",
+    "Empirical"
+  ],
+  "preprint-current-support-for-ai-driven-clinical-decision-support-in-ap": [
+    "Clinical Decision-Making",
+    "Literature Review"
+  ],
+  "preprint-dose-response-for-intervention-is-an-individual-not-group-phe": [
+    "Quantitative, computational & statistical methods",
+    "Clinical Decision-Making",
+    "Discussion/Theoretical"
+  ],
+  "preprint-experiential-delay-and-probability-discounting-during-positiv": [
+    "Basic Principles and Their Interactions",
+    "Empirical"
+  ],
+  "preprint-influence-of-sample-size-feature-set-and-algorithm-on-cluster": [
+    "Quantitative, computational & statistical methods",
+    "Empirical"
+  ],
+  "preprint-initial-description-of-3-9-million-unique-aba-sessions": [
+    "Quantitative, computational & statistical methods",
+    "Clinical Decision-Making",
+    "Empirical"
+  ],
+  "preprint-keystone-contingencies-and-the-organization-of-behavioral-rep": [
+    "Basic Principles and Their Interactions",
+    "Discussion/Theoretical"
+  ],
+  "preprint-predicting-choice-under-positive-and-negative-earning-budgets": [
+    "Quantitative, computational & statistical methods",
+    "Basic Principles and Their Interactions",
+    "Empirical"
+  ],
+  "preprint-testing-behavior-dynamic-models-to-predict-choice-in-a-non-st": [
+    "Quantitative, computational & statistical methods",
+    "Basic Principles and Their Interactions",
+    "Empirical"
+  ],
+  "preprint-using-machine-learning-for-multiscale-nonlinear-dynamical-ana": [
+    "Quantitative, computational & statistical methods",
+    "Empirical"
+  ],
+  "2026-a-guide-to-choosing-a-balanced-outcomes-measurement-portfolio-in": [
+    "Clinical Decision-Making",
+    "Discussion/Theoretical"
+  ],
+  "2026-a-proof-of-concept-demonstration-for-how-to-evaluate-clinical-dec": [
+    "Clinical Decision-Making",
+    "Research Methodologies",
+    "Empirical"
+  ],
+  "2026-choice-with-ethical-outcomes-sign-effect-commodity-effect-ethical": [
+    "Translating Basic Principles to Non-Laboratory Settings",
+    "Ethics & ethical decision-making",
+    "Verbal Behavior",
+    "Empirical"
+  ],
+  "2026-crowdsourced-analysis-of-single-case-experimental-design-data": [
+    "Quantitative, computational & statistical methods",
+    "Empirical"
+  ],
+  "2026-evaluating-the-combined-effects-of-effort-and-probability-on-mone": [
+    "Basic Principles and Their Interactions",
+    "Empirical"
+  ],
+  "2026-introduction-to-mathematical-modeling-in-behavior-science": [
+    "Book"
+  ],
+  "2026-machine-learning-to-analyze-alternating-treatment-graphs": [
+    "Quantitative, computational & statistical methods",
+    "Clinical Decision-Making",
+    "Empirical"
+  ],
+  "2026-of-models-vectors-matrices-advancing-analyses-of-the-multiple-con": [
+    "Translating Basic Principles to Non-Laboratory Settings",
+    "Quantitative, computational & statistical methods",
+    "Basic Principles and Their Interactions",
+    "Discussion/Theoretical",
+    "Book Chapter"
+  ],
+  "2026-reinforcement-learning-in-behavior-science-and-artificial-intelli": [
+    "Artificial organisms",
+    "Discussion/Theoretical",
+    "Book Chapter"
+  ],
+  "2026-survey-of-open-science-practices-in-behavior-analysis": [
+    "Research Methodologies",
+    "Discussion/Theoretical"
+  ],
+  "2026-the-effects-of-assignment-choice-on-quiz-performance-and-student": [
+    "Translating Basic Principles to Non-Laboratory Settings",
+    "Empirical"
+  ],
+  "2026-toward-a-dynamical-systems-account-of-behavioral-networks-integra": [
+    "Quantitative, computational & statistical methods",
+    "Basic Principles and Their Interactions",
+    "Discussion/Theoretical"
+  ],
+  "2026-verbal-frontiers-combining-words-in-the-wild-computational-modeli": [
+    "Quantitative, computational & statistical methods",
+    "Basic Principles and Their Interactions",
+    "Verbal Behavior",
+    "Discussion/Theoretical"
+  ],
+  "2025-a-data-driven-algorithmic-approach-to-recommending-hours-of-aba-f": [
+    "Clinical Decision-Making",
+    "Empirical"
+  ],
+  "2025-an-invitation-from-artificial-intelligence": [
+    "Quantitative, computational & statistical methods",
+    "History of Behavior Analysis",
+    "Magazine Article"
+  ],
+  "2025-apa-health-advisory-on-the-use-of-generative-ai-chatbots-and-well": [
+    "Ethics & ethical decision-making",
+    "Industry Guidelines & White Papers"
+  ],
+  "2025-applied-behavior-analysis-for-business-and-technology-application": [
+    "Book"
+  ],
+  "2025-applied-behavior-analysis-for-clinical-educational-and-training-a": [
+    "Book"
+  ],
+  "2025-behavioral-data-science": [
+    "Quantitative, computational & statistical methods",
+    "Research Methodologies",
+    "Book Chapter"
+  ],
+  "2025-casp-practice-parameters-for-using-artificial-intelligence-in-app": [
+    "Ethics & ethical decision-making",
+    "Clinical Decision-Making",
+    "Industry Guidelines & White Papers"
+  ],
+  "2025-delay-discounting-and-teacher-decision-making-of-behavioral-inter": [
+    "Translating Basic Principles to Non-Laboratory Settings",
+    "Clinical Decision-Making",
+    "Empirical"
+  ],
+  "2025-escape-from-static-flatland-how-might-behavior-as-movement-be-cap": [
+    "Quantitative, computational & statistical methods",
+    "Research Methodologies",
+    "Discussion/Theoretical"
+  ],
+  "2025-ethical-behavior-analysis-in-the-age-of-artificial-intelligence-a": [
+    "Ethics & ethical decision-making",
+    "Discussion/Theoretical"
+  ],
+  "2025-evaluation-of-statement-accuracy-on-ethical-decision-making": [
+    "Translating Basic Principles to Non-Laboratory Settings",
+    "Ethics & ethical decision-making",
+    "Empirical"
+  ],
+  "2025-extinction-in-free-ranging-aves-in-competition-with-sciurus-carol": [
+    "Basic Principles and Their Interactions",
+    "Empirical"
+  ],
+  "2025-getting-more-from-your-ioa-data-measures-additional-to-total-occu": [
+    "Quantitative, computational & statistical methods",
+    "Research Methodologies",
+    "Discussion/Theoretical"
+  ],
+  "2025-influence-of-televisibility-and-harm-probability-on-clinical-ethi": [
+    "Translating Basic Principles to Non-Laboratory Settings",
+    "Ethics & ethical decision-making",
+    "Clinical Decision-Making",
+    "Empirical"
+  ],
+  "2025-predicting-the-next-response-demonstrating-the-utility-of-integra": [
+    "Translating Basic Principles to Non-Laboratory Settings",
+    "Quantitative, computational & statistical methods",
+    "Artificial organisms",
+    "Empirical"
+  ],
+  "2025-sqab-2024-quantitative-frontiers-in-the-analysis-of-behavior": [
+    "Quantitative, computational & statistical methods",
+    "Editorial"
+  ],
+  "2025-toward-collapsing-the-is-ought-distinction-an-introduction-to-the": [
+    "Ethics & ethical decision-making",
+    "Editorial"
+  ],
+  "2024-a-qualitative-analysis-of-expert-interviews-on-safety-and-risk": [
+    "Clinical Decision-Making",
+    "Empirical"
+  ],
+  "2024-experience-with-reduced-nicotine-cigarettes-and-whether-this-decr": [
+    "Translating Basic Principles to Non-Laboratory Settings",
+    "Basic Principles and Their Interactions",
+    "Substance use",
+    "Empirical"
+  ],
+  "2024-proliferation-productivity-and-propagation-celebrating-the-next-w": [
+    "Editorial"
+  ],
+  "2024-readme-the-code-to-create-the-cover-toc-graphs": [
+    "Quantitative, computational & statistical methods",
+    "Editorial"
+  ],
+  "2024-starting-the-conversation-around-the-ethical-use-of-artificial-in": [
+    "Ethics & ethical decision-making",
+    "Quantitative, computational & statistical methods",
+    "Clinical Decision-Making",
+    "Discussion/Theoretical"
+  ],
+  "2024-the-challenges-ahead-concepts-analytics-and-ethics-of-value-based": [
+    "Translating Basic Principles to Non-Laboratory Settings",
+    "Ethics & ethical decision-making",
+    "Quantitative, computational & statistical methods",
+    "Clinical Decision-Making",
+    "Discussion/Theoretical"
+  ],
+  "2024-the-logic-and-code-behind-the-cover-toc-graphs": [
+    "Quantitative, computational & statistical methods",
+    "Editorial"
+  ],
+  "2024-the-promises-and-possibilities-of-artificial-intelligence-in-the": [
+    "Translating Basic Principles to Non-Laboratory Settings",
+    "Quantitative, computational & statistical methods",
+    "Clinical Decision-Making",
+    "Discussion/Theoretical"
+  ],
+  "2024-we-live-in-interesting-times-introduction-to-the-special-section": [
+    "Quantitative, computational & statistical methods",
+    "Editorial"
+  ],
+  "2023-an-artificial-intelligence-driven-system-to-predict-asd-outcomes": [
+    "Translating Basic Principles to Non-Laboratory Settings",
+    "Quantitative, computational & statistical methods",
+    "Clinical Decision-Making",
+    "Empirical",
+    "Industry Guidelines & White Papers"
+  ],
+  "2023-data-recording-and-analysis": [
+    "Quantitative, computational & statistical methods",
+    "Book Chapter"
+  ],
+  "2023-effects-of-economic-context-and-reward-amount-on-delay-and-probab": [
+    "Basic Principles and Their Interactions",
+    "Empirical"
+  ],
+  "2023-efficacy-of-edible-and-leisure-reinforcers-with-domestic-dogs": [
+    "Translating Basic Principles to Non-Laboratory Settings",
+    "Empirical"
+  ],
+  "2023-examination-of-ethical-decision-making-models-across-disciplines": [
+    "Ethics & ethical decision-making",
+    "Literature Review"
+  ],
+  "2023-identifying-trends-in-the-open-access-behavior-analytic-literatur": [
+    "Quantitative, computational & statistical methods",
+    "Verbal Behavior",
+    "History of Behavior Analysis",
+    "Empirical"
+  ],
+  "2023-statistics-for-aba-practitioners-and-researchers": [
+    "Quantitative, computational & statistical methods",
+    "Book"
+  ],
+  "2022-discounting-under-severe-weather-threat": [
+    "Translating Basic Principles to Non-Laboratory Settings",
+    "Empirical"
+  ],
+  "2022-ethical-decision-making-and-evidenced-based-practices": [
+    "Ethics & ethical decision-making",
+    "Clinical Decision-Making",
+    "Book Chapter"
+  ],
+  "2022-ethical-principles-and-values-guiding-modern-scientific-research": [
+    "Ethics & ethical decision-making",
+    "Research Methodologies",
+    "Book Chapter"
+  ],
+  "2022-practical-ethics-for-effective-treatment-of-autism-spectrum-disor": [
+    "Translating Basic Principles to Non-Laboratory Settings",
+    "Ethics & ethical decision-making",
+    "Book"
+  ],
+  "2022-quarterly-strategic-benchmark-report-parent-and-guardian-satisfac": [
+    "Empirical",
+    "Industry Guidelines & White Papers"
+  ],
+  "2022-quarterly-strategic-benchmark-report-predicting-staff-satisfactio": [
+    "Empirical",
+    "Industry Guidelines & White Papers"
+  ],
+  "2022-research-ethics-in-behavior-analysis-from-laboratory-to-clinic-an": [
+    "Ethics & ethical decision-making",
+    "Research Methodologies",
+    "Book"
+  ],
+  "2022-scaling-n-from-1-to-1-000-000-application-of-the-generalized-matc": [
+    "Translating Basic Principles to Non-Laboratory Settings",
+    "Quantitative, computational & statistical methods",
+    "Empirical"
+  ],
+  "2022-training-staff-to-create-equivalence-based-instruction-materials": [
+    "Clinical Decision-Making",
+    "Research Methodologies",
+    "Empirical"
+  ],
+  "2022-what-s-the-big-idea-a-preliminary-investigation-of-behavior-analy": [
+    "Clinical Decision-Making",
+    "Discussion/Theoretical"
+  ],
+  "2021-a-creative-destruction-approach-to-replication-implicit-work-and": [
+    "Ethics & ethical decision-making",
+    "Research Methodologies",
+    "Empirical"
+  ],
+  "2021-a-proof-of-concept-analysis-of-decision-making-with-time-series-d": [
+    "Translating Basic Principles to Non-Laboratory Settings",
+    "Clinical Decision-Making",
+    "Empirical"
+  ],
+  "2021-descriptive-and-normative-ethical-behavior-appear-to-be-functiona": [
+    "Translating Basic Principles to Non-Laboratory Settings",
+    "Ethics & ethical decision-making",
+    "Clinical Decision-Making",
+    "Verbal Behavior",
+    "Empirical"
+  ],
+  "2021-predicting-changes-in-substance-use-following-psychedelic-experie": [
+    "Quantitative, computational & statistical methods",
+    "Substance use",
+    "Verbal Behavior",
+    "Empirical"
+  ],
+  "2021-quarterly-strategic-benchmark-report-2001-aba-compensation-turnov": [
+    "Empirical",
+    "Industry Guidelines & White Papers"
+  ],
+  "2021-quarterly-strategic-benchmark-report-fiscal-metrics": [
+    "Empirical",
+    "Industry Guidelines & White Papers"
+  ],
+  "2021-quarterly-strategic-benchmark-report-predicting-turnover-in-aba-o": [
+    "Empirical",
+    "Industry Guidelines & White Papers"
+  ],
+  "2021-sexual-arousal-discounting-devaluing-condom-protected-sex-as-a-fu": [
+    "Translating Basic Principles to Non-Laboratory Settings",
+    "Empirical"
+  ],
+  "2021-sexual-discounting-a-systematic-review-of-discounting-processes-a": [
+    "Translating Basic Principles to Non-Laboratory Settings",
+    "Basic Principles and Their Interactions",
+    "Literature Review"
+  ],
+  "2021-the-influence-of-episodic-future-thinking-and-graphic-warning-lab": [
+    "Translating Basic Principles to Non-Laboratory Settings",
+    "Basic Principles and Their Interactions",
+    "Substance use",
+    "Verbal Behavior",
+    "Empirical"
+  ],
+  "2021-verbal-behavior-related-to-drug-reinforcement-in-polysubstance-ca": [
+    "Translating Basic Principles to Non-Laboratory Settings",
+    "Substance use",
+    "Verbal Behavior",
+    "Empirical"
+  ],
+  "2020-a-guide-to-establishing-ethics-committees": [
+    "Ethics & ethical decision-making",
+    "Discussion/Theoretical"
+  ],
+  "2020-a-proposed-process-for-risk-mitigation-during-the-covid-19-pandem": [
+    "Ethics & ethical decision-making",
+    "Clinical Decision-Making",
+    "Discussion/Theoretical"
+  ],
+  "2020-a-review-of-the-literature-on-staff-training-strategies-that-mini": [
+    "Clinical Decision-Making",
+    "Literature Review"
+  ],
+  "2020-comparison-of-multiplicative-and-additive-hyperbolic-and-hyperbol": [
+    "Basic Principles and Their Interactions",
+    "Empirical"
+  ],
+  "2020-delay-and-probability-discounting-in-cocaine-use-disorder-compreh": [
+    "Translating Basic Principles to Non-Laboratory Settings",
+    "Basic Principles and Their Interactions",
+    "Substance use",
+    "Empirical"
+  ],
+  "2020-kratom-mitragyna-speciosa-user-demographics-use-patterns-and-impl": [
+    "Substance use",
+    "Discussion/Theoretical"
+  ],
+  "2019-a-multidisciplinary-replication-of-upper-s-1974-unsuccessful-self": [
+    "Discussion/Theoretical"
+  ],
+  "2019-an-evaluation-of-explicit-ethical-statements-in-telehealth-resear": [
+    "Ethics & ethical decision-making",
+    "Literature Review"
+  ],
+  "2019-ethical-considerations-in-interdisciplinary-treatments": [
+    "Ethics & ethical decision-making",
+    "Book Chapter"
+  ],
+  "2019-multiple-control-responses-and-resurgence-of-human-behavior": [
+    "Basic Principles and Their Interactions",
+    "Empirical"
+  ],
+  "2019-still-lost-in-translation": [
+    "Ethics & ethical decision-making",
+    "Discussion/Theoretical"
+  ],
+  "2019-the-many-functions-of-quantitative-modeling": [
+    "Quantitative, computational & statistical methods",
+    "Discussion/Theoretical"
+  ],
+  "2018-any-reward-will-do-effects-of-reversed-contingencies-on-size-pref": [
+    "Translating Basic Principles to Non-Laboratory Settings",
+    "Empirical"
+  ],
+  "2018-function-matters-a-review-of-terminological-differences-in-applie": [
+    "Research Methodologies",
+    "Verbal Behavior",
+    "Literature Review"
+  ],
+  "2018-further-comparison-of-5-trial-adjusting-delay-and-probability-tas": [
+    "Research Methodologies",
+    "Empirical"
+  ],
+  "2018-how-to-identify-ethical-practices-in-organizations-prior-to-emplo": [
+    "Ethics & ethical decision-making",
+    "Discussion/Theoretical"
+  ],
+  "2018-influence-of-second-outcome-on-monetary-discounting": [
+    "Basic Principles and Their Interactions",
+    "Empirical"
+  ],
+  "2018-lost-in-translation-a-reply-to-shyman-2016": [
+    "Ethics & ethical decision-making",
+    "Discussion/Theoretical"
+  ],
+  "2018-practical-ethics-for-effective-treatment-of-autism-spectrum-disor": [
+    "Ethics & ethical decision-making",
+    "Book"
+  ],
+  "2018-verbal-behavior-and-risky-choice-in-humans-exploring-the-boundari": [
+    "Basic Principles and Their Interactions",
+    "Verbal Behavior",
+    "Empirical"
+  ],
+  "2017-application-of-the-matching-law-to-pitch-selection-in-professiona": [
+    "Translating Basic Principles to Non-Laboratory Settings",
+    "Quantitative, computational & statistical methods",
+    "Empirical"
+  ],
+  "2017-differences-in-delay-but-not-probability-discounting-in-smokers-n": [
+    "Basic Principles and Their Interactions",
+    "Substance use",
+    "Empirical"
+  ],
+  "2017-evaluating-resurgence-procedures-in-a-human-operant-laboratory": [
+    "Basic Principles and Their Interactions",
+    "Empirical"
+  ],
+  "2016-a-brief-overview-of-within-subject-experimental-design-logic-for": [
+    "Research Methodologies",
+    "Discussion/Theoretical"
+  ],
+  "2016-developing-coalitions-for-effective-action-the-five-horsemen-of-t": [
+    "Book Review"
+  ],
+  "2016-effects-of-delay-and-probability-combinations-on-discounting-in-h": [
+    "Basic Principles and Their Interactions",
+    "Empirical"
+  ],
+  "2012-from-interdisciplinary-to-integrated-care-of-the-child-with-autis": [
+    "Ethics & ethical decision-making",
+    "Discussion/Theoretical"
+  ]
+}

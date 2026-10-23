@@ -33,6 +33,59 @@
       "label": "Substance use"
     }
   ],
+  "topics": [
+    {
+      "id": 0,
+      "label": "Translating Basic Principles to Non-Laboratory Settings"
+    },
+    {
+      "id": 1,
+      "label": "Ethics & ethical decision-making"
+    },
+    {
+      "id": 2,
+      "label": "Quantitative, computational & statistical methods"
+    },
+    {
+      "id": 3,
+      "label": "Basic Principles and Their Interactions"
+    },
+    {
+      "id": 4,
+      "label": "Clinical Decision-Making"
+    },
+    {
+      "id": 5,
+      "label": "Research Methodologies"
+    },
+    {
+      "id": 6,
+      "label": "Artificial organisms"
+    },
+    {
+      "id": 7,
+      "label": "Substance use"
+    },
+    {
+      "id": 8,
+      "label": "Verbal Behavior"
+    },
+    {
+      "id": 9,
+      "label": "History of Behavior Analysis"
+    }
+  ],
+  "forms": [
+    "Empirical",
+    "Discussion/Theoretical",
+    "Literature Review",
+    "Editorial",
+    "Book Review",
+    "Magazine Article",
+    "Book",
+    "Book Chapter",
+    "Industry Guidelines & White Papers"
+  ],
   "items": [
     {
       "kind": "article",
@@ -45,7 +98,15 @@
       "map": "inpress-what-should-we-tell-our-students",
       "cluster": 0,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
-      "id": "inpress-what-should-we-tell-our-students"
+      "id": "inpress-what-should-we-tell-our-students",
+      "topics": [
+        0
+      ],
+      "forms": [
+        "Discussion/Theoretical",
+        "Magazine Article"
+      ],
+      "primary": 0
     },
     {
       "kind": "article",
@@ -58,7 +119,14 @@
       "map": "inreview-extending-conversation-ethical-ai-aba",
       "cluster": 1,
       "topic": "Ethics & ethical decision-making",
-      "id": "inreview-extending-the-conversation-around-the-ethical-use-of-ai-in-ab"
+      "id": "inreview-extending-the-conversation-around-the-ethical-use-of-ai-in-ab",
+      "topics": [
+        1,
+        2,
+        4
+      ],
+      "forms": [],
+      "primary": 1
     },
     {
       "kind": "article",
@@ -71,7 +139,16 @@
       "map": "inreview-merging-nlp-computational-quantitative-analyses-vb",
       "cluster": 2,
       "topic": "Quantitative, computational & statistical methods",
-      "id": "inreview-merging-natural-language-processing-with-computational-quanti"
+      "id": "inreview-merging-natural-language-processing-with-computational-quanti",
+      "topics": [
+        2,
+        5,
+        8
+      ],
+      "forms": [
+        "Discussion/Theoretical"
+      ],
+      "primary": 2
     },
     {
       "kind": "article",
@@ -84,7 +161,16 @@
       "map": "inreview-what-is-presented-what-is-published",
       "cluster": 5,
       "topic": "Research Methodologies",
-      "id": "inreview-what-is-presented-and-what-is-published-comparing-topic-distr"
+      "id": "inreview-what-is-presented-and-what-is-published-comparing-topic-distr",
+      "topics": [
+        2,
+        8,
+        9
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 2
     },
     {
       "kind": "article",
@@ -97,7 +183,14 @@
       "map": "preprint-ai-clinical-decision-support-review",
       "cluster": 4,
       "topic": "Clinical Decision-Making",
-      "id": "preprint-current-support-for-ai-driven-clinical-decision-support-in-ap"
+      "id": "preprint-current-support-for-ai-driven-clinical-decision-support-in-ap",
+      "topics": [
+        4
+      ],
+      "forms": [
+        "Literature Review"
+      ],
+      "primary": 4
     },
     {
       "kind": "article",
@@ -110,7 +203,15 @@
       "map": "preprint-dose-response-individual-phenomenon",
       "cluster": 4,
       "topic": "Clinical Decision-Making",
-      "id": "preprint-dose-response-for-intervention-is-an-individual-not-group-phe"
+      "id": "preprint-dose-response-for-intervention-is-an-individual-not-group-phe",
+      "topics": [
+        2,
+        4
+      ],
+      "forms": [
+        "Discussion/Theoretical"
+      ],
+      "primary": 4
     },
     {
       "kind": "article",
@@ -123,7 +224,14 @@
       "map": "preprint-experiential-discounting-earnings-budgets",
       "cluster": 3,
       "topic": "Basic Principles and Their Interactions",
-      "id": "preprint-experiential-delay-and-probability-discounting-during-positiv"
+      "id": "preprint-experiential-delay-and-probability-discounting-during-positiv",
+      "topics": [
+        3
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 3
     },
     {
       "kind": "article",
@@ -136,7 +244,14 @@
       "map": "preprint-cluster-analyses-asd",
       "cluster": 2,
       "topic": "Quantitative, computational & statistical methods",
-      "id": "preprint-influence-of-sample-size-feature-set-and-algorithm-on-cluster"
+      "id": "preprint-influence-of-sample-size-feature-set-and-algorithm-on-cluster",
+      "topics": [
+        2
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 2
     },
     {
       "kind": "article",
@@ -149,7 +264,15 @@
       "map": "preprint-3-9-million-aba-sessions",
       "cluster": 2,
       "topic": "Quantitative, computational & statistical methods",
-      "id": "preprint-initial-description-of-3-9-million-unique-aba-sessions"
+      "id": "preprint-initial-description-of-3-9-million-unique-aba-sessions",
+      "topics": [
+        2,
+        4
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 2
     },
     {
       "kind": "article",
@@ -162,7 +285,14 @@
       "map": "preprint-keystone-contingencies-repertoires",
       "cluster": 3,
       "topic": "Basic Principles and Their Interactions",
-      "id": "preprint-keystone-contingencies-and-the-organization-of-behavioral-rep"
+      "id": "preprint-keystone-contingencies-and-the-organization-of-behavioral-rep",
+      "topics": [
+        3
+      ],
+      "forms": [
+        "Discussion/Theoretical"
+      ],
+      "primary": 3
     },
     {
       "kind": "article",
@@ -175,7 +305,15 @@
       "map": "preprint-predicting-choice-earning-budgets-models",
       "cluster": 3,
       "topic": "Basic Principles and Their Interactions",
-      "id": "preprint-predicting-choice-under-positive-and-negative-earning-budgets"
+      "id": "preprint-predicting-choice-under-positive-and-negative-earning-budgets",
+      "topics": [
+        2,
+        3
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 3
     },
     {
       "kind": "article",
@@ -188,7 +326,15 @@
       "map": "preprint-behavior-dynamic-models-foraging",
       "cluster": 3,
       "topic": "Basic Principles and Their Interactions",
-      "id": "preprint-testing-behavior-dynamic-models-to-predict-choice-in-a-non-st"
+      "id": "preprint-testing-behavior-dynamic-models-to-predict-choice-in-a-non-st",
+      "topics": [
+        2,
+        3
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 3
     },
     {
       "kind": "article",
@@ -201,7 +347,14 @@
       "map": "preprint-ml-pigeon-peck-irts-choices",
       "cluster": 2,
       "topic": "Quantitative, computational & statistical methods",
-      "id": "preprint-using-machine-learning-for-multiscale-nonlinear-dynamical-ana"
+      "id": "preprint-using-machine-learning-for-multiscale-nonlinear-dynamical-ana",
+      "topics": [
+        2
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 2
     },
     {
       "kind": "article",
@@ -214,7 +367,14 @@
       "map": "2026-a-guide-to-choosing-a-balanced-outcomes-measurement-por",
       "cluster": 4,
       "topic": "Clinical Decision-Making",
-      "id": "2026-a-guide-to-choosing-a-balanced-outcomes-measurement-portfolio-in"
+      "id": "2026-a-guide-to-choosing-a-balanced-outcomes-measurement-portfolio-in",
+      "topics": [
+        4
+      ],
+      "forms": [
+        "Discussion/Theoretical"
+      ],
+      "primary": 4
     },
     {
       "kind": "article",
@@ -227,7 +387,15 @@
       "map": "2026-a-proof-of-concept-demonstration-for-how-to-evaluate-cl",
       "cluster": 0,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
-      "id": "2026-a-proof-of-concept-demonstration-for-how-to-evaluate-clinical-dec"
+      "id": "2026-a-proof-of-concept-demonstration-for-how-to-evaluate-clinical-dec",
+      "topics": [
+        4,
+        5
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 4
     },
     {
       "kind": "article",
@@ -240,7 +408,16 @@
       "map": "2026-choice-with-ethical-outcomes-sign-effect-commodity-effe",
       "cluster": 1,
       "topic": "Ethics & ethical decision-making",
-      "id": "2026-choice-with-ethical-outcomes-sign-effect-commodity-effect-ethical"
+      "id": "2026-choice-with-ethical-outcomes-sign-effect-commodity-effect-ethical",
+      "topics": [
+        0,
+        1,
+        8
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 1
     },
     {
       "kind": "article",
@@ -253,7 +430,14 @@
       "map": "2026-crowdsourced-analysis-of-single-case-experimental-desig",
       "cluster": 2,
       "topic": "Quantitative, computational & statistical methods",
-      "id": "2026-crowdsourced-analysis-of-single-case-experimental-design-data"
+      "id": "2026-crowdsourced-analysis-of-single-case-experimental-design-data",
+      "topics": [
+        2
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 2
     },
     {
       "kind": "article",
@@ -266,7 +450,14 @@
       "map": "2026-evaluating-the-combined-effects-of-effort-and-probabili",
       "cluster": 3,
       "topic": "Basic Principles and Their Interactions",
-      "id": "2026-evaluating-the-combined-effects-of-effort-and-probability-on-mone"
+      "id": "2026-evaluating-the-combined-effects-of-effort-and-probability-on-mone",
+      "topics": [
+        3
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 3
     },
     {
       "kind": "book",
@@ -279,7 +470,12 @@
       "map": null,
       "cluster": null,
       "topic": null,
-      "id": "2026-introduction-to-mathematical-modeling-in-behavior-science"
+      "id": "2026-introduction-to-mathematical-modeling-in-behavior-science",
+      "topics": [],
+      "forms": [
+        "Book"
+      ],
+      "primary": null
     },
     {
       "kind": "article",
@@ -292,7 +488,15 @@
       "map": "2026-using-ml-to-analyze-alternating-treatment-graphs",
       "cluster": 2,
       "topic": "Quantitative, computational & statistical methods",
-      "id": "2026-machine-learning-to-analyze-alternating-treatment-graphs"
+      "id": "2026-machine-learning-to-analyze-alternating-treatment-graphs",
+      "topics": [
+        2,
+        4
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 2
     },
     {
       "kind": "chapter",
@@ -305,7 +509,17 @@
       "map": "2026-of-models-vectors-and-matrices-advancing-analyses-of-th",
       "cluster": 2,
       "topic": "Quantitative, computational & statistical methods",
-      "id": "2026-of-models-vectors-matrices-advancing-analyses-of-the-multiple-con"
+      "id": "2026-of-models-vectors-matrices-advancing-analyses-of-the-multiple-con",
+      "topics": [
+        0,
+        2,
+        3
+      ],
+      "forms": [
+        "Discussion/Theoretical",
+        "Book Chapter"
+      ],
+      "primary": 2
     },
     {
       "kind": "chapter",
@@ -318,7 +532,15 @@
       "map": "2026-rl-in-behavior-science-and-ai",
       "cluster": 6,
       "topic": "Artificial organisms",
-      "id": "2026-reinforcement-learning-in-behavior-science-and-artificial-intelli"
+      "id": "2026-reinforcement-learning-in-behavior-science-and-artificial-intelli",
+      "topics": [
+        6
+      ],
+      "forms": [
+        "Discussion/Theoretical",
+        "Book Chapter"
+      ],
+      "primary": 6
     },
     {
       "kind": "article",
@@ -331,7 +553,14 @@
       "map": "2026-survey-of-open-science-practices-in-behavior-analysis",
       "cluster": 5,
       "topic": "Research Methodologies",
-      "id": "2026-survey-of-open-science-practices-in-behavior-analysis"
+      "id": "2026-survey-of-open-science-practices-in-behavior-analysis",
+      "topics": [
+        5
+      ],
+      "forms": [
+        "Discussion/Theoretical"
+      ],
+      "primary": 5
     },
     {
       "kind": "article",
@@ -344,7 +573,14 @@
       "map": "2026-the-effects-of-assignment-choice-on-quiz-performance-an",
       "cluster": 0,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
-      "id": "2026-the-effects-of-assignment-choice-on-quiz-performance-and-student"
+      "id": "2026-the-effects-of-assignment-choice-on-quiz-performance-and-student",
+      "topics": [
+        0
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 0
     },
     {
       "kind": "article",
@@ -357,7 +593,15 @@
       "map": "2026-toward-a-dynamical-systems-account-of-behavioral-networ",
       "cluster": 3,
       "topic": "Basic Principles and Their Interactions",
-      "id": "2026-toward-a-dynamical-systems-account-of-behavioral-networks-integra"
+      "id": "2026-toward-a-dynamical-systems-account-of-behavioral-networks-integra",
+      "topics": [
+        2,
+        3
+      ],
+      "forms": [
+        "Discussion/Theoretical"
+      ],
+      "primary": 3
     },
     {
       "kind": "article",
@@ -370,7 +614,16 @@
       "map": "2026-verbal-frontiers-combining-words-in-the-wild-computatio",
       "cluster": 3,
       "topic": "Basic Principles and Their Interactions",
-      "id": "2026-verbal-frontiers-combining-words-in-the-wild-computational-modeli"
+      "id": "2026-verbal-frontiers-combining-words-in-the-wild-computational-modeli",
+      "topics": [
+        2,
+        3,
+        8
+      ],
+      "forms": [
+        "Discussion/Theoretical"
+      ],
+      "primary": 3
     },
     {
       "kind": "article",
@@ -383,7 +636,14 @@
       "map": "2025-a-data-driven-algorithmic-approach-to-recommending-hour",
       "cluster": 0,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
-      "id": "2025-a-data-driven-algorithmic-approach-to-recommending-hours-of-aba-f"
+      "id": "2025-a-data-driven-algorithmic-approach-to-recommending-hours-of-aba-f",
+      "topics": [
+        4
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 4
     },
     {
       "kind": "article",
@@ -396,7 +656,15 @@
       "map": "2025-an-invitation-from-artificial-intelligence",
       "cluster": 0,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
-      "id": "2025-an-invitation-from-artificial-intelligence"
+      "id": "2025-an-invitation-from-artificial-intelligence",
+      "topics": [
+        2,
+        9
+      ],
+      "forms": [
+        "Magazine Article"
+      ],
+      "primary": 2
     },
     {
       "kind": "report",
@@ -409,7 +677,14 @@
       "map": "2025-apa-health-advisory-on-the-use-of-generative-ai-chatbot",
       "cluster": 1,
       "topic": "Ethics & ethical decision-making",
-      "id": "2025-apa-health-advisory-on-the-use-of-generative-ai-chatbots-and-well"
+      "id": "2025-apa-health-advisory-on-the-use-of-generative-ai-chatbots-and-well",
+      "topics": [
+        1
+      ],
+      "forms": [
+        "Industry Guidelines & White Papers"
+      ],
+      "primary": 1
     },
     {
       "kind": "book",
@@ -422,7 +697,12 @@
       "map": "book-aba-for-business-and-technology-applications",
       "cluster": 0,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
-      "id": "2025-applied-behavior-analysis-for-business-and-technology-application"
+      "id": "2025-applied-behavior-analysis-for-business-and-technology-application",
+      "topics": [],
+      "forms": [
+        "Book"
+      ],
+      "primary": null
     },
     {
       "kind": "book",
@@ -435,7 +715,12 @@
       "map": "book-aba-for-clinical-educational-and-training-applications",
       "cluster": 0,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
-      "id": "2025-applied-behavior-analysis-for-clinical-educational-and-training-a"
+      "id": "2025-applied-behavior-analysis-for-clinical-educational-and-training-a",
+      "topics": [],
+      "forms": [
+        "Book"
+      ],
+      "primary": null
     },
     {
       "kind": "chapter",
@@ -448,7 +733,15 @@
       "map": "2025-chapter-8-behavioral-data-science",
       "cluster": 2,
       "topic": "Quantitative, computational & statistical methods",
-      "id": "2025-behavioral-data-science"
+      "id": "2025-behavioral-data-science",
+      "topics": [
+        2,
+        5
+      ],
+      "forms": [
+        "Book Chapter"
+      ],
+      "primary": 2
     },
     {
       "kind": "report",
@@ -461,7 +754,15 @@
       "map": "2025-practice-parameters-for-ai-use-in-aba",
       "cluster": 4,
       "topic": "Clinical Decision-Making",
-      "id": "2025-casp-practice-parameters-for-using-artificial-intelligence-in-app"
+      "id": "2025-casp-practice-parameters-for-using-artificial-intelligence-in-app",
+      "topics": [
+        1,
+        4
+      ],
+      "forms": [
+        "Industry Guidelines & White Papers"
+      ],
+      "primary": 4
     },
     {
       "kind": "article",
@@ -474,7 +775,15 @@
       "map": "2025-delay-discounting-and-teacher-decision-making-of-behavi",
       "cluster": 0,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
-      "id": "2025-delay-discounting-and-teacher-decision-making-of-behavioral-inter"
+      "id": "2025-delay-discounting-and-teacher-decision-making-of-behavioral-inter",
+      "topics": [
+        0,
+        4
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 0
     },
     {
       "kind": "article",
@@ -487,7 +796,15 @@
       "map": "2025-escape-from-static-flatland-how-might-behavior-as-movem",
       "cluster": 2,
       "topic": "Quantitative, computational & statistical methods",
-      "id": "2025-escape-from-static-flatland-how-might-behavior-as-movement-be-cap"
+      "id": "2025-escape-from-static-flatland-how-might-behavior-as-movement-be-cap",
+      "topics": [
+        2,
+        5
+      ],
+      "forms": [
+        "Discussion/Theoretical"
+      ],
+      "primary": 2
     },
     {
       "kind": "article",
@@ -500,7 +817,14 @@
       "map": "2025-ethical-behavior-analysis-in-the-age-of-ai-the-importan",
       "cluster": 1,
       "topic": "Ethics & ethical decision-making",
-      "id": "2025-ethical-behavior-analysis-in-the-age-of-artificial-intelligence-a"
+      "id": "2025-ethical-behavior-analysis-in-the-age-of-artificial-intelligence-a",
+      "topics": [
+        1
+      ],
+      "forms": [
+        "Discussion/Theoretical"
+      ],
+      "primary": 1
     },
     {
       "kind": "article",
@@ -513,7 +837,15 @@
       "map": "2025-evaluation-of-statement-accuracy-on-ethical-decision-ma",
       "cluster": 0,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
-      "id": "2025-evaluation-of-statement-accuracy-on-ethical-decision-making"
+      "id": "2025-evaluation-of-statement-accuracy-on-ethical-decision-making",
+      "topics": [
+        0,
+        1
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 0
     },
     {
       "kind": "article",
@@ -526,7 +858,14 @@
       "map": "2025-extinction-in-free-ranging-aves-in-competition-with-sci",
       "cluster": 3,
       "topic": "Basic Principles and Their Interactions",
-      "id": "2025-extinction-in-free-ranging-aves-in-competition-with-sciurus-carol"
+      "id": "2025-extinction-in-free-ranging-aves-in-competition-with-sciurus-carol",
+      "topics": [
+        3
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 3
     },
     {
       "kind": "article",
@@ -539,7 +878,15 @@
       "map": "2025-getting-more-from-your-ioa-data-alternative-measures-to",
       "cluster": 2,
       "topic": "Quantitative, computational & statistical methods",
-      "id": "2025-getting-more-from-your-ioa-data-measures-additional-to-total-occu"
+      "id": "2025-getting-more-from-your-ioa-data-measures-additional-to-total-occu",
+      "topics": [
+        2,
+        5
+      ],
+      "forms": [
+        "Discussion/Theoretical"
+      ],
+      "primary": 2
     },
     {
       "kind": "article",
@@ -552,7 +899,16 @@
       "map": "2025-influence-of-televisibility-and-harm-probability-on-cli",
       "cluster": 0,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
-      "id": "2025-influence-of-televisibility-and-harm-probability-on-clinical-ethi"
+      "id": "2025-influence-of-televisibility-and-harm-probability-on-clinical-ethi",
+      "topics": [
+        0,
+        1,
+        4
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 0
     },
     {
       "kind": "article",
@@ -565,7 +921,16 @@
       "map": "2025-predicting-the-next-response-demonstrating-the-utility-",
       "cluster": 6,
       "topic": "Artificial organisms",
-      "id": "2025-predicting-the-next-response-demonstrating-the-utility-of-integra"
+      "id": "2025-predicting-the-next-response-demonstrating-the-utility-of-integra",
+      "topics": [
+        0,
+        2,
+        6
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 6
     },
     {
       "kind": "article",
@@ -578,7 +943,14 @@
       "map": "2025-sqab-2024-quantitative-frontiers-in-the-analysis-of-beh",
       "cluster": 2,
       "topic": "Quantitative, computational & statistical methods",
-      "id": "2025-sqab-2024-quantitative-frontiers-in-the-analysis-of-behavior"
+      "id": "2025-sqab-2024-quantitative-frontiers-in-the-analysis-of-behavior",
+      "topics": [
+        2
+      ],
+      "forms": [
+        "Editorial"
+      ],
+      "primary": 2
     },
     {
       "kind": "article",
@@ -591,7 +963,14 @@
       "map": "2025-toward-collapsing-the-is-ought-distinction-an-intro-to-",
       "cluster": 0,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
-      "id": "2025-toward-collapsing-the-is-ought-distinction-an-introduction-to-the"
+      "id": "2025-toward-collapsing-the-is-ought-distinction-an-introduction-to-the",
+      "topics": [
+        1
+      ],
+      "forms": [
+        "Editorial"
+      ],
+      "primary": 1
     },
     {
       "kind": "article",
@@ -604,7 +983,14 @@
       "map": "2024-a-qualitative-analysis-of-expert-interviews-on-safety-r",
       "cluster": 4,
       "topic": "Clinical Decision-Making",
-      "id": "2024-a-qualitative-analysis-of-expert-interviews-on-safety-and-risk"
+      "id": "2024-a-qualitative-analysis-of-expert-interviews-on-safety-and-risk",
+      "topics": [
+        4
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 4
     },
     {
       "kind": "article",
@@ -617,7 +1003,16 @@
       "map": "2024-experience-with-reduced-nicotine-cigarettes-and-whether",
       "cluster": 3,
       "topic": "Basic Principles and Their Interactions",
-      "id": "2024-experience-with-reduced-nicotine-cigarettes-and-whether-this-decr"
+      "id": "2024-experience-with-reduced-nicotine-cigarettes-and-whether-this-decr",
+      "topics": [
+        0,
+        3,
+        7
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 3
     },
     {
       "kind": "article",
@@ -630,7 +1025,12 @@
       "map": null,
       "cluster": null,
       "topic": null,
-      "id": "2024-proliferation-productivity-and-propagation-celebrating-the-next-w"
+      "id": "2024-proliferation-productivity-and-propagation-celebrating-the-next-w",
+      "topics": [],
+      "forms": [
+        "Editorial"
+      ],
+      "primary": null
     },
     {
       "kind": "article",
@@ -643,7 +1043,14 @@
       "map": "2024-readme-the-code-to-create-the-cover-toc-graphs",
       "cluster": 2,
       "topic": "Quantitative, computational & statistical methods",
-      "id": "2024-readme-the-code-to-create-the-cover-toc-graphs"
+      "id": "2024-readme-the-code-to-create-the-cover-toc-graphs",
+      "topics": [
+        2
+      ],
+      "forms": [
+        "Editorial"
+      ],
+      "primary": 2
     },
     {
       "kind": "article",
@@ -656,7 +1063,16 @@
       "map": "2024-starting-the-conversation-around-the-ethical-use-of-ai-",
       "cluster": 1,
       "topic": "Ethics & ethical decision-making",
-      "id": "2024-starting-the-conversation-around-the-ethical-use-of-artificial-in"
+      "id": "2024-starting-the-conversation-around-the-ethical-use-of-artificial-in",
+      "topics": [
+        1,
+        2,
+        4
+      ],
+      "forms": [
+        "Discussion/Theoretical"
+      ],
+      "primary": 1
     },
     {
       "kind": "article",
@@ -669,7 +1085,17 @@
       "map": "2024-the-challenges-ahead-concepts-analytics-and-ethics-of-v",
       "cluster": 0,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
-      "id": "2024-the-challenges-ahead-concepts-analytics-and-ethics-of-value-based"
+      "id": "2024-the-challenges-ahead-concepts-analytics-and-ethics-of-value-based",
+      "topics": [
+        0,
+        1,
+        2,
+        4
+      ],
+      "forms": [
+        "Discussion/Theoretical"
+      ],
+      "primary": 0
     },
     {
       "kind": "article",
@@ -682,7 +1108,14 @@
       "map": "2024-the-logic-and-code-behind-the-cover-toc-graphs",
       "cluster": 2,
       "topic": "Quantitative, computational & statistical methods",
-      "id": "2024-the-logic-and-code-behind-the-cover-toc-graphs"
+      "id": "2024-the-logic-and-code-behind-the-cover-toc-graphs",
+      "topics": [
+        2
+      ],
+      "forms": [
+        "Editorial"
+      ],
+      "primary": 2
     },
     {
       "kind": "article",
@@ -695,7 +1128,16 @@
       "map": "2024-the-promises-and-possibilities-of-ai-in-the-delivery-of",
       "cluster": 4,
       "topic": "Clinical Decision-Making",
-      "id": "2024-the-promises-and-possibilities-of-artificial-intelligence-in-the"
+      "id": "2024-the-promises-and-possibilities-of-artificial-intelligence-in-the",
+      "topics": [
+        0,
+        2,
+        4
+      ],
+      "forms": [
+        "Discussion/Theoretical"
+      ],
+      "primary": 4
     },
     {
       "kind": "article",
@@ -708,7 +1150,14 @@
       "map": "2024-we-live-in-interesting-times-intro-to-the-special-secti",
       "cluster": 2,
       "topic": "Quantitative, computational & statistical methods",
-      "id": "2024-we-live-in-interesting-times-introduction-to-the-special-section"
+      "id": "2024-we-live-in-interesting-times-introduction-to-the-special-section",
+      "topics": [
+        2
+      ],
+      "forms": [
+        "Editorial"
+      ],
+      "primary": 2
     },
     {
       "kind": "report",
@@ -721,7 +1170,17 @@
       "map": "2023-an-artificial-intelligence-driven-system-to-predict-asd",
       "cluster": 0,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
-      "id": "2023-an-artificial-intelligence-driven-system-to-predict-asd-outcomes"
+      "id": "2023-an-artificial-intelligence-driven-system-to-predict-asd-outcomes",
+      "topics": [
+        0,
+        2,
+        4
+      ],
+      "forms": [
+        "Empirical",
+        "Industry Guidelines & White Papers"
+      ],
+      "primary": 0
     },
     {
       "kind": "chapter",
@@ -734,7 +1193,14 @@
       "map": "2023-data-recording-and-analysis",
       "cluster": 2,
       "topic": "Quantitative, computational & statistical methods",
-      "id": "2023-data-recording-and-analysis"
+      "id": "2023-data-recording-and-analysis",
+      "topics": [
+        2
+      ],
+      "forms": [
+        "Book Chapter"
+      ],
+      "primary": 2
     },
     {
       "kind": "article",
@@ -747,7 +1213,14 @@
       "map": "2023-effects-of-economic-context-and-reward-amount-on-delay-",
       "cluster": 3,
       "topic": "Basic Principles and Their Interactions",
-      "id": "2023-effects-of-economic-context-and-reward-amount-on-delay-and-probab"
+      "id": "2023-effects-of-economic-context-and-reward-amount-on-delay-and-probab",
+      "topics": [
+        3
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 3
     },
     {
       "kind": "article",
@@ -760,7 +1233,14 @@
       "map": "2023-efficacy-of-edible-and-leisure-reinforcers-with-domesti",
       "cluster": 0,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
-      "id": "2023-efficacy-of-edible-and-leisure-reinforcers-with-domestic-dogs"
+      "id": "2023-efficacy-of-edible-and-leisure-reinforcers-with-domestic-dogs",
+      "topics": [
+        0
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 0
     },
     {
       "kind": "article",
@@ -773,7 +1253,14 @@
       "map": "2023-examination-of-ethical-decision-making-models-across-di",
       "cluster": 1,
       "topic": "Ethics & ethical decision-making",
-      "id": "2023-examination-of-ethical-decision-making-models-across-disciplines"
+      "id": "2023-examination-of-ethical-decision-making-models-across-disciplines",
+      "topics": [
+        1
+      ],
+      "forms": [
+        "Literature Review"
+      ],
+      "primary": 1
     },
     {
       "kind": "article",
@@ -786,7 +1273,16 @@
       "map": "2023-identifying-trends-in-the-open-access-behavior-analytic",
       "cluster": 2,
       "topic": "Quantitative, computational & statistical methods",
-      "id": "2023-identifying-trends-in-the-open-access-behavior-analytic-literatur"
+      "id": "2023-identifying-trends-in-the-open-access-behavior-analytic-literatur",
+      "topics": [
+        2,
+        8,
+        9
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 2
     },
     {
       "kind": "book",
@@ -799,7 +1295,14 @@
       "map": "2023-statistics-for-aba-practitioners-and-researchers",
       "cluster": 2,
       "topic": "Quantitative, computational & statistical methods",
-      "id": "2023-statistics-for-aba-practitioners-and-researchers"
+      "id": "2023-statistics-for-aba-practitioners-and-researchers",
+      "topics": [
+        2
+      ],
+      "forms": [
+        "Book"
+      ],
+      "primary": 2
     },
     {
       "kind": "article",
@@ -812,7 +1315,14 @@
       "map": "2022-discounting-under-severe-weather-threat",
       "cluster": 0,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
-      "id": "2022-discounting-under-severe-weather-threat"
+      "id": "2022-discounting-under-severe-weather-threat",
+      "topics": [
+        0
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 0
     },
     {
       "kind": "chapter",
@@ -825,7 +1335,15 @@
       "map": "2022-ethical-decision-making-and-ebps",
       "cluster": 1,
       "topic": "Ethics & ethical decision-making",
-      "id": "2022-ethical-decision-making-and-evidenced-based-practices"
+      "id": "2022-ethical-decision-making-and-evidenced-based-practices",
+      "topics": [
+        1,
+        4
+      ],
+      "forms": [
+        "Book Chapter"
+      ],
+      "primary": 1
     },
     {
       "kind": "chapter",
@@ -838,7 +1356,15 @@
       "map": "2022-ethical-principles-and-values-guiding-modern-scientific",
       "cluster": 1,
       "topic": "Ethics & ethical decision-making",
-      "id": "2022-ethical-principles-and-values-guiding-modern-scientific-research"
+      "id": "2022-ethical-principles-and-values-guiding-modern-scientific-research",
+      "topics": [
+        1,
+        5
+      ],
+      "forms": [
+        "Book Chapter"
+      ],
+      "primary": 1
     },
     {
       "kind": "book",
@@ -851,7 +1377,15 @@
       "map": "book-practical-ethics-for-effective-treatment-of-asd-2nd-ed",
       "cluster": 1,
       "topic": "Ethics & ethical decision-making",
-      "id": "2022-practical-ethics-for-effective-treatment-of-autism-spectrum-disor"
+      "id": "2022-practical-ethics-for-effective-treatment-of-autism-spectrum-disor",
+      "topics": [
+        0,
+        1
+      ],
+      "forms": [
+        "Book"
+      ],
+      "primary": 1
     },
     {
       "kind": "report",
@@ -864,7 +1398,13 @@
       "map": null,
       "cluster": null,
       "topic": null,
-      "id": "2022-quarterly-strategic-benchmark-report-parent-and-guardian-satisfac"
+      "id": "2022-quarterly-strategic-benchmark-report-parent-and-guardian-satisfac",
+      "topics": [],
+      "forms": [
+        "Empirical",
+        "Industry Guidelines & White Papers"
+      ],
+      "primary": null
     },
     {
       "kind": "report",
@@ -877,7 +1417,13 @@
       "map": null,
       "cluster": null,
       "topic": null,
-      "id": "2022-quarterly-strategic-benchmark-report-predicting-staff-satisfactio"
+      "id": "2022-quarterly-strategic-benchmark-report-predicting-staff-satisfactio",
+      "topics": [],
+      "forms": [
+        "Empirical",
+        "Industry Guidelines & White Papers"
+      ],
+      "primary": null
     },
     {
       "kind": "book",
@@ -890,7 +1436,15 @@
       "map": "2022-research-ethics-in-behavior-analysis",
       "cluster": 1,
       "topic": "Ethics & ethical decision-making",
-      "id": "2022-research-ethics-in-behavior-analysis-from-laboratory-to-clinic-an"
+      "id": "2022-research-ethics-in-behavior-analysis-from-laboratory-to-clinic-an",
+      "topics": [
+        1,
+        5
+      ],
+      "forms": [
+        "Book"
+      ],
+      "primary": 1
     },
     {
       "kind": "article",
@@ -903,7 +1457,15 @@
       "map": "2021-scaling-n-from-1-to-1-000-000-application-of-the-gml-to",
       "cluster": 0,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
-      "id": "2022-scaling-n-from-1-to-1-000-000-application-of-the-generalized-matc"
+      "id": "2022-scaling-n-from-1-to-1-000-000-application-of-the-generalized-matc",
+      "topics": [
+        0,
+        2
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 0
     },
     {
       "kind": "article",
@@ -916,7 +1478,15 @@
       "map": "2022-training-staff-to-create-equivalence-based-instruction-",
       "cluster": 5,
       "topic": "Research Methodologies",
-      "id": "2022-training-staff-to-create-equivalence-based-instruction-materials"
+      "id": "2022-training-staff-to-create-equivalence-based-instruction-materials",
+      "topics": [
+        4,
+        5
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 5
     },
     {
       "kind": "article",
@@ -929,7 +1499,14 @@
       "map": "2022-what-s-the-big-idea",
       "cluster": 4,
       "topic": "Clinical Decision-Making",
-      "id": "2022-what-s-the-big-idea-a-preliminary-investigation-of-behavior-analy"
+      "id": "2022-what-s-the-big-idea-a-preliminary-investigation-of-behavior-analy",
+      "topics": [
+        4
+      ],
+      "forms": [
+        "Discussion/Theoretical"
+      ],
+      "primary": 4
     },
     {
       "kind": "article",
@@ -942,7 +1519,15 @@
       "map": "2021-a-creative-destruction-approach-to-replication-implicit",
       "cluster": 1,
       "topic": "Ethics & ethical decision-making",
-      "id": "2021-a-creative-destruction-approach-to-replication-implicit-work-and"
+      "id": "2021-a-creative-destruction-approach-to-replication-implicit-work-and",
+      "topics": [
+        1,
+        5
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 1
     },
     {
       "kind": "article",
@@ -955,7 +1540,15 @@
       "map": "2021-a-proof-of-concept-analysis-of-decision-making-with-tim",
       "cluster": 0,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
-      "id": "2021-a-proof-of-concept-analysis-of-decision-making-with-time-series-d"
+      "id": "2021-a-proof-of-concept-analysis-of-decision-making-with-time-series-d",
+      "topics": [
+        0,
+        4
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 0
     },
     {
       "kind": "article",
@@ -968,7 +1561,17 @@
       "map": "2021-descriptive-and-normative-ethical-behavior-appear-to-be",
       "cluster": 0,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
-      "id": "2021-descriptive-and-normative-ethical-behavior-appear-to-be-functiona"
+      "id": "2021-descriptive-and-normative-ethical-behavior-appear-to-be-functiona",
+      "topics": [
+        0,
+        1,
+        4,
+        8
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 0
     },
     {
       "kind": "article",
@@ -981,7 +1584,16 @@
       "map": "2021-predicting-changes-in-substance-use-following-psychedel",
       "cluster": 7,
       "topic": "Substance use",
-      "id": "2021-predicting-changes-in-substance-use-following-psychedelic-experie"
+      "id": "2021-predicting-changes-in-substance-use-following-psychedelic-experie",
+      "topics": [
+        2,
+        7,
+        8
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 7
     },
     {
       "kind": "report",
@@ -994,7 +1606,13 @@
       "map": null,
       "cluster": null,
       "topic": null,
-      "id": "2021-quarterly-strategic-benchmark-report-2001-aba-compensation-turnov"
+      "id": "2021-quarterly-strategic-benchmark-report-2001-aba-compensation-turnov",
+      "topics": [],
+      "forms": [
+        "Empirical",
+        "Industry Guidelines & White Papers"
+      ],
+      "primary": null
     },
     {
       "kind": "report",
@@ -1007,7 +1625,13 @@
       "map": null,
       "cluster": null,
       "topic": null,
-      "id": "2021-quarterly-strategic-benchmark-report-fiscal-metrics"
+      "id": "2021-quarterly-strategic-benchmark-report-fiscal-metrics",
+      "topics": [],
+      "forms": [
+        "Empirical",
+        "Industry Guidelines & White Papers"
+      ],
+      "primary": null
     },
     {
       "kind": "report",
@@ -1020,7 +1644,13 @@
       "map": null,
       "cluster": null,
       "topic": null,
-      "id": "2021-quarterly-strategic-benchmark-report-predicting-turnover-in-aba-o"
+      "id": "2021-quarterly-strategic-benchmark-report-predicting-turnover-in-aba-o",
+      "topics": [],
+      "forms": [
+        "Empirical",
+        "Industry Guidelines & White Papers"
+      ],
+      "primary": null
     },
     {
       "kind": "article",
@@ -1033,7 +1663,14 @@
       "map": "2021-sexual-arousal-discounting-devaluing-condom-protected-s",
       "cluster": 0,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
-      "id": "2021-sexual-arousal-discounting-devaluing-condom-protected-sex-as-a-fu"
+      "id": "2021-sexual-arousal-discounting-devaluing-condom-protected-sex-as-a-fu",
+      "topics": [
+        0
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 0
     },
     {
       "kind": "article",
@@ -1046,7 +1683,15 @@
       "map": "2021-sexual-discounting-a-systematic-review-of-discounting-p",
       "cluster": 0,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
-      "id": "2021-sexual-discounting-a-systematic-review-of-discounting-processes-a"
+      "id": "2021-sexual-discounting-a-systematic-review-of-discounting-processes-a",
+      "topics": [
+        0,
+        3
+      ],
+      "forms": [
+        "Literature Review"
+      ],
+      "primary": 0
     },
     {
       "kind": "article",
@@ -1059,7 +1704,17 @@
       "map": "2021-the-influence-of-eft-and-graphic-warnign-labels-on-dd-a",
       "cluster": 0,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
-      "id": "2021-the-influence-of-episodic-future-thinking-and-graphic-warning-lab"
+      "id": "2021-the-influence-of-episodic-future-thinking-and-graphic-warning-lab",
+      "topics": [
+        0,
+        3,
+        7,
+        8
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 0
     },
     {
       "kind": "article",
@@ -1072,7 +1727,16 @@
       "map": "2021-verbal-behavior-related-to-drug-reinforcement-in-polysu",
       "cluster": 0,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
-      "id": "2021-verbal-behavior-related-to-drug-reinforcement-in-polysubstance-ca"
+      "id": "2021-verbal-behavior-related-to-drug-reinforcement-in-polysubstance-ca",
+      "topics": [
+        0,
+        7,
+        8
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 0
     },
     {
       "kind": "article",
@@ -1085,7 +1749,14 @@
       "map": "2020-a-guide-to-establishing-ethics-committees-in-behavioral",
       "cluster": 1,
       "topic": "Ethics & ethical decision-making",
-      "id": "2020-a-guide-to-establishing-ethics-committees"
+      "id": "2020-a-guide-to-establishing-ethics-committees",
+      "topics": [
+        1
+      ],
+      "forms": [
+        "Discussion/Theoretical"
+      ],
+      "primary": 1
     },
     {
       "kind": "article",
@@ -1098,7 +1769,15 @@
       "map": "2020-a-proposed-process-for-risk-mitigation-during-the-covid",
       "cluster": 1,
       "topic": "Ethics & ethical decision-making",
-      "id": "2020-a-proposed-process-for-risk-mitigation-during-the-covid-19-pandem"
+      "id": "2020-a-proposed-process-for-risk-mitigation-during-the-covid-19-pandem",
+      "topics": [
+        1,
+        4
+      ],
+      "forms": [
+        "Discussion/Theoretical"
+      ],
+      "primary": 1
     },
     {
       "kind": "article",
@@ -1111,7 +1790,14 @@
       "map": "2020-a-review-of-the-literature-on-staff-training-strategies",
       "cluster": 4,
       "topic": "Clinical Decision-Making",
-      "id": "2020-a-review-of-the-literature-on-staff-training-strategies-that-mini"
+      "id": "2020-a-review-of-the-literature-on-staff-training-strategies-that-mini",
+      "topics": [
+        4
+      ],
+      "forms": [
+        "Literature Review"
+      ],
+      "primary": 4
     },
     {
       "kind": "article",
@@ -1124,7 +1810,14 @@
       "map": "2020-comparison-of-multiplicative-and-additive-hyperbolic-an",
       "cluster": 3,
       "topic": "Basic Principles and Their Interactions",
-      "id": "2020-comparison-of-multiplicative-and-additive-hyperbolic-and-hyperbol"
+      "id": "2020-comparison-of-multiplicative-and-additive-hyperbolic-and-hyperbol",
+      "topics": [
+        3
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 3
     },
     {
       "kind": "article",
@@ -1137,7 +1830,16 @@
       "map": "2020-dd-and-pd-in-cud-comprehensive-examination-of-money-coc",
       "cluster": 0,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
-      "id": "2020-delay-and-probability-discounting-in-cocaine-use-disorder-compreh"
+      "id": "2020-delay-and-probability-discounting-in-cocaine-use-disorder-compreh",
+      "topics": [
+        0,
+        3,
+        7
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 0
     },
     {
       "kind": "article",
@@ -1150,7 +1852,14 @@
       "map": "2020-kratom-user-demographics-use-patterns-and-implications-",
       "cluster": 7,
       "topic": "Substance use",
-      "id": "2020-kratom-mitragyna-speciosa-user-demographics-use-patterns-and-impl"
+      "id": "2020-kratom-mitragyna-speciosa-user-demographics-use-patterns-and-impl",
+      "topics": [
+        7
+      ],
+      "forms": [
+        "Discussion/Theoretical"
+      ],
+      "primary": 7
     },
     {
       "kind": "article",
@@ -1163,7 +1872,12 @@
       "map": "2019-a-multidisciplinary-replication-of-upper-s-1974-unsucee",
       "cluster": 5,
       "topic": "Research Methodologies",
-      "id": "2019-a-multidisciplinary-replication-of-upper-s-1974-unsuccessful-self"
+      "id": "2019-a-multidisciplinary-replication-of-upper-s-1974-unsuccessful-self",
+      "topics": [],
+      "forms": [
+        "Discussion/Theoretical"
+      ],
+      "primary": null
     },
     {
       "kind": "article",
@@ -1176,7 +1890,14 @@
       "map": "2019-an-evaluation-of-explicit-ethical-statements-in-telehea",
       "cluster": 1,
       "topic": "Ethics & ethical decision-making",
-      "id": "2019-an-evaluation-of-explicit-ethical-statements-in-telehealth-resear"
+      "id": "2019-an-evaluation-of-explicit-ethical-statements-in-telehealth-resear",
+      "topics": [
+        1
+      ],
+      "forms": [
+        "Literature Review"
+      ],
+      "primary": 1
     },
     {
       "kind": "chapter",
@@ -1189,7 +1910,14 @@
       "map": "2019-ethical-considerations-in-interdisciplinary-treatments",
       "cluster": 1,
       "topic": "Ethics & ethical decision-making",
-      "id": "2019-ethical-considerations-in-interdisciplinary-treatments"
+      "id": "2019-ethical-considerations-in-interdisciplinary-treatments",
+      "topics": [
+        1
+      ],
+      "forms": [
+        "Book Chapter"
+      ],
+      "primary": 1
     },
     {
       "kind": "article",
@@ -1202,7 +1930,14 @@
       "map": "2019-multiple-control-responses-and-resurgence-of-human-beha",
       "cluster": 3,
       "topic": "Basic Principles and Their Interactions",
-      "id": "2019-multiple-control-responses-and-resurgence-of-human-behavior"
+      "id": "2019-multiple-control-responses-and-resurgence-of-human-behavior",
+      "topics": [
+        3
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 3
     },
     {
       "kind": "article",
@@ -1215,7 +1950,14 @@
       "map": "2019-still-lost-in-translation",
       "cluster": 1,
       "topic": "Ethics & ethical decision-making",
-      "id": "2019-still-lost-in-translation"
+      "id": "2019-still-lost-in-translation",
+      "topics": [
+        1
+      ],
+      "forms": [
+        "Discussion/Theoretical"
+      ],
+      "primary": 1
     },
     {
       "kind": "article",
@@ -1228,7 +1970,14 @@
       "map": "2019-the-many-functions-of-quantitative-modeling",
       "cluster": 2,
       "topic": "Quantitative, computational & statistical methods",
-      "id": "2019-the-many-functions-of-quantitative-modeling"
+      "id": "2019-the-many-functions-of-quantitative-modeling",
+      "topics": [
+        2
+      ],
+      "forms": [
+        "Discussion/Theoretical"
+      ],
+      "primary": 2
     },
     {
       "kind": "article",
@@ -1241,7 +1990,14 @@
       "map": "2018-any-reward-will-do-effects-of-a-reverse-reward-continge",
       "cluster": 0,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
-      "id": "2018-any-reward-will-do-effects-of-reversed-contingencies-on-size-pref"
+      "id": "2018-any-reward-will-do-effects-of-reversed-contingencies-on-size-pref",
+      "topics": [
+        0
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 0
     },
     {
       "kind": "article",
@@ -1254,7 +2010,15 @@
       "map": "2018-function-matters-a-review-of-terminological-differences",
       "cluster": 5,
       "topic": "Research Methodologies",
-      "id": "2018-function-matters-a-review-of-terminological-differences-in-applie"
+      "id": "2018-function-matters-a-review-of-terminological-differences-in-applie",
+      "topics": [
+        5,
+        8
+      ],
+      "forms": [
+        "Literature Review"
+      ],
+      "primary": 5
     },
     {
       "kind": "article",
@@ -1267,7 +2031,14 @@
       "map": "2018-further-comparison-of-5-trial-adjusting-delay-and-proba",
       "cluster": 5,
       "topic": "Research Methodologies",
-      "id": "2018-further-comparison-of-5-trial-adjusting-delay-and-probability-tas"
+      "id": "2018-further-comparison-of-5-trial-adjusting-delay-and-probability-tas",
+      "topics": [
+        5
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 5
     },
     {
       "kind": "article",
@@ -1280,7 +2051,14 @@
       "map": "2018-how-to-identify-ethical-practices-in-organizations-prio",
       "cluster": 1,
       "topic": "Ethics & ethical decision-making",
-      "id": "2018-how-to-identify-ethical-practices-in-organizations-prior-to-emplo"
+      "id": "2018-how-to-identify-ethical-practices-in-organizations-prior-to-emplo",
+      "topics": [
+        1
+      ],
+      "forms": [
+        "Discussion/Theoretical"
+      ],
+      "primary": 1
     },
     {
       "kind": "article",
@@ -1293,7 +2071,14 @@
       "map": "2018-influence-of-second-outcome-on-monetary-discounting",
       "cluster": 3,
       "topic": "Basic Principles and Their Interactions",
-      "id": "2018-influence-of-second-outcome-on-monetary-discounting"
+      "id": "2018-influence-of-second-outcome-on-monetary-discounting",
+      "topics": [
+        3
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 3
     },
     {
       "kind": "article",
@@ -1306,7 +2091,14 @@
       "map": "2018-lost-in-translation-a-reply-to-shyman-2016",
       "cluster": 1,
       "topic": "Ethics & ethical decision-making",
-      "id": "2018-lost-in-translation-a-reply-to-shyman-2016"
+      "id": "2018-lost-in-translation-a-reply-to-shyman-2016",
+      "topics": [
+        1
+      ],
+      "forms": [
+        "Discussion/Theoretical"
+      ],
+      "primary": 1
     },
     {
       "kind": "book",
@@ -1319,7 +2111,14 @@
       "map": "book-practical-ethics-for-effective-treatment-of-asd-1st-ed",
       "cluster": 1,
       "topic": "Ethics & ethical decision-making",
-      "id": "2018-practical-ethics-for-effective-treatment-of-autism-spectrum-disor"
+      "id": "2018-practical-ethics-for-effective-treatment-of-autism-spectrum-disor",
+      "topics": [
+        1
+      ],
+      "forms": [
+        "Book"
+      ],
+      "primary": 1
     },
     {
       "kind": "article",
@@ -1332,7 +2131,15 @@
       "map": "2018-verbal-behavior-and-risky-choice-in-humans-exploring-th",
       "cluster": 3,
       "topic": "Basic Principles and Their Interactions",
-      "id": "2018-verbal-behavior-and-risky-choice-in-humans-exploring-the-boundari"
+      "id": "2018-verbal-behavior-and-risky-choice-in-humans-exploring-the-boundari",
+      "topics": [
+        3,
+        8
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 3
     },
     {
       "kind": "article",
@@ -1345,7 +2152,15 @@
       "map": "2017-application-of-the-matching-law-to-pitch-selection-in-p",
       "cluster": 0,
       "topic": "Translating Basic Principles to Non-Laboratory Settings",
-      "id": "2017-application-of-the-matching-law-to-pitch-selection-in-professiona"
+      "id": "2017-application-of-the-matching-law-to-pitch-selection-in-professiona",
+      "topics": [
+        0,
+        2
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 0
     },
     {
       "kind": "article",
@@ -1358,7 +2173,15 @@
       "map": "2017-differences-in-delay-but-not-probability-discounting-in",
       "cluster": 3,
       "topic": "Basic Principles and Their Interactions",
-      "id": "2017-differences-in-delay-but-not-probability-discounting-in-smokers-n"
+      "id": "2017-differences-in-delay-but-not-probability-discounting-in-smokers-n",
+      "topics": [
+        3,
+        7
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 3
     },
     {
       "kind": "article",
@@ -1371,7 +2194,14 @@
       "map": "2017-evaluating-resurgence-procedures-in-a-human-operant-lab",
       "cluster": 3,
       "topic": "Basic Principles and Their Interactions",
-      "id": "2017-evaluating-resurgence-procedures-in-a-human-operant-laboratory"
+      "id": "2017-evaluating-resurgence-procedures-in-a-human-operant-laboratory",
+      "topics": [
+        3
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 3
     },
     {
       "kind": "article",
@@ -1384,7 +2214,14 @@
       "map": "2016-a-brief-overview-of-within-subject-experimental-design-",
       "cluster": 5,
       "topic": "Research Methodologies",
-      "id": "2016-a-brief-overview-of-within-subject-experimental-design-logic-for"
+      "id": "2016-a-brief-overview-of-within-subject-experimental-design-logic-for",
+      "topics": [
+        5
+      ],
+      "forms": [
+        "Discussion/Theoretical"
+      ],
+      "primary": 5
     },
     {
       "kind": "article",
@@ -1397,7 +2234,12 @@
       "map": "2016-developing-coalitions-for-effective-action-the-five-hor",
       "cluster": 3,
       "topic": "Basic Principles and Their Interactions",
-      "id": "2016-developing-coalitions-for-effective-action-the-five-horsemen-of-t"
+      "id": "2016-developing-coalitions-for-effective-action-the-five-horsemen-of-t",
+      "topics": [],
+      "forms": [
+        "Book Review"
+      ],
+      "primary": null
     },
     {
       "kind": "article",
@@ -1410,7 +2252,14 @@
       "map": "2016-effects-of-delay-and-probability-combinations-on-discou",
       "cluster": 3,
       "topic": "Basic Principles and Their Interactions",
-      "id": "2016-effects-of-delay-and-probability-combinations-on-discounting-in-h"
+      "id": "2016-effects-of-delay-and-probability-combinations-on-discounting-in-h",
+      "topics": [
+        3
+      ],
+      "forms": [
+        "Empirical"
+      ],
+      "primary": 3
     },
     {
       "kind": "article",
@@ -1423,7 +2272,14 @@
       "map": "2012-from-interdisciplinary-to-integrated-care-of-the-child-",
       "cluster": 1,
       "topic": "Ethics & ethical decision-making",
-      "id": "2012-from-interdisciplinary-to-integrated-care-of-the-child-with-autis"
+      "id": "2012-from-interdisciplinary-to-integrated-care-of-the-child-with-autis",
+      "topics": [
+        1
+      ],
+      "forms": [
+        "Discussion/Theoretical"
+      ],
+      "primary": 1
     }
   ]
 }

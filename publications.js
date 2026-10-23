@@ -1,35 +1,39 @@
 /* Publications page. Renders window.PUBS (data/publications.js, built by
    scripts/build_publications.py) as a filterable index grouped by year.
-   Filters: text search, topic (topic-map clusters), type, and a year range
-   brushed on the histogram. */
+   Filters: text search, topic and form (multi-tags from
+   data/publication_tags.json; an entry passes if it carries any selected
+   tag), and a year range brushed on the histogram. */
 (function () {
   const D = window.PUBS;
   if (!D) return;
   // same palette and cluster ids as the topic map (topic-map.js)
   const PALETTE = ['#6cc5ff','#a98bff','#5fd6a4','#ffb454','#ff7a9c','#7ce0e0',
                    '#c3a3ff','#ffd166','#8fd694','#f4978e','#9aa6bd'];
-  const colorOf = id => id == null ? '#6b7689' : PALETTE[id % PALETTE.length];
-  const TYPES = [
-    ['article', 'Articles'], ['chapter', 'Chapters'], ['book', 'Books'],
-    ['report', 'Reports'], ['progress', 'In progress'],
-  ];
+  // topic ids 0-7 are the topic-map clusters; later ids are tags that have
+  // no map region of their own, so they take hues the map palette lacks
+  const TAG_COLORS = { 8: '#7d8cff', 9: '#c9a27e' };
+  const colorOf = id => id == null ? '#6b7689' : TAG_COLORS[id] || PALETTE[id % PALETTE.length];
+  const PROGRESS = 'In progress';
+  const FORMS = [...D.forms, PROGRESS];
+  const topicLabel = id => D.topics[id].label;
   const STATUS_GROUPS = [
     ['inpress', 'Forthcoming', 'In press'],
     ['inreview', 'In review', 'Under review'],
     ['preprint', 'Preprints', 'Working papers'],
   ];
-  const typeOf = p => p.status !== 'published' ? 'progress' : p.kind;
+  const formsOf = p => p.status !== 'published' ? [...p.forms, PROGRESS] : p.forms;
   const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c =>
     ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' }[c]));
 
   const items = D.items.map(p => ({
     ...p,
-    _hay: [p.title, p.authors, p.venue, p.topic].join(' ').toLowerCase(),
+    _forms: formsOf(p),
+    _hay: [p.title, p.authors, p.venue, ...p.topics.map(topicLabel), ...p.forms].join(' ').toLowerCase(),
   }));
   const years = items.filter(p => p.year).map(p => p.year);
   const minY = Math.min(...years), maxY = Math.max(...years);
 
-  const state = { q: '', topics: new Set(), types: new Set(), range: null };
+  const state = { q: '', topics: new Set(), forms: new Set(), range: null };
 
   const $ = id => document.getElementById(id);
   const list = $('pubs-list');
@@ -37,8 +41,8 @@
   // ---- filtering
   function passes(p, ignore) {
     if (state.q && !state.q.split(/\s+/).every(w => p._hay.includes(w))) return false;
-    if (ignore !== 'topic' && state.topics.size && !state.topics.has(p.cluster)) return false;
-    if (ignore !== 'type' && state.types.size && !state.types.has(typeOf(p))) return false;
+    if (ignore !== 'topic' && state.topics.size && !p.topics.some(t => state.topics.has(t))) return false;
+    if (ignore !== 'form' && state.forms.size && !p._forms.some(f => state.forms.has(f))) return false;
     if (ignore !== 'year' && state.range) {
       const [a, b] = state.range;
       if (p.year == null) return b === maxY;      // work in progress counts as current
@@ -58,13 +62,16 @@
     return 'Read';
   }
   function metaHTML(p) {
+    const topics = p.topics.map(t =>
+      `<span class="e-topic" style="--c:${colorOf(t)}"><span class="dot"></span>${esc(topicLabel(t))}</span>`);
     const bits = [];
-    if (p.cluster != null) bits.push(`<span class="e-topic"><span class="dot"></span>${esc(p.topic)}</span>`);
-    const kind = { article: 'Article', chapter: 'Chapter', book: 'Book', report: 'Report' }[p.kind];
-    bits.push(`<span class="e-kind">${kind}</span>`);
+    const forms = p.forms.length ? p.forms
+      : [{ article: 'Article', chapter: 'Chapter', book: 'Book', report: 'Report' }[p.kind]];
+    bits.push(`<span class="e-kind">${forms.map(esc).join(' &middot; ')}</span>`);
     if (p.link) bits.push(`<a href="${esc(p.link)}" target="_blank" rel="noopener">${linkLabel(p.link, p.status)}</a>`);
     if (p.map) bits.push(`<a href="index.html#paper=${encodeURIComponent(p.map)}">On the map</a>`);
-    return `<div class="e-meta">${bits.join('')}</div>`;
+    return (topics.length ? `<div class="e-meta e-topics">${topics.join('')}</div>` : '') +
+      `<div class="e-meta">${bits.join('')}</div>`;
   }
   function titleHTML(p) {
     const t = esc(p.title);
@@ -94,7 +101,7 @@
       <div class="ix-group">
         <div class="ix-label${g.words ? ' words' : ''}">${esc(g.label)}<small>${g.items.length} ${g.items.length === 1 ? 'work' : 'works'}</small></div>
         <div class="ix-entries">${g.items.map(p =>
-          `<article class="ix-entry" style="--c:${colorOf(p.cluster)}">${entryBody(p)}</article>`).join('')}</div>
+          `<article class="ix-entry" style="--c:${colorOf(p.primary)}">${entryBody(p)}</article>`).join('')}</div>
       </div>`).join('');
   }
 
@@ -111,15 +118,15 @@
   }
   function toggle(set, v) { set.has(v) ? set.delete(v) : set.add(v); render(); }
   function renderChips() {
-    const topics = $('pubs-topics'), types = $('pubs-types');
-    topics.replaceChildren(...D.clusters
-      .map(c => [c, items.filter(p => p.cluster === c.id && passes(p, 'topic')).length])
+    const topics = $('pubs-topics'), forms = $('pubs-types');
+    topics.replaceChildren(...D.topics
+      .map(c => [c, items.filter(p => p.topics.includes(c.id) && passes(p, 'topic')).length])
       .filter(([c, n]) => n || state.topics.has(c.id))
       .map(([c, n]) => chip(c.label, state.topics.has(c.id), colorOf(c.id), n, () => toggle(state.topics, c.id))));
-    types.replaceChildren(...TYPES
-      .map(([k, label]) => [k, label, items.filter(p => typeOf(p) === k && passes(p, 'type')).length])
-      .filter(([k, , n]) => n || state.types.has(k))
-      .map(([k, label, n]) => chip(label, state.types.has(k), null, n, () => toggle(state.types, k))));
+    forms.replaceChildren(...FORMS
+      .map(f => [f, items.filter(p => p._forms.includes(f) && passes(p, 'form')).length])
+      .filter(([f, n]) => n || state.forms.has(f))
+      .map(([f, n]) => chip(f, state.forms.has(f), null, n, () => toggle(state.forms, f))));
   }
 
   // ---- year histogram with a draggable range
@@ -143,7 +150,7 @@
       const inRange = !state.range || (y >= state.range[0] && y <= state.range[1]);
       let top = H - padB;
       const byCluster = {};
-      (counts[y] || []).forEach(p => { byCluster[p.cluster] = (byCluster[p.cluster] || 0) + 1; });
+      (counts[y] || []).forEach(p => { byCluster[p.primary] = (byCluster[p.primary] || 0) + 1; });
       Object.keys(byCluster).sort().forEach(k => {
         const h = byCluster[k] * unit;
         top -= h;
@@ -192,19 +199,19 @@
   $('pubs-q').addEventListener('input', e => { state.q = e.target.value.trim().toLowerCase(); render(); });
   $('pubs-reset').addEventListener('click', () => {
     state.q = ''; $('pubs-q').value = '';
-    state.topics.clear(); state.types.clear(); state.range = null;
+    state.topics.clear(); state.forms.clear(); state.range = null;
     render();
   });
   window.addEventListener('resize', () => renderHist());
 
   const total = items.length;
 
-  // names the active filters, e.g. "Showing 74 of 107: Articles, 2018 to 2022"
+  // names the active filters, e.g. "Showing 51 of 107: Empirical, 2018 to 2022"
   function activeFilters() {
     const parts = [];
     if (state.q) parts.push(`"${state.q}"`);
-    if (state.topics.size) parts.push(D.clusters.filter(c => state.topics.has(c.id)).map(c => c.label).join(' or '));
-    if (state.types.size) parts.push(TYPES.filter(([k]) => state.types.has(k)).map(([, l]) => l).join(' or '));
+    if (state.topics.size) parts.push(D.topics.filter(c => state.topics.has(c.id)).map(c => c.label).join(' or '));
+    if (state.forms.size) parts.push(FORMS.filter(f => state.forms.has(f)).join(' or '));
     if (state.range) parts.push(state.range[0] === state.range[1] ? `${state.range[0]}` : `${state.range[0]} to ${state.range[1]}`);
     return parts;
   }
