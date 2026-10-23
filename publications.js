@@ -6,12 +6,13 @@
 (function () {
   const D = window.PUBS;
   if (!D) return;
-  // same palette and cluster ids as the topic map (topic-map.js)
   const PALETTE = ['#3b8acd','#ab78fd','#1ff7df','#fecb28','#fe87ba','#379062',
                    '#7dc1fb','#e84d37','#6ac358','#be449c','#9aa6bd'];
-  // topic ids 0-7 are the topic-map clusters; 8 and 9 are tags with no map
-  // region. The ten hues were checked for normal and color-blind separation
-  // against the page background.
+  // topic ids are positions in the fixed _topics list of
+  // data/publication_tags.json (not map cluster ids, which shift with cluster
+  // size); 8 and 9 are tags with no map region. topic-map.js uses the same
+  // label -> color pairs. The ten hues were checked for normal and
+  // color-blind separation against the page background.
   const colorOf = id => id == null ? '#6b7689' : PALETTE[id % PALETTE.length];
   const PROGRESS = 'In progress';
   const FORMS = [...D.forms, PROGRESS];

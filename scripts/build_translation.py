@@ -87,7 +87,7 @@ MAP = [
     ("scaling n from 1 to 1,000,000", "matching", "ai"),
     ("sexual arousal discounting", "beh_econ", "health"),
     ("sexual discounting- a systematic review", "beh_econ", "health"),
-    ("influence of eft and graphic warnign labels", "beh_econ", "substance"),
+    ("influence of eft and graphic warning labels", "beh_econ", "substance"),
     ("verbal behavior related to drug reinforcement", "verbal", "substance"),
     ("dd and pd in cud", "beh_econ", "substance"),
     ("any reward will do", "reinforcement", "animal"),
