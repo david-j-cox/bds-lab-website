@@ -18,7 +18,7 @@
   color:var(--ink); font:inherit; font-size:.95rem; padding:.6rem .85rem;
 }
 .pubs-search input:focus{outline:2px solid var(--accent); outline-offset:1px; border-color:transparent}
-.pubs-chips{gap:6px}
+.pubs-chips{gap:6px; justify-content:center}
 .chip{
   display:inline-flex; align-items:center; gap:.45rem; background:transparent;
   border:1px solid var(--line); color:var(--muted); border-radius:999px;
