@@ -1,5 +1,13 @@
 [
   {
+    "id": "inpress-what-should-we-tell-our-students",
+    "type": "inpress",
+    "authors": "Cox, D. J.",
+    "title": "What should we tell our students?",
+    "url": "https://www.behavioral-data-science.org/documents/Cox-2026-what-should-we-tell-our-students.pdf",
+    "label": "Translating Basic Principles to Non-Laboratory Settings"
+  },
+  {
     "id": "inreview-merging-nlp-computational-quantitative-analyses-vb",
     "type": "inreview",
     "url": "https://doi.org/10.13140/RG.2.2.10723.92967",
