@@ -198,9 +198,6 @@
   window.addEventListener('resize', () => renderHist());
 
   const total = items.length;
-  $('pubs-lede').textContent =
-    `${total} articles, chapters, books, reports, and works in progress, ${minY} to the present. ` +
-    'Filter by topic or type, drag across the timeline to choose years, or search.';
 
   // names the active filters, e.g. "Showing 74 of 107: Articles, 2018 to 2022"
   function activeFilters() {
@@ -221,9 +218,11 @@
     $('pubs-range').textContent = state.range
       ? (state.range[0] === state.range[1] ? `${state.range[0]}` : `${state.range[0]} to ${state.range[1]}`)
       : `All years, ${minY} to ${maxY}`;
+    // the status line appears only while a filter is on
     $('pubs-count').innerHTML = active.length
       ? `Showing <b>${shown.length}</b> of ${total}: ${esc(active.join(', '))}`
-      : `All ${total} works`;
+      : '';
+    $('pubs-count').closest('.pubs-status').hidden = !active.length;
     if (!shown.length) {
       list.innerHTML = '<p class="pubs-empty">Nothing matches those filters.</p>';
       return;
