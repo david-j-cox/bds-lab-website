@@ -11,6 +11,9 @@
 
 /* ---- Controls ---- */
 .pubs-controls{display:grid; gap:12px; margin-bottom:10px}
+.pubs-filter{display:grid; grid-template-columns:132px 1fr; gap:0 28px; align-items:start}
+.pubs-filter-label{font-family:var(--serif); font-size:1.5rem; font-style:italic; line-height:1.1; color:var(--accent); padding-top:2px}
+.pubs-filter-label small{display:block; margin-top:.5rem; font-family:var(--sans); font-size:.72rem; font-style:normal; letter-spacing:.12em; text-transform:uppercase; color:var(--faint)}
 .pubs-row{display:flex; flex-wrap:wrap; align-items:center; gap:10px}
 .pubs-search{flex:1 1 280px}
 .pubs-search input{
@@ -57,9 +60,8 @@
 .e-meta{display:flex; flex-wrap:wrap; gap:.25rem .9rem; margin-top:.45rem; font-size:.76rem; color:var(--faint)}
 .e-meta a{color:var(--muted)}
 .e-meta a:hover{color:var(--accent)}
-.e-topics + .e-meta{margin-top:.2rem}
-.e-topic{display:inline-flex; align-items:center; gap:.35rem}
-.e-topic .dot{width:7px; height:7px; border-radius:50%; background:var(--c)}
+.e-topics{display:inline-flex; align-items:center; gap:4px}
+.e-topics .dot{width:8px; height:8px; border-radius:50%; background:var(--c)}
 .e-kind{text-transform:uppercase; letter-spacing:.12em; font-size:.66rem}
 
 /* ---- Index view ---- */
@@ -72,13 +74,13 @@
 .ix-label.words{font-size:1.5rem; font-style:italic; line-height:1.1; color:var(--accent)}
 .ix-label small{display:block; margin-top:.5rem; font-family:var(--sans); font-size:.72rem; font-style:normal; letter-spacing:.12em; text-transform:uppercase; color:var(--faint)}
 .ix-entries{columns:2 420px; column-gap:44px}
-.ix-entry{break-inside:avoid; padding:0 0 1.15rem; margin:0 0 1.15rem; border-bottom:1px solid rgba(39,48,74,.6); position:relative; padding-left:14px}
-.ix-entry::before{content:""; position:absolute; left:0; top:.55rem; width:4px; height:4px; border-radius:50%; background:var(--c,var(--faint))}
+.ix-entry{break-inside:avoid; padding:0 0 1.15rem; margin:0 0 1.15rem; border-bottom:1px solid rgba(39,48,74,.6)}
 
 .pubs-empty{padding:40px 0; color:var(--muted); font-family:var(--serif); font-size:1.15rem; font-style:italic}
 
 @media (max-width:760px){
-  .ix-group{grid-template-columns:1fr; gap:10px}
+  .ix-group, .pubs-filter{grid-template-columns:1fr; gap:10px}
+  .pubs-filter-label{font-size:1.3rem}
   .ix-label{position:static; font-size:2.2rem}
   .ix-label.words{font-size:1.3rem}
   .ix-entries{columns:1}

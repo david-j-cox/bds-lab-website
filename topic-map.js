@@ -1,7 +1,7 @@
 /* Topic-space map of the corpus. Vanilla canvas 2D — no dependencies. */
 (() => {
-  const PALETTE = ['#6cc5ff','#a98bff','#5fd6a4','#ffb454','#ff7a9c','#7ce0e0',
-                   '#c3a3ff','#ffd166','#8fd694','#f4978e','#9aa6bd'];
+  const PALETTE = ['#3b8acd','#ab78fd','#1ff7df','#fecb28','#fe87ba','#379062',
+                   '#7dc1fb','#e84d37','#6ac358','#be449c','#9aa6bd'];
   // Labels come straight from the data (your hand labels in data/labels.json).
   const LABEL_OVERRIDE = {};
 

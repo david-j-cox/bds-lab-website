@@ -54,8 +54,14 @@
                         <input type="search" id="pubs-q" placeholder="Search titles, authors, venues" autocomplete="off">
                     </label>
                 </div>
-                <div class="pubs-row pubs-chips" id="pubs-topics" aria-label="Topics"></div>
-                <div class="pubs-row pubs-chips" id="pubs-types" aria-label="Forms"></div>
+                <div class="pubs-filter">
+                    <div class="pubs-filter-label">Topics<small>Shown in color</small></div>
+                    <div class="pubs-row pubs-chips" id="pubs-topics" aria-label="Topics"></div>
+                </div>
+                <div class="pubs-filter">
+                    <div class="pubs-filter-label">Publication type</div>
+                    <div class="pubs-row pubs-chips" id="pubs-types" aria-label="Publication type"></div>
+                </div>
                 <div class="pubs-years">
                     <svg id="pubs-hist" role="img" aria-label="Publications per year; drag to filter by years"></svg>
                     <div class="pubs-years-label"><span id="pubs-range"></span></div>

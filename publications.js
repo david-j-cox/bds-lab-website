@@ -7,12 +7,12 @@
   const D = window.PUBS;
   if (!D) return;
   // same palette and cluster ids as the topic map (topic-map.js)
-  const PALETTE = ['#6cc5ff','#a98bff','#5fd6a4','#ffb454','#ff7a9c','#7ce0e0',
-                   '#c3a3ff','#ffd166','#8fd694','#f4978e','#9aa6bd'];
-  // topic ids 0-7 are the topic-map clusters; later ids are tags that have
-  // no map region of their own, so they take hues the map palette lacks
-  const TAG_COLORS = { 8: '#7d8cff', 9: '#c9a27e' };
-  const colorOf = id => id == null ? '#6b7689' : TAG_COLORS[id] || PALETTE[id % PALETTE.length];
+  const PALETTE = ['#3b8acd','#ab78fd','#1ff7df','#fecb28','#fe87ba','#379062',
+                   '#7dc1fb','#e84d37','#6ac358','#be449c','#9aa6bd'];
+  // topic ids 0-7 are the topic-map clusters; 8 and 9 are tags with no map
+  // region. The ten hues were checked for normal and color-blind separation
+  // against the page background.
+  const colorOf = id => id == null ? '#6b7689' : PALETTE[id % PALETTE.length];
   const PROGRESS = 'In progress';
   const FORMS = [...D.forms, PROGRESS];
   const topicLabel = id => D.topics[id].label;
@@ -62,16 +62,16 @@
     return 'Read';
   }
   function metaHTML(p) {
-    const topics = p.topics.map(t =>
-      `<span class="e-topic" style="--c:${colorOf(t)}"><span class="dot"></span>${esc(topicLabel(t))}</span>`);
-    const bits = [];
+    // topics show as dots only; the name is in the hover title
+    const dots = p.topics.map(t =>
+      `<span class="dot" style="--c:${colorOf(t)}" title="${esc(topicLabel(t))}" role="img" aria-label="${esc(topicLabel(t))}"></span>`).join('');
+    const bits = dots ? [`<span class="e-topics">${dots}</span>`] : [];
     const forms = p.forms.length ? p.forms
       : [{ article: 'Article', chapter: 'Chapter', book: 'Book', report: 'Report' }[p.kind]];
     bits.push(`<span class="e-kind">${forms.map(esc).join(' &middot; ')}</span>`);
     if (p.link) bits.push(`<a href="${esc(p.link)}" target="_blank" rel="noopener">${linkLabel(p.link, p.status)}</a>`);
     if (p.map) bits.push(`<a href="index.html#paper=${encodeURIComponent(p.map)}">On the map</a>`);
-    return (topics.length ? `<div class="e-meta e-topics">${topics.join('')}</div>` : '') +
-      `<div class="e-meta">${bits.join('')}</div>`;
+    return `<div class="e-meta">${bits.join('')}</div>`;
   }
   function titleHTML(p) {
     const t = esc(p.title);
@@ -101,7 +101,7 @@
       <div class="ix-group">
         <div class="ix-label${g.words ? ' words' : ''}">${esc(g.label)}<small>${g.items.length} ${g.items.length === 1 ? 'work' : 'works'}</small></div>
         <div class="ix-entries">${g.items.map(p =>
-          `<article class="ix-entry" style="--c:${colorOf(p.primary)}">${entryBody(p)}</article>`).join('')}</div>
+          `<article class="ix-entry">${entryBody(p)}</article>`).join('')}</div>
       </div>`).join('');
   }
 
