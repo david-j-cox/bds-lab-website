@@ -16,6 +16,22 @@
     "label": "Quantitative, computational & statistical methods"
   },
   {
+    "id": "inreview-extending-conversation-ethical-ai-aba",
+    "type": "inreview",
+    "authors": "Cox, D. J.",
+    "title": "Extending the conversation around the ethical use of AI in ABA",
+    "url": "https://www.behavioral-data-science.org/documents/Cox-2026-extending-ethical-ai-conversation-aba.pdf",
+    "label": "Ethics & ethical decision-making"
+  },
+  {
+    "id": "inreview-what-is-presented-what-is-published",
+    "type": "inreview",
+    "authors": "Cox, D. J.",
+    "title": "What is presented and what is published: Comparing topic distributions across behavior-analytic conferences and journals",
+    "url": "https://www.behavioral-data-science.org/documents/Cox-2026-what-is-presented-and-what-is-published.pdf",
+    "label": "Research Methodologies"
+  },
+  {
     "id": "preprint-predicting-choice-earning-budgets-models",
     "authors": "Cox, D. J.",
     "title": "Predicting choice under positive and negative earning budgets: Comparisons among behavior-analytic, behavioral ecological, and reinforcement learning models",
