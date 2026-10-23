@@ -7,7 +7,6 @@
 
 /* ---- Head ---- */
 .pubs-head{padding:10px 0 26px; border-bottom:1px solid var(--line); margin-bottom:22px}
-.pubs-kicker{margin:0 0 .5rem; font-size:.72rem; letter-spacing:.18em; text-transform:uppercase; color:var(--accent); font-weight:600}
 .pubs-title{margin:0; font-family:var(--serif); font-weight:400; font-style:italic; font-size:clamp(2.2rem,5vw,3.4rem); line-height:1.05; letter-spacing:-.01em}
 
 /* ---- Controls ---- */
