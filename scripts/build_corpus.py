@@ -131,17 +131,27 @@ def _abstract_from_raw(raw: str, max_chars: int, window: int = 3500) -> str:
     return text[:max_chars]
 
 
+def load_links():
+    """Hosted links for articles without a DOI (e.g., magazine pieces, chapters
+    self-hosted in documents/), from data/links.json: {corpus id: url}."""
+    path = OUT.parent / "links.json"
+    if not path.exists():
+        return {}
+    return {k: v for k, v in json.loads(path.read_text()).items() if not k.startswith("_")}
+
+
 def build_articles():
     items = []
     if not ARTICLES.exists():
         print(f"WARN: {ARTICLES} not found", file=sys.stderr)
         return items
+    links = load_links()
     for p in sorted(ARTICLES.iterdir()):
         if p.suffix.lower() not in (".pdf", ".docx"):
             continue
         year, title, authors = parse_article_name(p.stem)
         abstract, doi = pdf_extract(p) if p.suffix.lower() == ".pdf" else ("", None)
-        items.append({
+        item = {
             "id": slugify(f"{year}-{title}"),
             "type": "article",
             "year": year,
@@ -150,7 +160,13 @@ def build_articles():
             "filename": p.name,
             "abstract": abstract,
             "doi": doi,
-        })
+        }
+        if item["id"] in links:
+            item["url"] = links[item["id"]]
+        items.append(item)
+    unused = set(links) - {it["id"] for it in items}
+    if unused:
+        print(f"WARN: links.json ids not in corpus: {sorted(unused)}", file=sys.stderr)
     return items
 
 

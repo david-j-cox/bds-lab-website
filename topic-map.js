@@ -321,7 +321,7 @@
 
     // Links: DOI (if known) + Scholar fallback
     const links = [];
-    if (d.url) links.push(`<a href="${esc(d.url)}" target="_blank" rel="noopener">View preprint</a>`);
+    if (d.url) links.push(`<a href="${esc(d.url)}" target="_blank" rel="noopener">${d.type === 'article' ? 'View paper' : 'View preprint'}</a>`);
     else if (d.doi) links.push(`<a href="https://doi.org/${encodeURIComponent(d.doi)}" target="_blank" rel="noopener">View paper (DOI)</a>`);
     links.push(`<a href="https://scholar.google.com/scholar?q=${encodeURIComponent(d.title)}" target="_blank" rel="noopener">Find on Scholar</a>`);
     document.getElementById('detail-links').innerHTML = links.join('');

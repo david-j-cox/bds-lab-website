@@ -1,0 +1,5 @@
+{
+  "_note": "Topic-map links for articles with no DOI. Keys are corpus ids (see data/corpus.json); read by scripts/build_corpus.py.",
+  "2025-an-invitation-from-artificial-intelligence": "https://www.behavioral-data-science.org/documents/Cox-2025-operants-uplevel-behavior-analysis.pdf",
+  "2026-of-models-vectors-and-matrices-advancing-analyses-of-th": "https://www.behavioral-data-science.org/documents/Cox-2026-models-vectors-matrices.pdf"
+}
