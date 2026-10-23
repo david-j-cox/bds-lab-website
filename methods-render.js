@@ -40,7 +40,7 @@
   const items = (window.CORPUS && window.CORPUS.items) || [];
   const find = kw => items.find(it => it.title.toLowerCase().includes(kw));
   const esc = s => String(s || '').replace(/[&<>]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;' }[c]));
-  const linkOf = it => it.doi ? 'https://doi.org/' + it.doi : 'https://scholar.google.com/scholar?q=' + encodeURIComponent(it.title);
+  const linkOf = it => it.doi ? 'https://doi.org/' + it.doi : it.url ? it.url : 'https://scholar.google.com/scholar?q=' + encodeURIComponent(it.title);
 
   const NS = 'http://www.w3.org/2000/svg';
   const lines = document.createElementNS(NS, 'svg');

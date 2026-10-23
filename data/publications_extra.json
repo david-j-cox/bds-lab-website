@@ -1,0 +1,33 @@
+{
+  "_note": "Read by scripts/build_publications.py. 'add': entries not in the CV. 'match': title fragment -> corpus id, for entries the automatic title match misses (first matching fragment wins, so list longer fragments first). 'venue': title fragment -> venue line for preprints whose CV entry has a different title.",
+  "add": [
+    {
+      "kind": "article",
+      "status": "published",
+      "year": 2025,
+      "authors": "Cox, D. J.",
+      "title": "An invitation from artificial intelligence",
+      "venue": "Operants, 2025, Quarter IV",
+      "link": "https://www.behavioral-data-science.org/documents/Cox-2025-operants-uplevel-behavior-analysis.pdf"
+    },
+    {
+      "kind": "article",
+      "status": "inpress",
+      "year": null,
+      "authors": "Cox, D. J.",
+      "title": "What should we tell our students?",
+      "venue": "Operants",
+      "link": "https://www.behavioral-data-science.org/documents/Cox-2026-what-should-we-tell-our-students.pdf",
+      "map": "inpress-what-should-we-tell-our-students"
+    }
+  ],
+  "match": {
+    "The challenges ahead: Concepts, analytics, and ethics of value-based care": "2024-the-challenges-ahead-concepts-analytics-and-ethics-of-v",
+    "Practical ethics for effective treatment of Autism Spectrum Disorder: Second": "book-practical-ethics-for-effective-treatment-of-asd-2nd-ed",
+    "Practical ethics for effective treatment of Autism Spectrum Disorder": "book-practical-ethics-for-effective-treatment-of-asd-1st-ed",
+    "Scaling N from 1 to 1,000,000": "2021-scaling-n-from-1-to-1-000-000-application-of-the-gml-to"
+  },
+  "venue": {
+    "What is presented and what is published": "Under review at Behavioral Interventions"
+  }
+}
