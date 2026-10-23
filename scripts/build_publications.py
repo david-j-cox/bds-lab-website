@@ -216,9 +216,30 @@ def main():
         p["topic"] = clusters.get(p["cluster"]) if it else None
         p["id"] = re.sub(r"[^a-z0-9]+", "-", f'{p["year"] or p["status"]}-{p["title"].lower()}')[:70].strip("-")
 
+    # multi-tags from data/publication_tags.json (set in the Publication
+    # Tagger): topic tags extend the topic-map clusters, form tags say what
+    # kind of work it is. "primary" is the topic that colors the entry: its
+    # map cluster when still tagged, else its first topic tag.
+    tagged = json.loads((DATA / "publication_tags.json").read_text())
+    topic_labels = tagged["_topics"]
+    for p in pubs:
+        t = tagged.get(p["id"])
+        if t is None:
+            t = [p["topic"]] if p["topic"] else []
+            print("  untagged:", p["id"])
+        p["topics"] = [topic_labels.index(x) for x in t if x in topic_labels]
+        p["forms"] = [x for x in tagged["_forms"] if x in t]
+        home = topic_labels.index(p["topic"]) if p["topic"] in topic_labels else None
+        p["primary"] = home if home in p["topics"] else (p["topics"][0] if p["topics"] else None)
+    unused = set(tagged) - {p["id"] for p in pubs} - {k for k in tagged if k.startswith("_")}
+    for u in sorted(unused):
+        print("  tags for unknown id:", u)
+
     order = {"inpress": 0, "inreview": 1, "preprint": 2, "published": 3}
     pubs.sort(key=lambda p: (order[p["status"]], -(p["year"] or 0), p["title"].lower()))
-    out = {"clusters": [{"id": k, "label": v} for k, v in sorted(clusters.items())], "items": pubs}
+    out = {"clusters": [{"id": k, "label": v} for k, v in sorted(clusters.items())],
+           "topics": [{"id": i, "label": l} for i, l in enumerate(topic_labels)],
+           "forms": tagged["_forms"], "items": pubs}
     (DATA / "publications.json").write_text(json.dumps(out, indent=2, ensure_ascii=False) + "\n")
     (DATA / "publications.js").write_text("window.PUBS = " + json.dumps(out, ensure_ascii=False) + ";\n")
 

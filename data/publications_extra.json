@@ -19,6 +19,15 @@
       "venue": "Operants",
       "link": "https://www.behavioral-data-science.org/documents/Cox-2026-what-should-we-tell-our-students.pdf",
       "map": "inpress-what-should-we-tell-our-students"
+    },
+    {
+      "kind": "article",
+      "status": "published",
+      "year": 2023,
+      "authors": "Cox, D. J.",
+      "title": "How learning to code saved my intellectual soul",
+      "venue": "Behavior Analysis Blogs, Association for Behavior Analysis International",
+      "link": "https://behavioranalysisblogs.abainternational.org/2023/12/18/how-learning-to-code-saved-my-intellectual-soul/"
     }
   ],
   "match": {
