@@ -996,6 +996,26 @@
     },
     {
       "kind": "article",
+      "status": "published",
+      "year": 2024,
+      "authors": "Cox, D. J.",
+      "title": "APBA ethics skill builder: Consent and assent",
+      "venue": "APBA Reporter, Issue 64",
+      "link": "https://www.apbahome.net/news/july-2024-issue-64-ethics-challenge",
+      "map": null,
+      "cluster": null,
+      "topic": null,
+      "id": "2024-apba-ethics-skill-builder-consent-and-assent",
+      "topics": [
+        1
+      ],
+      "forms": [
+        "Magazine Article"
+      ],
+      "primary": 1
+    },
+    {
+      "kind": "article",
       "year": 2024,
       "authors": "Naud$acute{e}$, G. P., Strickland, J. C., Berry, M. S., Dolan, S. B., Cox, D. J., & Johnson, M. W.",
       "title": "Experience with reduced-nicotine cigarettes and whether this decreases smoking and substitution for full-nicotine cigarettes",
@@ -1185,6 +1205,27 @@
       "primary": 0
     },
     {
+      "kind": "article",
+      "status": "published",
+      "year": 2023,
+      "authors": "Cox, D. J.",
+      "title": "Artificial intelligence in ABA: Why data transparency matters",
+      "venue": "Rethink Futures",
+      "link": "https://www.rethinkfutures.com/resources/artificial-intelligence-aba-why-data-transparency-matters/",
+      "map": null,
+      "cluster": null,
+      "topic": null,
+      "id": "2023-artificial-intelligence-in-aba-why-data-transparency-matters",
+      "topics": [
+        1,
+        2
+      ],
+      "forms": [
+        "Magazine Article"
+      ],
+      "primary": 1
+    },
+    {
       "kind": "chapter",
       "year": 2023,
       "authors": "Cox, D.J., Javed, A., Sosine, J., Cordeiro, C., & Sotomayor, J.",
@@ -1270,8 +1311,8 @@
       "year": 2023,
       "authors": "Cox, D. J.",
       "title": "How learning to code saved my intellectual soul",
-      "venue": "Behavior Analysis Blogs, Association for Behavior Analysis International",
-      "link": "https://behavioranalysisblogs.abainternational.org/2023/12/18/how-learning-to-code-saved-my-intellectual-soul/",
+      "venue": "Medium",
+      "link": "https://link.medium.com/HpuSrPLCLFb",
       "map": null,
       "cluster": null,
       "topic": null,
@@ -1307,6 +1348,26 @@
       "primary": 2
     },
     {
+      "kind": "article",
+      "status": "published",
+      "year": 2023,
+      "authors": "Cox, D. J.",
+      "title": "Reflections on artificial intelligence, technology, and the future of behavior analysis",
+      "venue": "Medium",
+      "link": "https://link.medium.com/2uJLNMdn4yb",
+      "map": null,
+      "cluster": null,
+      "topic": null,
+      "id": "2023-reflections-on-artificial-intelligence-technology-and-the-future",
+      "topics": [
+        2
+      ],
+      "forms": [
+        "Magazine Article"
+      ],
+      "primary": 2
+    },
+    {
       "kind": "book",
       "year": 2023,
       "authors": "Cox, D.J., & Vladescu, J.",
@@ -1325,6 +1386,27 @@
         "Book"
       ],
       "primary": 2
+    },
+    {
+      "kind": "article",
+      "status": "published",
+      "year": 2023,
+      "authors": "Cox, D. J.",
+      "title": "The intersection between autism acceptance and health equity",
+      "venue": "Rethink Futures",
+      "link": "https://www.rethinkfutures.com/resources/intersection-autism-acceptance-health-equity/",
+      "map": null,
+      "cluster": null,
+      "topic": null,
+      "id": "2023-the-intersection-between-autism-acceptance-and-health-equity",
+      "topics": [
+        1,
+        4
+      ],
+      "forms": [
+        "Magazine Article"
+      ],
+      "primary": 1
     },
     {
       "kind": "article",
