@@ -6,7 +6,7 @@
 .sr-only{position:absolute; width:1px; height:1px; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap}
 
 /* ---- Head ---- */
-.pubs-head{display:flex; align-items:flex-end; justify-content:space-between; gap:20px 40px; flex-wrap:wrap; padding:10px 0 22px; border-bottom:1px solid var(--line); margin-bottom:22px}
+.pubs-head{display:flex; align-items:center; justify-content:space-between; gap:20px 40px; flex-wrap:wrap; padding:10px 0 22px; border-bottom:1px solid var(--line); margin-bottom:22px}
 .pubs-title{margin:0; font-family:var(--serif); font-weight:400; font-style:italic; font-size:clamp(2.2rem,5vw,3.4rem); line-height:1.05; letter-spacing:-.01em}
 
 /* ---- Controls ---- */
