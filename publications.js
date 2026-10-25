@@ -106,29 +106,62 @@
       </div>`).join('');
   }
 
-  // ---- chips
-  function chip(label, pressed, color, n, onClick) {
-    const b = document.createElement('button');
-    b.type = 'button';
-    b.className = 'chip';
-    b.setAttribute('aria-pressed', pressed);
-    if (color) b.style.setProperty('--c', color);
-    b.innerHTML = (color ? '<span class="dot"></span>' : '') + esc(label) + ` <span class="n">${n}</span>`;
-    b.addEventListener('click', onClick);
-    return b;
+  // ---- filter dropdowns: a button that opens a panel of checkboxes
+  function option(label, checked, color, n, onChange) {
+    const l = document.createElement('label');
+    l.className = 'dd-opt';
+    if (color) l.style.setProperty('--c', color);
+    l.innerHTML = `<input type="checkbox"${checked ? ' checked' : ''}>` +
+      (color ? '<span class="dot"></span>' : '') +
+      `<span class="lbl">${esc(label)}</span><span class="n">${n}</span>`;
+    l.firstChild.dataset.v = label;
+    l.firstChild.addEventListener('change', onChange);
+    return l;
   }
   function toggle(set, v) { set.has(v) ? set.delete(v) : set.add(v); render(); }
+  // rebuilding a panel drops focus, so put it back on the same option
+  function fill(panel, opts) {
+    const f = panel.contains(document.activeElement) && document.activeElement.dataset.v;
+    panel.replaceChildren(...opts);
+    if (f) [...panel.querySelectorAll('input')].find(i => i.dataset.v === f)?.focus();
+  }
+  // the button names a lone choice and counts several
+  const summary = names => !names.length ? 'All' : names.length === 1 ? names[0] : `${names.length} selected`;
   function renderChips() {
     const topics = $('pubs-topics'), forms = $('pubs-types');
-    topics.replaceChildren(...D.topics
-      .map(c => [c, items.filter(p => p.topics.includes(c.id) && passes(p, 'topic')).length])
-      .filter(([c, n]) => n || state.topics.has(c.id))
-      .map(([c, n]) => chip(c.label, state.topics.has(c.id), colorOf(c.id), n, () => toggle(state.topics, c.id))));
-    forms.replaceChildren(...FORMS
+    fill(topics, [
+      Object.assign(document.createElement('p'), { className: 'dd-note', textContent: 'Topics are shown in color in the chart and list' }),
+      ...D.topics
+        .map(c => [c, items.filter(p => p.topics.includes(c.id) && passes(p, 'topic')).length])
+        .filter(([c, n]) => n || state.topics.has(c.id))
+        .map(([c, n]) => option(c.label, state.topics.has(c.id), colorOf(c.id), n, () => toggle(state.topics, c.id))),
+    ]);
+    fill(forms, FORMS
       .map(f => [f, items.filter(p => p._forms.includes(f) && passes(p, 'form')).length])
       .filter(([f, n]) => n || state.forms.has(f))
-      .map(([f, n]) => chip(f, state.forms.has(f), null, n, () => toggle(state.forms, f))));
+      .map(([f, n]) => option(f, state.forms.has(f), null, n, () => toggle(state.forms, f))));
+    $('pubs-topics-sum').textContent = summary(D.topics.filter(c => state.topics.has(c.id)).map(c => c.label));
+    $('pubs-types-sum').textContent = summary(FORMS.filter(f => state.forms.has(f)));
   }
+  function openDd(dd, open) {
+    dd.querySelector('.pubs-dd-btn').setAttribute('aria-expanded', open);
+    dd.querySelector('.pubs-dd-panel').hidden = !open;
+    dd.classList.toggle('open', open);
+  }
+  document.querySelectorAll('.pubs-dd').forEach(dd => {
+    dd.querySelector('.pubs-dd-btn').addEventListener('click', () => {
+      const open = !dd.classList.contains('open');
+      document.querySelectorAll('.pubs-dd.open').forEach(o => openDd(o, false));
+      openDd(dd, open);
+    });
+  });
+  document.addEventListener('click', e => {
+    document.querySelectorAll('.pubs-dd.open').forEach(dd => { if (!dd.contains(e.target)) openDd(dd, false); });
+  });
+  document.addEventListener('keydown', e => {
+    if (e.key !== 'Escape') return;
+    document.querySelectorAll('.pubs-dd.open').forEach(dd => { openDd(dd, false); dd.querySelector('.pubs-dd-btn').focus(); });
+  });
 
   // ---- year histogram with a draggable range
   const svg = $('pubs-hist');
