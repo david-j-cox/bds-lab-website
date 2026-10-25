@@ -57,14 +57,14 @@
                         <span class="sr-only">Search titles, authors, and venues</span>
                         <input type="search" id="pubs-q" placeholder="Search titles, authors, venues" autocomplete="off">
                     </label>
-                </div>
-                <div class="pubs-filter">
-                    <div class="pubs-filter-label">Topics<small>Shown in color</small></div>
-                    <div class="pubs-row pubs-chips" id="pubs-topics" aria-label="Topics"></div>
-                </div>
-                <div class="pubs-filter">
-                    <div class="pubs-filter-label">Publication type</div>
-                    <div class="pubs-row pubs-chips" id="pubs-types" aria-label="Publication type"></div>
+                    <div class="pubs-dd">
+                        <button type="button" class="pubs-dd-btn" aria-expanded="false" aria-controls="pubs-topics">Topics <span class="pubs-dd-sum" id="pubs-topics-sum"></span></button>
+                        <div class="pubs-dd-panel" id="pubs-topics" role="group" aria-label="Topics" hidden></div>
+                    </div>
+                    <div class="pubs-dd">
+                        <button type="button" class="pubs-dd-btn" aria-expanded="false" aria-controls="pubs-types">Type <span class="pubs-dd-sum" id="pubs-types-sum"></span></button>
+                        <div class="pubs-dd-panel" id="pubs-types" role="group" aria-label="Publication type" hidden></div>
+                    </div>
                 </div>
             </section>
 
