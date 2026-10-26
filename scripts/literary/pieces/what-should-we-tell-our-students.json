@@ -1,12 +1,12 @@
 {
-  "_note": "What should we tell our students? Accepted at Operants; rebuild from the final text once editorial revision is done, and update the notice when it is published.",
-  "source": "~/Dropbox/Projects/Manuscripts Under Review/(2026) What should we tell our students, Cox.docx",
+  "_note": "AI has felled yet another. What should we tell our students? Final text with Operants editor fixes, for the 2026 Q4 issue; update the notice with issue details once published.",
+  "source": "~/Dropbox/Projects/Manuscripts With Decisions/Published/Operants Magazine/(2026) AI has felled yet another. What should we tell our students, Cox.docx",
   "out": "documents/Cox-2026-what-should-we-tell-our-students.pdf",
   "skip": 1,
-  "title": "What Should We Tell Our Students?",
+  "title": "AI Has Felled Yet Another. What Should We Tell Our Students?",
   "short": "What Should We Tell Our Students?",
-  "opener": "<h1>What Should We Tell<br>Our Students?</h1>",
+  "opener": "<h1 class=\"long\">AI Has Felled Yet Another.</h1><p class=\"sub\">What Should We Tell Our Students?</p>",
   "epigraph": "",
-  "lead": "So was the title",
-  "notice": "Accepted for publication in <span style=\"font-style:normal\">Operants</span>, Quarter IV 2026, the B. F. Skinner Foundation&rsquo;s special issue on artificial intelligence in behavior analysis. This version precedes editorial revision and may differ from the published article."
+  "lead": "So was the theme",
+  "notice": "Accepted for publication in <span style=\"font-style:normal\">Operants</span>, Quarter IV 2026, the B. F. Skinner Foundation&rsquo;s special issue on artificial intelligence in behavior analysis. This is the author&rsquo;s final manuscript, incorporating the editor&rsquo;s revisions; the magazine version may differ in layout."
 }
